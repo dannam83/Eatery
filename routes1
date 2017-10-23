@@ -1,0 +1,37 @@
+Routes
+
+HTML
+
+GET / StaticPagesController#root
+API Endpoints
+
+USERS:
+GET /api/users - returns the user information for the User Search feature
+POST /api/users - sign up
+GET /api/users/:id/reviews - returns user reviews
+
+SESSION:
+POST /api/session - log in
+DELETE /api/session - log out
+
+BUSINESSES:
+GET /api/businesses - returns relevant business (filtered by data/params)
+GET /api/businesses/:id - returns business
+GET /api/businesses/:id/reviews - returns business reviews
+
+REVIEWS:
+GET /api/reviews/:id - show a review
+POST /api/reviews - creates a review
+PATCH /api/reviews/:id - edit a review
+DELETE /api/reviews/:id - remove a review
+
+FRONT END ROUTES:
+/login
+/signup
+/ - homepage with search
+/search - page with search results
+/users/:userId - user profile
+/businesses/:businessId - business profile
+/reviews/new - create a review
+/reviews/:reviewId - review show
+/reviews/:reviewId/edit - edit a review
