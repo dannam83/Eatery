@@ -1,0 +1,76 @@
+{
+  entities: {
+    users: {
+      1: {
+        id: 1,
+        email: "cakeboy@gmail.com",
+        img_url: "http://myface.com",
+        reviews: [3],
+      },
+      2: {
+        id: 2,
+        email: "iloveporkchops@gmail.com",
+        img_url: "http://myprofile.com",
+        reviews: [1, 2],
+      }
+    }
+    businesses: {
+      1: {
+        id: 1,
+        name: "Good Deli",
+        address: "158 35th St, New York, NY 10018",
+        reviews: [2, 3],
+      },
+      2: {
+        id: 2,
+        name: "Hotdogs R Us",
+        address: "887 32nd St, New York, NY 10018",
+        reviews: [],
+
+      },
+      3: {
+        id: 3,
+        name: "Bonkers For Beef",
+        address: "45 8th Ave, New York, NY 10018",
+        reviews: [1],
+      }
+    }
+    reviews: {
+      1: {
+        id: 1,
+        body: "This place was so good! epsum epsum leonitus.",
+        author_id: 2, //association to users
+        business_id: 3, //association to businesses
+        rating: 5,
+        likes: 1
+      },
+      2: {
+        id: 2,
+        body: "I've had better. All I have to say is epsum lopsum lollipops.",
+        author_id: 2,
+        business_id: 1,
+        rating: 3,
+        likes: 0
+      },
+      3: {
+        id: 3,
+        body: "I like this place! blah blah epsum epsum leonardo dicaprio!"
+        author_id: 1,
+        business_id: 1,
+        rating: 4,
+        likes: 1
+      }
+    }
+  },
+  ui: {
+    loading: true/false
+  },
+  errors: {
+  login: ["Incorrect username or password"],
+  review_body: ["Review cannot be blank"],
+  review_rating: ["Must give a rating"]
+  },
+  session: {
+    id: 72,
+  }
+}
