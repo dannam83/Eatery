@@ -1,0 +1,37 @@
+React Component Hierarchy
+
+Functional Component Hierarchy
+
+ROOT
+  App
+    - NavBar
+    - MainPage
+    - Footer
+
+NAVBAR
+  NavBar
+    - links
+    - session buttons
+    - search bar
+
+SEARCH PAGE
+  SearchPageContainer
+    - NavBar
+    - business ul 
+    - map
+    - footer
+
+BUSINESS PAGE
+  BusinessPageContainer
+    - NavBar
+    - business showcase
+    - reviews ul 
+    - business info ul
+    - footer
+
+USER PAGE
+  UserPageContainer
+    - NavBar
+    - user profile 
+    - user reviews ul 
+    - footer
