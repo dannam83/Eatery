@@ -8,6 +8,7 @@ class Api::SessionsController < ApplicationController
 
     if user
       login(user)
+      render :json => {fname: user.fname, lname: user.lname}
     else
       render :json => {
         :errors => "Incorrect email or password" }, :status => 422
