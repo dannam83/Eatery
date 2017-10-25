@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: bizs
+#
+#  id         :integer          not null, primary key
+#  name       :string           not null
+#  lat        :float            not null
+#  lng        :float            not null
+#  hours      :json
+#  price      :integer
+#  phone      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  lat: MyString
+  lng: MyString
+  hours: MyString
+  price: MyString
+  phone: MyString
+
+two:
+  name: MyString
+  lat: MyString
+  lng: MyString
+  hours: MyString
+  price: MyString
+  phone: MyString

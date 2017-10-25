@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'bizs/index'
+
+  get 'bizs/show'
+
+  get 'bizs/create'
+
   root to: 'static_pages#root'
 
   namespace :api, defaults: { format: :json } do
