@@ -1,6 +1,7 @@
 import React from 'react';
 import GreetingContainer from './greeting_container';
 import SessionFormContainer from './session_form_container';
+import { AuthRoute } from '../util/route_util';
 import {
   Route,
   Redirect,
@@ -16,8 +17,8 @@ const App = () => (
       <GreetingContainer />
     </header>
 
-  <Route exact path="/login" component={SessionFormContainer} />
-  <Route exact path="/signup" component={SessionFormContainer} />
+  <AuthRoute exact path="/login" component={SessionFormContainer} />
+  <AuthRoute exact path="/signup" component={SessionFormContainer} />
 
   </div>
 );
