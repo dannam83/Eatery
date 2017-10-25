@@ -8,6 +8,7 @@ class Api::UsersController < ApplicationController
     # how to make error for email address already being used
     if @user.save
       login(@user)
+      render :json => {fname: @user.fname, lname: @user.lname}
     else
       render :json => {
         :errors => @user.errors.full_messages }, :status => 422

@@ -14,20 +14,51 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    const errors = this.props.errors.session;
+      if (errors) {
+        return(
+        <ul>
+          {this.props.errors.session.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
+    this.props.processForm(this.state).then(
+      this.props.history.push('/')
+    );
+  }
+
+  nameInput(formType) {
+    if (this.props.match.path === '/signup') {
+      return(
+        <div>
+          <br/>
+          <label>First Name
+          <br/>
+            <input
+              type="text"
+              onChange={this.update('fname')}
+              />
+          </label>
+          <br/>
+          <label>Last Name
+          <br/>
+            <input
+              type="text"
+              onChange={this.update('lname')}
+              />
+          </label>
+        <br/>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -38,6 +69,7 @@ class SessionForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           {this.renderErrors()}
+          {this.nameInput()}
           <label>Email
             <br/>
             <input
