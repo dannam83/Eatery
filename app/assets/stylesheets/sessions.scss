@@ -17,6 +17,23 @@ header.session {
   margin-bottom: 50px;
 }
 
+.logo:active {
+  color: white;
+  text-decoration: none;
+}
+.logo:hover {
+  color: white;
+  text-decoration: none;
+}
+.logo:visited {
+  color: white;
+  text-decoration: none;
+}
+.logo:link {
+  color: white;
+  text-decoration: none;
+}
+
 .chefPic {
   width: 50px;
   height: auto;
@@ -28,15 +45,34 @@ header.session {
   align-items: center;
 }
 
+.intro-big {
+  color: #F91717;
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  margin-bottom: 8px;
+}
+
+.intro-small {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+}
+
 .form-input {
-  width: 250px;
+  width: 265px;
   padding: 4px;
   font-size: 14px;
   border-radius: 4px;
 }
 
 .form-button {
-  width: 263px;
+  width: 278px;
   height: 30px;
   padding: 0px;
   border: none;
@@ -64,8 +100,12 @@ h2.switch-comment {
 }
 
 .input-name {
-  width: 119px;
+  width: 125px;
   padding: 4px;
   font-size: 14px;
   border-radius: 4px;
+}
+
+.input-name:last-child {
+  margin-left: 4px;
 }

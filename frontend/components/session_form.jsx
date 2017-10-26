@@ -37,6 +37,24 @@ class SessionForm extends React.Component {
         );
   }
 
+  intro(formType) {
+    if (this.props.match.path === '/signup') {
+      return(
+        <div>
+          <h1 className="intro-big">Sign Up for Eatery</h1>
+          <h2 className="intro-small">Connect with great local businesses</h2>
+        </div>
+      );
+    } else {
+      return(
+        <div>
+          <h1 className="intro-big">Log In to Eatery</h1>
+          <h2 className="intro-small">Welcome Back!</h2>
+        </div>
+      );
+    }
+  }
+
   nameInput(formType) {
     if (this.props.match.path === '/signup') {
       return(
@@ -113,6 +131,7 @@ class SessionForm extends React.Component {
       <div className="form-div">
         <form className="form" onSubmit={this.handleSubmit}>
           {this.renderErrors()}
+          {this.intro()}
           {this.nameInput()}
             <br/>
             <input
