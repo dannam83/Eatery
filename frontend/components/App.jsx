@@ -1,7 +1,7 @@
 import React from 'react';
 import GreetingContainer from './greeting_container';
 import SessionFormContainer from './session_form_container';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute } from '../util/route_util.js';
 import {
   Route,
   Redirect,
