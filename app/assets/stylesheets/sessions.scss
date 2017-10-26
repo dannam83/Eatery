@@ -1,3 +1,71 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+header.session {
+  background-color: #F91717;
+  height: 70px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Marker Felt, fantasy;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.chefPic {
+  width: 50px;
+  height: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-input {
+  width: 250px;
+  padding: 4px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.form-button {
+  width: 263px;
+  height: 30px;
+  padding: 0px;
+  border: none;
+  background-color: #F91717;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+h2.switch-comment {
+  color: gray;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.switch-link {
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.form-name {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-name {
+  width: 119px;
+  padding: 4px;
+  font-size: 14px;
+  border-radius: 4px;
+}

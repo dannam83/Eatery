@@ -40,57 +40,103 @@ class SessionForm extends React.Component {
   nameInput(formType) {
     if (this.props.match.path === '/signup') {
       return(
-        <div>
-          <br/>
-          <label>First Name
-          <br/>
+        <div className="form-name">
             <input
+              className="input-name"
               type="text"
               onChange={this.update('fname')}
+              placeholder="First Name"
               />
-          </label>
-          <br/>
-          <label>Last Name
-          <br/>
             <input
+              className="input-name"
               type="text"
               onChange={this.update('lname')}
+              placeholder="Last Name"
               />
-          </label>
-        <br/>
         </div>
       );
     }
   }
 
+  zipCode(formType) {
+    if (this.props.match.path === '/signup') {
+      return(
+        <div>
+            <input
+              className="form-input"
+              type="text"
+              onChange={this.update('zipcode')}
+              placeholder="ZIP Code"
+              />
+        </div>
+      );
+    }
+  }
+
+  // if want to add a birthday column to table
+  // birthday(formType) {
+  //   if (this.props.match.path === '/signup') {
+  //     return(
+  //       <div>
+  //           <h3 className="birthday-text" id="birthday">Birthday</h3>
+  //           <h3 className="birthday-text" id="optional">Optional</h3>
+  //           <input
+  //             className="form-input"
+  //             type="text"
+  //             onChange={this.update('month')}
+  //             placeholder="ZIP Code"
+  //             />
+  //           <input
+  //             className="form-input"
+  //             type="text"
+  //             onChange={this.update('day')}
+  //             placeholder="ZIP Code"
+  //             />
+  //           <input
+  //             className="form-input"
+  //             type="text"
+  //             onChange={this.update('year')}
+  //             placeholder="ZIP Code"
+  //             />
+  //       </div>
+  //     );
+  //   }
+  // }
+
   render() {
     const formType = this.props.formType;
-    const otherType = formType === "Sign Up" ? "Log In" : "Sign Up";
-    const otherUrl = formType === "Sign Up" ? "/login" : "/signup";
+    const signup = formType === "Sign Up";
+    const otherType = signup ? "Log In" : "Sign Up";
+    const otherUrl = signup ? "/login" : "/signup";
+    const switchText = signup ? "Already on Eatery?" : "New to Eatery?";
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="form-div">
+        <form className="form" onSubmit={this.handleSubmit}>
           {this.renderErrors()}
           {this.nameInput()}
-          <label>Email
             <br/>
             <input
+              className="form-input"
+              id="email"
               type="text"
               onChange={this.update('email')}
+              placeholder="Email"
               />
-          </label>
-          <br/>
-          <label>Password
             <br/>
             <input
+              className="form-input"
+              id="password"
               type="text"
               onChange={this.update('password')}
+              placeholder="Password"
               />
-          </label>
           <br/>
-          <input type="submit" value={formType}/>
+          {this.zipCode()}
           <br/>
-          go to <Link to={otherUrl}>{otherType}</Link>
+          <input className="form-button" type="submit" value={formType}/>
+          <br/>
+          <h2 className="switch-comment">{switchText}</h2>
+          <Link className="switch-link" to={otherUrl}>{otherType}</Link>
         </form>
       </div>
     );
