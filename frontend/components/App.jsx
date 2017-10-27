@@ -3,6 +3,7 @@ import HomeHeaderCon from './home_header_con';
 import MainHeaderCon from './main_header_con';
 import SessionHeaderCon from './session_header_con';
 import SessionFormContainer from './session_form_container';
+import BizIndexContainer from './biz_index_container';
 import { AuthRoute } from '../util/route_util.js';
 import {
   Route,
@@ -15,7 +16,6 @@ import {
 // const Header = this.props.location === '/' ? HomeHeaderCon : MainHeaderCon;
 
 const App = () => (
-
   <div>
     <header>
       <Switch>
@@ -28,6 +28,7 @@ const App = () => (
 
   <AuthRoute exact path="/login" component={SessionFormContainer} />
   <AuthRoute exact path="/signup" component={SessionFormContainer} />
+  <Route exact path="/bizs" component={BizIndexContainer} />
 
   </div>
 );

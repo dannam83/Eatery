@@ -13,11 +13,12 @@ const receiveBiz = (biz) => ({
   biz,
 });
 
-export const fetchBizs = () => (dispatch) => (
-  BizApiUtil.fetchBizs().then(
+export const fetchBizs = () => (dispatch) => {
+  debugger
+  return (BizApiUtil.fetchBizs().then(
     (bizs) => dispatch(receiveBizs(bizs))
-  )
-);
+  ));
+};
 
 export const fetchBiz = (bizId) => (dispatch) => (
   BizApiUtil.fetchBiz(bizId).then(

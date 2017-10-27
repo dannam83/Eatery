@@ -12,7 +12,15 @@
   position: absolute;
   min-width: 1000px;
   justify-content: center;
-  opacity: 0.8;
+  object-fit: cover;
+}
+
+.blocker {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  min-width: 1000px;
+  background: rgba(0,0,0,0.5);
   object-fit: cover;
 }
 
@@ -45,7 +53,7 @@
 }
 
 .session-start:last-child {
-  margin-right: 75px;
+  margin-right: 15px;
 }
 .session-start:first-child {
   border: 0px solid white;
@@ -87,7 +95,7 @@
 }
 
 .extra-links:first-child {
-  margin-left: 75px;
+  margin-left: 15px;
 }
 
 .extra-links:hover, .session-start:first-child:hover {

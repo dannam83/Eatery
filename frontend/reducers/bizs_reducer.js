@@ -6,7 +6,7 @@ const BizsReducer = (state = {}, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_BIZS:
-      return merge({}, action.bizs);
+      return action.bizs;
     case RECEIVE_BIZ:
       return merge(newState, {[action.biz.id]:action.biz});
     default:
