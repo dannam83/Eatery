@@ -9,10 +9,28 @@ const sessionLinks = () => {
   return (
   <nav className="signed-out">
     <img className="homePic" src={image}></img>
-      <Link className="session-start" to="/login">Log In</Link>
-      <Link className="session-start" to="/signup">Sign Up</Link>
+      {extraLinks()}
+      {links()}
   </nav>
 )};
+
+const links = () => {
+  return (
+    <div className="session-choice">
+      <Link className="session-start" to="/login">Log In</Link>
+      <Link className="session-start" to="/signup">Sign Up</Link>
+    </div>
+  )
+}
+
+const extraLinks = () => {
+  return (
+    <div className="extra-choices">
+      <Link className="extra-links" to="/login">Link</Link>
+      <Link className="extra-links" to="/signup">Link</Link>
+    </div>
+  )
+}
 
 
 // <img className="homePic" src={window.steak}>
