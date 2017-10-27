@@ -14,7 +14,6 @@ const receiveBiz = (biz) => ({
 });
 
 export const fetchBizs = () => (dispatch) => {
-  debugger
   return (BizApiUtil.fetchBizs().then(
     (bizs) => dispatch(receiveBizs(bizs))
   ));

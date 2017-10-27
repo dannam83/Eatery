@@ -5,7 +5,6 @@ import BizIndexItem from './biz_index_item.jsx';
 class BizIndex extends React.Component {
 
   componentDidMount () {
-    debugger
     this.props.fetchBizs();
   }
 
@@ -20,7 +19,6 @@ class BizIndex extends React.Component {
   // }
 
   render () {
-    debugger
     return(
       <div>
         <ul>

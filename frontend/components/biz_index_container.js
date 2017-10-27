@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { fetchBizs } from '../actions/biz_actions'
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return ({
     bizs: Object.values(state.entities.bizs),
   });
