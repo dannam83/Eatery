@@ -7,4 +7,11 @@ export default class MarkerManager {
   updateMarkers(bizs) {
     console.log('time to update');
   }
+
+  createMarkerFromBiz(biz) {
+    const maker = new google.maps.Marker({
+      position: { lat: biz.lat, lng: biz.lng },
+      map: 'map-container',
+    });
+  }
 }

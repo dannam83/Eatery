@@ -12,7 +12,7 @@ Biz.delete_all
 
 User.create(
   fname: "Guest",
-  lname: "Guest",
+  lname: "*",
   email: "guest@hmail.com",
   password: "asdf1234"
 )

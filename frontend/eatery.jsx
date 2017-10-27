@@ -18,6 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchBizs = () => dispatch(fetchBizs());
+  window.fetchBizs = fetchBizs;
   ReactDOM.render(<Root store={store} />, root);
 });

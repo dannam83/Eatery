@@ -7,7 +7,7 @@ class Search extends React.Component {
   render () {
     return (
       <div>
-        <BizMap />
+        <BizMap updateBounds={this.props.updateBounds} bizs={this.props.bizs}/>
         <BizIndex bizs={this.props.bizs} fetchBizs={this.props.fetchBizs}/>
       </div>
     );

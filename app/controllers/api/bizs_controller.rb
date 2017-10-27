@@ -1,6 +1,6 @@
 class Api::BizsController < ApplicationController
   def index
-    @bizs = Biz.all
+    @bizs = params[:bounds] ? Biz.in_bounds(params[:bounds]) : Biz.all
     render :index
   end
 
