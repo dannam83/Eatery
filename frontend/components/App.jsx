@@ -3,7 +3,7 @@ import HomeHeaderCon from './home_header_con';
 import MainHeaderCon from './main_header_con';
 import SessionHeaderCon from './session_header_con';
 import SessionFormContainer from './session_form_container';
-import BizIndexContainer from './biz_index_container';
+import SearchContainer from './search_container';
 import { AuthRoute } from '../util/route_util.js';
 import {
   Route,
@@ -28,7 +28,7 @@ const App = () => (
 
   <AuthRoute exact path="/login" component={SessionFormContainer} />
   <AuthRoute exact path="/signup" component={SessionFormContainer} />
-  <Route exact path="/bizs" component={BizIndexContainer} />
+  <Route exact path="/search" component={SearchContainer} />
 
   </div>
 );

@@ -1,6 +1,7 @@
 import BizIndex from './biz_index';
 import { connect } from 'react-redux';
-import { fetchBizs } from '../actions/biz_actions'
+import { fetchBizs } from '../actions/biz_actions';
+import Search from './search';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -17,4 +18,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BizIndex);
+)(Search);

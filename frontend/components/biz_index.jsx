@@ -8,16 +8,6 @@ class BizIndex extends React.Component {
     this.props.fetchBizs();
   }
 
-  // listBizs (bizs) {
-  //   return (
-  //     bizs.map((biz) => (
-  //       <li>
-  //         <Link to={`/bizs/${biz.id}`}>{biz.name}</Link>
-  //       </li>
-  //     ))
-  //   );
-  // }
-
   render () {
     return(
       <div>
