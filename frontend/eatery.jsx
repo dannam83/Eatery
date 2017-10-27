@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { fetchBizs } from './actions/biz_actions';
+// import { fetchBizs } from './actions/biz_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   const root = document.getElementById('root');
+
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  
   ReactDOM.render(<Root store={store} />, root);
 });

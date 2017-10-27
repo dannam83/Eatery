@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 
 const sessionLinks = () => {
-  const images = [window.burger, window.cupcakes, window.ribs, window.sushi, window.tacos]
+  const images =
+    [window.burger, window.cupcakes, window.ribs, window.sushi, window.tacos, window.steak]
   const image = images[Math.floor(Math.random()*images.length)];
   return (
   <nav className="signed-out">
