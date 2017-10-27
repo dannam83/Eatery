@@ -5,6 +5,9 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
+    this.setState = this.setState.bind(this);
+    // this.state = {'email': "", 'password': ""};
   }
 
   update(field) {
@@ -37,6 +40,13 @@ class SessionForm extends React.Component {
         );
   }
 
+  handleGuest(e) {
+    e.preventDefault();
+    this.props.processForm({['email']: "guest@hmail.com", ['password']: "asdf1234"}).then(
+      this.props.history.push('/')
+    );
+  }
+
   intro(formType) {
     if (this.props.match.path === '/signup') {
       return(
@@ -45,11 +55,18 @@ class SessionForm extends React.Component {
           <h2 className="intro-small">Connect with great local businesses</h2>
         </div>
       );
-    } else {
+    } else if (this.props.match.path === '/login') {
       return(
         <div>
           <h1 className="intro-big">Log In to Eatery</h1>
           <h2 className="intro-small">Welcome Back!</h2>
+        </div>
+      );
+    } else {
+      return(
+        <div>
+          <h1 className="intro-big">Want to get the full experience?</h1>
+          <h2 className="intro-small">Sign in as a guest and check it out!</h2>
         </div>
       );
     }
@@ -127,6 +144,37 @@ class SessionForm extends React.Component {
     const otherType = signup ? "Log In" : "Sign Up";
     const otherUrl = signup ? "/login" : "/signup";
     const switchText = signup ? "Already on Eatery?" : "New to Eatery?";
+    if (formType === "Guest") {
+      return (
+        <div className="form-div">
+          <form className="form" onSubmit={this.handleGuest}>
+            {this.renderErrors()}
+            {this.intro()}
+              <br/>
+              <input
+                className="form-input"
+                id="email"
+                type="text"
+                value="Guest"
+                onChange={this.update('email')}
+                />
+              <br/>
+              <input
+                className="form-input"
+                id="password"
+                type="text"
+                value="Thanks for visiting!"
+                onChange={this.update('password')}
+                />
+            <br/>
+            <input className="form-button" type="submit" value="Sign in as a guest!"/>
+            <br/>
+            <h2 className="switch-comment">Or click here to get started today!</h2>
+            <Link className="switch-link" to="./signup">Sign Up</Link>
+          </form>
+        </div>
+      );
+    } else {
     return (
       <div className="form-div">
         <form className="form" onSubmit={this.handleSubmit}>
@@ -158,7 +206,7 @@ class SessionForm extends React.Component {
           <Link className="switch-link" to={otherUrl}>{otherType}</Link>
         </form>
       </div>
-    );
+    );}
   }
 
 }

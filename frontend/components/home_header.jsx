@@ -30,8 +30,8 @@ const links = () => {
 const extraLinks = () => {
   return (
     <div className="extra-choices">
-      <Link className="extra-links" to="/login">Link</Link>
-      <Link className="extra-links" to="/signup">Link</Link>
+      <Link className="extra-links" to="/guest">Guest</Link>
+      <Link className="extra-links" to="/search">Restaurants</Link>
     </div>
   )
 }

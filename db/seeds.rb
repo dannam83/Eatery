@@ -9,6 +9,13 @@
 User.delete_all
 Biz.delete_all
 
+
+User.create(
+  fname: "Guest",
+  lname: "Guest",
+  email: "guest@hmail.com",
+  password: "asdf1234"
+)
 User.create(
   fname: "Spider",
   lname: "Man",

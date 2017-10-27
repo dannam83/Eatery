@@ -22,12 +22,14 @@ const App = () => (
         <Route exact path="/" component={HomeHeaderCon} />
         <Route exact path="/login" component={SessionHeaderCon} />
         <Route exact path="/signup" component={SessionHeaderCon} />
+        <Route exact path="/guest" component={SessionHeaderCon} />
         <Route path="/" component={MainHeaderCon} />
       </Switch>
     </header>
 
   <AuthRoute exact path="/login" component={SessionFormContainer} />
   <AuthRoute exact path="/signup" component={SessionFormContainer} />
+  <AuthRoute exact path="/guest" component={SessionFormContainer} />
   <Route exact path="/search" component={SearchContainer} />
 
   </div>
