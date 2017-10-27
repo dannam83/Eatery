@@ -23,7 +23,7 @@
   z-index: 1;
   height: 70px;
   width: 700px;
-  // border: 2px solid black;
+  border: 0px solid black;
 }
 
 .session-start {
@@ -64,7 +64,7 @@
   z-index: 1;
   height: 70px;
   width: 700px;
-  // border: 2px solid black;
+  border: 0px solid black;
 }
 
 .extra-links {
@@ -98,4 +98,11 @@
 .session-start:last-child:hover {
   background-color: white;
   color: #5F5F5F;
+}
+
+.fixed-size-box {
+  width: 1000px;
+  height: 600;
+  display: flex;
+  justify-content: center;
 }

@@ -9,8 +9,10 @@ const sessionLinks = () => {
   return (
   <nav className="signed-out">
     <img className="homePic" src={image}></img>
-      {extraLinks()}
-      {links()}
+      <div className="fixed-size-box">
+        {extraLinks()}
+        {links()}
+      </div>
   </nav>
 )};
 
