@@ -10,13 +10,12 @@ class BizMap extends React.Component {
   }
 
   componentDidMount() {
-    const map = ReactDOM.findDOMNode(this.refs.map);
+    // const map = ReactDOM.findDOMNode(this.refs.map);
     // set the map to show manhattan
     const mapOptions = {
-      center: { lat: 40.7831, lng: -73.9712 },
+      center: { lat: 40.76294719967364, lng: -73.97823811645509 },
       zoom: 13
     };
-
     // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
@@ -26,6 +25,7 @@ class BizMap extends React.Component {
   }
 
   componentDidUpdate() {
+    this.props.bizs.forEach(this.addBiz);
     this.MarkerManager.updateMarkers();
   }
 
@@ -36,7 +36,7 @@ class BizMap extends React.Component {
       map: this.map
     });
     marker.addListener('click', () => {
-      alert('clicked on: ${biz.name}');
+      alert(`clicked on: ${biz.name}`);
     });
   }
 
