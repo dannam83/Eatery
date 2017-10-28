@@ -4,17 +4,33 @@
 
 
 header.session {
-  background-color: #F91717;
-  height: 70px;
+  height: 64px;
   color: white;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
   font-family: Marker Felt, fantasy;
   display: flex;
-  position: relative;
+  position: absolute;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  z-index: 3;
+}
+
+.header-container {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  background-color: #D92626;
+  margin-bottom: 35px;
+  min-width: 1000px;
+}
+
+.star-logo {
+  display: flex;
+  position: relative;
+  z-index: 1;
 }
 
 .logo:active {
@@ -35,18 +51,35 @@ header.session {
 }
 
 .chefPic {
-  width: 50px;
+  width: 45px;
   height: auto;
+}
+
+.form-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 320px;
+  flex-direction: row;
+  margin-left: 50px;
+}
+
+.form-div {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  width: 300px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 300px;
 }
 
 .intro-big {
-  color: #F91717;
+  color: #D92626;
   font-size: 22px;
   font-weight: 600;
   display: flex;
@@ -76,7 +109,7 @@ header.session {
   height: 30px;
   padding: 0px;
   border: none;
-  background-color: #F91717;
+  background-color: #D92626;
   color: white;
   font-size: 14px;
   font-weight: 700;
@@ -108,4 +141,20 @@ h2.switch-comment {
 
 .input-name:last-child {
   margin-left: 4px;
+}
+
+.welcome-div {
+  width: 500px;
+  margin-top: 42px;
+}
+
+.welcome-img {
+  width: 500px;
+}
+
+.form-welcome-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  min-width: 1000px;
 }

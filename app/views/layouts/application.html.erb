@@ -2,20 +2,22 @@
 <html>
   <head>
     <title>Eatery</title>
-
+    <link rel="icon" href="<%= image_url('chef_browser.png') %>">
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyAT6XWfR0o9V0blGi0i9UecDV5xM_rxEy0" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag 'application' %>
 
     <script type="text/javascript">
-      window.chefPic = "<%= image_url('chef.png') %>"
+      window.chefLogo = "<%= image_url('chef_logo.png') %>"
       window.burger = "<%= image_url('burger.jpg') %>"
       window.cupcakes = "<%= image_url('cupcakes.jpg') %>"
       window.ribs = "<%= image_url('ribs.jpg') %>"
       window.steak = "<%= image_url('steak.jpg') %>"
       window.sushi = "<%= image_url('sushi.jpg') %>"
       window.tacos = "<%= image_url('tacos.jpg') %>"
+      window.starLogo = "<%= image_url('star_logo.jpg') %>"
+      window.welcome = "<%= image_url('welcome.jpg') %>"
     </script>
   </head>
 

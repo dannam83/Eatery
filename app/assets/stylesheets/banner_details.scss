@@ -1,0 +1,50 @@
+header.session {
+  height: 64px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  font-family: Marker Felt, fantasy;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  z-index: 3;
+}
+
+.header-container {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  background-color: #D92626;
+  margin-bottom: 25px;
+}
+
+.star-logo {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.logo:active {
+  color: white;
+  text-decoration: none;
+}
+.logo:hover {
+  color: white;
+  text-decoration: none;
+}
+.logo:visited {
+  color: white;
+  text-decoration: none;
+}
+.logo:link {
+  color: white;
+  text-decoration: none;
+}
+
+.chefPic {
+  width: 45px;
+  height: auto;
+}

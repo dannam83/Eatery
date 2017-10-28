@@ -7,7 +7,6 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
     this.setState = this.setState.bind(this);
-    // this.state = {'email': "", 'password': ""};
   }
 
   update(field) {
@@ -65,8 +64,8 @@ class SessionForm extends React.Component {
     } else {
       return(
         <div>
-          <h1 className="intro-big">Want to get the full experience?</h1>
-          <h2 className="intro-small">Sign in as a guest and check it out!</h2>
+          <h1 className="intro-big">Want a taste?</h1>
+          <h2 className="intro-small">Sign in as a guest and check us out!</h2>
         </div>
       );
     }
@@ -138,43 +137,44 @@ class SessionForm extends React.Component {
   //   }
   // }
 
-  render() {
+  guestForm() {
+    return (
+      <div className="form-div">
+        <form className="form" onSubmit={this.handleGuest}>
+          {this.renderErrors()}
+          {this.intro()}
+            <br/>
+            <input
+              className="form-input"
+              id="email"
+              type="text"
+              value="Guest"
+              onChange={this.update('email')}
+              />
+            <br/>
+            <input
+              className="form-input"
+              id="password"
+              type="text"
+              value="Thanks for visiting!"
+              onChange={this.update('password')}
+              />
+          <br/>
+          <input className="form-button" type="submit" value="Click here to begin"/>
+          <br/>
+          <h2 className="switch-comment">Or click here to get make your own account!</h2>
+          <Link className="switch-link" to="./signup">Sign Up</Link>
+        </form>
+      </div>
+    );
+  }
+
+  sessionForm() {
     const formType = this.props.formType;
     const signup = formType === "Sign Up";
     const otherType = signup ? "Log In" : "Sign Up";
     const otherUrl = signup ? "/login" : "/signup";
     const switchText = signup ? "Already on Eatery?" : "New to Eatery?";
-    if (formType === "Guest") {
-      return (
-        <div className="form-div">
-          <form className="form" onSubmit={this.handleGuest}>
-            {this.renderErrors()}
-            {this.intro()}
-              <br/>
-              <input
-                className="form-input"
-                id="email"
-                type="text"
-                value="Guest"
-                onChange={this.update('email')}
-                />
-              <br/>
-              <input
-                className="form-input"
-                id="password"
-                type="text"
-                value="Thanks for visiting!"
-                onChange={this.update('password')}
-                />
-            <br/>
-            <input className="form-button" type="submit" value="Sign in as a guest!"/>
-            <br/>
-            <h2 className="switch-comment">Or click here to get started today!</h2>
-            <Link className="switch-link" to="./signup">Sign Up</Link>
-          </form>
-        </div>
-      );
-    } else {
     return (
       <div className="form-div">
         <form className="form" onSubmit={this.handleSubmit}>
@@ -206,6 +206,39 @@ class SessionForm extends React.Component {
           <Link className="switch-link" to={otherUrl}>{otherType}</Link>
         </form>
       </div>
+    );
+  }
+
+  sidePic() {
+    return (
+      <div className="welcome-div">
+        <img className="welcome-img" src={welcome}></img>
+      </div>
+    );
+  }
+
+  render() {
+    if (this.props.formType === "Guest") {
+      return (
+        <div className="form-welcome-container">
+          <div className="form-container">
+            {this.guestForm()}
+          </div>
+          <div className="welcome-container">
+            {this.sidePic()}
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="form-welcome-container">
+          <div className="form-container">
+            {this.sessionForm()}
+          </div>
+          <div className="welcome-container">
+            {this.sidePic()}
+          </div>
+        </div>
     );}
   }
 
