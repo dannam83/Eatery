@@ -48,6 +48,50 @@ const greeterSelector = (currentUser, logout) => {
   )
 }
 
+const mainLogo = () => {
+  return (
+    <div className="mainLogo">
+      <Link to="/" className="bigLogo">Eatery</Link>
+      <a href="/">
+        <img className="bigChefPic" src={window.chefLogo}></img>
+      </a>
+    </div>
+  )
+}
+
+const mainSearch = () => {
+  return (
+    <div className="mainSearch">
+      <Link to="/" className="logo">Search Bar</Link>
+      <a href="/">
+        <img className="chefPic" src={window.chefLogo}></img>
+      </a>
+    </div>
+  )
+}
+
+const mainLinks = () => {
+  return (
+    <div className="mainLinks">
+      <Link to="/" className="logo">Photo Cred</Link>
+      <a href="/">
+        <img className="chefPic" src={window.chefLogo}></img>
+      </a>
+    </div>
+  )
+}
+
+const photoCred = () => {
+  return (
+    <div className="photoCred">
+      <Link to="/" className="logo">Photo Cred</Link>
+      <a href="/">
+        <img className="chefPic" src={window.chefLogo}></img>
+      </a>
+    </div>
+  )
+}
+
 const HomeHeader = ({currentUser, logout, location}) => {
   const images = [
     window.burger,
@@ -62,9 +106,17 @@ const HomeHeader = ({currentUser, logout, location}) => {
   <nav className="signed-out">
     <img className="homePic" src={image}></img>
     <div className="blocker"></div>
-    <div className="fixed-size-box">\
-      {extraLinks()}
-      {greeterSelector(currentUser, logout)}
+    <div className="fixed-size-box-organizer">
+      <div className="fixed-size-box">
+        {extraLinks()}
+        {greeterSelector(currentUser, logout)}
+      </div>
+      <div className="fixed-size-others">
+        {mainLogo()}
+        {mainSearch()}
+        {mainLinks()}
+        {photoCred()}
+      </div>
     </div>
   </nav>
 )};
