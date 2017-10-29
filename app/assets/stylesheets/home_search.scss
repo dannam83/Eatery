@@ -38,6 +38,10 @@
   border: 0px;
 }
 
+.mainSearchInput:focus {
+  outline-width: 0px;
+}
+
 .mainSearchLabel {
   font-size: 19px;
   font-weight: 700;
@@ -47,18 +51,25 @@
   border: 0px
 }
 
-
-
 .mainSearchSubmit {
   color: white;
   font-size: 19px;
   font-family: Arial, sans-serif;
-  padding: 11px 0px 12px 10px;
+  padding: 11px 14px 13px 14px;
   border-radius: 0 4px 4px 0;
   background-color: #D92626;
   font-weight: 700;
   border: 0px;
-  width: 40px;
+  margin-top: 1px;
+}
+
+.mainSearchSubmit:focus {
+  outline-width: 0px;
+}
+
+.mainSearchSubmit:hover {
+  background-color: #BB1E1E;
+  cursor: pointer;
 }
 
 #mainSearchFirst {
@@ -68,13 +79,12 @@
 
 #mainSearchSecond {
   padding: 7px 0px 6px 0px;
-
 }
 
 .shortBorder {
   border-left: 1px solid lightgray;
   padding-left: 10px;
-  padding: 3px 10px 7px 10px;
+  padding: 4px 10px 6px 10px;
 }
 
 .mainLinks {
@@ -107,4 +117,33 @@
   font-family: Arial, sans-serif;
   padding: 15px;
   text-decoration: none;
+}
+
+.photoCredName{
+  display: flex;
+  font-size: 14.5px;
+}
+
+.photoName {
+  font-weight: 900;
+  text-decoration: none;
+  margin-left: 3px;
+  color: white;
+  font-size: 14.5px;
+}
+
+.photoName:hover {
+  text-decoration: underline;
+}
+
+.photoLocation {
+  font-weight: 900;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 2px;
+  font-size: 14.5px;
+}
+
+.photoLocation:hover {
+  text-decoration: underline;
 }

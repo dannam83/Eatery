@@ -1,56 +1,86 @@
-// .session {
-//   height: 64px;
-//   color: white;
-//   font-weight: bold;
-//   font-size: 22px;
-//   font-family: Marker Felt, fantasy;
-//   display: flex;
-//   position: absolute;
-//   align-items: center;
-//   z-index: 3;
-// }
-//
-//
-// .header-container {
-//   display: flex;
-//   position: relative;
-//   z-index: 2;
-//   justify-content: center;
-//   background-color: #D92626;
-//   margin-bottom: 35px;
-//   min-width: 1000px;
-// }
-//
-// .star-logo {
-//   display: flex;
-//   position: relative;
-//   z-index: 1;
-// }
+.header-container-default {
+  display: flex;
+  position: relative;
+  z-index: 3;
+  justify-content: center;
+  background-color: #D92626;
+  min-width: 1000px;
+}
 
-// .login-signup {
-//   display: flex;
-//   position: absolute;
-// }
-//
-// .default-logo {
-//   text-decoration: none;
-//   color: white;
-// }
-//
-// .default-chef {
-// }
+
 .header-default {
-  // height: 64px;
-  // color: white;
-  // font-weight: bold;
-  // font-size: 22px;
-  // font-family: Marker Felt, fantasy;
   display: flex;
   position: absolute;
   align-items: center;
-  z-index: 3;
+  z-index: 4;
+  margin-top: 6px;
 }
 
+.search-default-input {
+  padding: 9px 2px 9px 0px;
+  width: 300px;
+  font-size: 14.5px;
+  font-family: Arial, sans-serif;
+  border: 0px;
+}
+
+.search-default-input:focus, .search-default-submit:focus {
+  outline-width: 0px;
+}
+
+.search-default-label {
+  font-size: 14.5px;
+  font-weight: 700;
+  background-color: white;
+  font-family: Arial, sans-serif;
+  border: 0px
+}
+
+#search-default-first {
+  border-radius: 4px 0 0 4px;
+  margin-top: 1px;
+  padding: 9px 5px 9px 8px;
+}
+
+#search-default-second {
+  padding: 6px 0px 5px 0px;
+}
+
+.short-default-border {
+  border-left: 1px solid lightgray;
+  padding-left: 10px;
+  padding: 3px 5px 4px 8px;
+}
+
+.search-default-submit {
+  color: white;
+  font-size: 14.5px;
+  font-family: Arial, sans-serif;
+  padding: 9px 10px 9px 10px;
+  border-radius: 0 4px 4px 0;
+  background-color: #BB1E1E;
+  font-weight: 700;
+  border: 0px;
+  margin-top: 1px;
+}
+
+.signup-default {
+  color: white;
+  font-size: 14.5px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  border-radius: 4px;
+  align-items: center;
+  padding: 9px 20px 9px 20px;
+  text-decoration: none;
+  margin-left: 20px;
+  background-color: #BB1E1E;
+}
+
+.signup-default:hover, .search-default-submit:hover {
+  background-color: #8D1C1C;
+  cursor: pointer;
+}
 
 .logo-default-div {
   display: flex;

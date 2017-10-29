@@ -7,14 +7,14 @@
   display: flex;
   position: absolute;
   align-items: center;
-  z-index: 3;
+  z-index: 4;
 }
 
 
 .header-container {
   display: flex;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   justify-content: center;
   background-color: #D92626;
   margin-bottom: 35px;
@@ -24,5 +24,5 @@
 .star-logo {
   display: flex;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }

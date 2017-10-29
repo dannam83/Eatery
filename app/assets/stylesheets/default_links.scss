@@ -1,0 +1,51 @@
+.header-default-links-container {
+  background-color: #BB1E1E;
+  color: white;
+  display: flex;
+  position: relative;
+  min-width: 1000px;
+  justify-content: center;
+}
+
+.header-default-links {
+  background-color: #BB1E1E;
+  display: flex;
+  width: 100px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  width: 955px;
+}
+
+.header-default-link {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px 6px 12px;
+  margin-right: 18px;
+}
+
+.header-default-link-period {
+  padding: 4px 25px 0px 8px;
+}
+
+.header-default-login {
+  color: white;
+  text-decoration: none;
+  padding: 6px 18px 6px 18px;
+}
+
+.header-default-space {
+  width: 108px;
+}
+
+.header-default-link:hover, .header-default-login:hover {
+  background-color: #8D1C1C;
+}
+
+.header-default-login:focus {
+  outline-width: 0px;
+}
+
+#header-default-link-first {
+  margin-left: 92px;
+}

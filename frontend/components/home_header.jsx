@@ -61,13 +61,13 @@ const mainLogo = () => {
 
 const mainSearch = () => {
   return (
-    <div className="mainSearch">
+    <form className="mainSearch">
       <span className="mainSearchLabel" id="mainSearchFirst">Find</span>
       <input className="mainSearchInput" type="text" placeholder="burgers, deli, italian, etc."/>
       <span className="mainSearchLabel" id="mainSearchSecond"><p className="shortBorder">Near</p></span>
-      <input className="mainSearchInput" type="text" value="Manhattan, NY"/>
-      <input className="mainSearchSubmit" id="mainSearchLast" value="Go"/>
-    </div>
+      <input className="mainSearchInput" type="text" placeholder="Manhattan, NY"/>
+      <input className="mainSearchSubmit" type="submit" id="mainSearchLast" value="Go"/>
+    </form>
   )
 }
 
@@ -89,20 +89,20 @@ const mainLinks = () => {
 const photoCred = (location, name) => {
   return (
     <div className="photoCred">
-      <Link to="/biz/bizId" className="logo">{location}</Link>
-      <Link to="/users/userId" className="logo">Photo by {name}</Link>
+      <Link to="/biz/bizId" className="photoLocation">{location}</Link>
+      <div className="photoCredName">Photo by<Link to="/users/userId" className="photoName">{name}</Link></div>
     </div>
   )
 }
 
 const HomeHeader = ({currentUser, logout, location}) => {
   const images = [
-    [window.burger, "Burger Station", "Jen K"],
-    [window.cupcakes, "Frosted City", "Valerie S"],
-    [window.ribs, "Wild West Broiler", "Tony L"],
-    [window.sushi, "Osaka Sushi", "David N"],
-    [window.tacos, "Macho Taco", "Jill A"],
-    [window.steak, "Jeter Mueger Steakhouse", "Kurt R"]
+    [window.burger, "Burger Station", "Jen K."],
+    [window.cupcakes, "Frosted City", "Valerie S."],
+    [window.ribs, "Wild West Broiler", "Tony L."],
+    [window.sushi, "Osaka Sushi", "David N."],
+    [window.tacos, "Macho Taco", "Jill A."],
+    [window.steak, "Jeter Mueger Steakhouse", "Kurt R."]
   ]
   const imageInfo = images[Math.floor(Math.random()*images.length)];
   const image = imageInfo[0];

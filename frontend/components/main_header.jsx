@@ -25,26 +25,61 @@ const greeter = (currentUser, logout) => (
 
 const searchBar = () => {
   return (
-    <div className="search-default-div">
+    <form className="search-default-div">
       <span className="search-default-label" id="search-default-first">Find</span>
       <input className="search-default-input" type="text" placeholder="burgers, deli, italian, etc."/>
       <span className="search-default-label" id="search-default-second"><p className="short-default-border">Near</p></span>
-      <input className="search-default-input" type="text" placeholder="City, State"/>
-      <input className="search-default-submit" id="search-default-last" value="Go"/>
-    </div>
+      <input className="search-default-input" type="text" placeholder="city, state"/>
+      <input className="search-default-submit" type="submit" value="Go"/>
+    </form>
   );
 };
 
-const MainHeader = ({currentUser, logout, location}) => {
+const mainHeaderSearch = (currentUser, logout, location) => {
   const userPresence = currentUser ? greeter(currentUser, logout) : sessionLinks();
   return (
-    <div className="header-container">
+    <div className="header-container-default">
       <img className="star-logo" src={window.starLogo}></img>
       <header className="header-default">
         {logo()}
         {searchBar()}
         {userPresence}
       </header>
+    </div>
+  );
+};
+
+const loginButton = (currentUser) => {
+  if (!currentUser) {
+    return (
+      <Link to="/login" className="header-default-login">Log In</Link>
+    )
+  }
+}
+
+const mainHeaderLinks = (currentUser) => {
+  return (
+    <div className="header-default-links-container">
+      <div className="header-default-links">
+        <Link className="header-default-link" id="header-default-link-first" to="/search">Restaurants</Link>
+        <Link className="header-default-link" to="/search">Nightlife</Link>
+        <Link className="header-default-link" to="/search">Home Services</Link>
+        <p className="header-default-link-period">.</p>
+        <Link className="header-default-link" to="/search">Write a Review</Link>
+        <Link className="header-default-link" to="/search">Events</Link>
+        <Link className="header-default-link" to="/search">Talk</Link>
+        <p className="header-default-space"></p>
+        {loginButton(currentUser)}
+      </div>
+    </div>
+  );
+};
+
+const MainHeader = ({currentUser, logout, location}) => {
+  return (
+    <div className="header-container-default-master">
+      {mainHeaderSearch(currentUser, logout, location)}
+      {mainHeaderLinks(currentUser)}
     </div>
   );
 };
