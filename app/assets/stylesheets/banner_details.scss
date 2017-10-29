@@ -1,4 +1,4 @@
-header.session {
+.session {
   height: 64px;
   color: white;
   font-weight: bold;
@@ -6,11 +6,10 @@ header.session {
   font-family: Marker Felt, fantasy;
   display: flex;
   position: absolute;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
   z-index: 3;
 }
+
 
 .header-container {
   display: flex;
@@ -18,7 +17,8 @@ header.session {
   z-index: 2;
   justify-content: center;
   background-color: #D92626;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
+  min-width: 1000px;
 }
 
 .star-logo {
