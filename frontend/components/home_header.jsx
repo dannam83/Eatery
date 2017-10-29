@@ -62,10 +62,11 @@ const mainLogo = () => {
 const mainSearch = () => {
   return (
     <div className="mainSearch">
-      <Link to="/" className="logo">Search Bar</Link>
-      <a href="/">
-        <img className="chefPic" src={window.chefLogo}></img>
-      </a>
+      <span className="mainSearchLabel" id="mainSearchFirst">Find</span>
+      <input className="mainSearchInput" type="text" placeholder="burgers, deli, italian, etc."/>
+      <span className="mainSearchLabel" id="mainSearchSecond"><p className="shortBorder">Near</p></span>
+      <input className="mainSearchInput" type="text" value="Manhattan, NY"/>
+      <input className="mainSearchSubmit" id="mainSearchLast" value="Go"/>
     </div>
   )
 }
@@ -73,35 +74,40 @@ const mainSearch = () => {
 const mainLinks = () => {
   return (
     <div className="mainLinks">
-      <Link to="/" className="logo">Photo Cred</Link>
-      <a href="/">
-        <img className="chefPic" src={window.chefLogo}></img>
-      </a>
+      <div>pic</div>
+      <Link to="/" className="mainLink">Restaurants</Link>
+      <div>pic</div>
+      <Link to="/" className="mainLink">Night Life</Link>
+      <div>pic</div>
+      <Link to="/" className="mainLink">Home Delivery</Link>
+      <div>pic</div>
+      <Link to="/" className="mainLink">Services</Link>
     </div>
   )
 }
 
-const photoCred = () => {
+const photoCred = (location, name) => {
   return (
     <div className="photoCred">
-      <Link to="/" className="logo">Photo Cred</Link>
-      <a href="/">
-        <img className="chefPic" src={window.chefLogo}></img>
-      </a>
+      <Link to="/biz/bizId" className="logo">{location}</Link>
+      <Link to="/users/userId" className="logo">Photo by {name}</Link>
     </div>
   )
 }
 
 const HomeHeader = ({currentUser, logout, location}) => {
   const images = [
-    window.burger,
-    window.cupcakes,
-    window.ribs,
-    window.sushi,
-    window.tacos,
-    window.steak
+    [window.burger, "Burger Station", "Jen K"],
+    [window.cupcakes, "Frosted City", "Valerie S"],
+    [window.ribs, "Wild West Broiler", "Tony L"],
+    [window.sushi, "Osaka Sushi", "David N"],
+    [window.tacos, "Macho Taco", "Jill A"],
+    [window.steak, "Jeter Mueger Steakhouse", "Kurt R"]
   ]
-  const image = images[Math.floor(Math.random()*images.length)];
+  const imageInfo = images[Math.floor(Math.random()*images.length)];
+  const image = imageInfo[0];
+  const locale = imageInfo[1];
+  const name = imageInfo[2];
   return (
   <nav className="signed-out">
     <img className="homePic" src={image}></img>
@@ -115,7 +121,7 @@ const HomeHeader = ({currentUser, logout, location}) => {
         {mainLogo()}
         {mainSearch()}
         {mainLinks()}
-        {photoCred()}
+        {photoCred(locale,name)}
       </div>
     </div>
   </nav>
