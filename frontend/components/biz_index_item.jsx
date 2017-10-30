@@ -3,8 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 
 const BizIndexItem = ({biz}) => {
   return (
-    <li>
-      <Link to={`/bizs/${biz.id}`}>
+    <li className="biz-index-item-li">
+      <Link to={`/bizs/${biz.id}`} className="biz-index-item-link">
         {biz.name}
       </Link>
     </li>

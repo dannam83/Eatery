@@ -15,27 +15,29 @@
   font-size: 13px;
   font-weight: 800;
   width: 955px;
+  justify-content: flex-start;
 }
 
 .header-default-link {
   color: white;
   text-decoration: none;
   padding: 6px 12px 6px 12px;
-  margin-right: 18px;
+  margin-right: 19px;
 }
 
 .header-default-link-period {
-  padding: 4px 25px 0px 8px;
+  padding: 4px 25px 0px 7px;
 }
 
 .header-default-login {
   color: white;
   text-decoration: none;
   padding: 6px 18px 6px 18px;
+  margin-right: 4px;
 }
 
 .header-default-space {
-  width: 108px;
+  width: 103px;
 }
 
 .header-default-link:hover, .header-default-login:hover {

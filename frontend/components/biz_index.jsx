@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BizIndexItem from './biz_index_item.jsx';
+import BizMap from './biz_map';
 
 class BizIndex extends React.Component {
 
@@ -8,9 +9,9 @@ class BizIndex extends React.Component {
     this.props.fetchBizs();
   }
 
-  render () {
-    return(
-      <div>
+  bizIndex (bizs) {
+    return (
+      <div className="biz-index-div">
         <ul>
           {this.props.bizs.map(biz =>(
             <BizIndexItem
@@ -19,6 +20,15 @@ class BizIndex extends React.Component {
             />
           ))}
         </ul>
+      </div>
+    );
+  }
+
+  render () {
+    const bizs = this.props.bizs;
+    return(
+      <div>
+        {this.bizIndex({bizs})}
       </div>
     );
   }
