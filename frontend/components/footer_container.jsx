@@ -54,7 +54,7 @@ const international = () => {
 
       </div>
       <div>
-        <p className="footer-label">Countries</p>
+        <p className="footer-label" id="footer-countries">Countries</p>
         <Link to="/" className="footer-link">United States</Link>
 
       </div>
