@@ -12,7 +12,7 @@ class BizIndex extends React.Component {
   bizIndex (bizs) {
     return (
       <div className="biz-index-div">
-        <ul>
+        <ul className="biz-index-ul">
           {this.props.bizs.map(biz =>(
             <BizIndexItem
               key={biz.id}

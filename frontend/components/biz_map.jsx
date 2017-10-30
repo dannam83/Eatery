@@ -10,6 +10,7 @@ class BizMap extends React.Component {
   }
 
   componentDidMount() {
+
     const mapOptions = {
       center: { lat: 40.76294719967364, lng: -73.97823811645509 },
       zoom: 13
@@ -23,15 +24,21 @@ class BizMap extends React.Component {
   }
 
   componentDidUpdate() {
-    this.props.bizs.forEach(this.addBiz);
-    // this.MarkerManager.updateMarkers();
+    let count = 0;
+    this.props.bizs.forEach(biz => {
+      count++;
+      let label = count.toString();
+      this.addBiz(biz, label);
+    });
   }
+    // this.MarkerManager.updateMarkers();
 
-  addBiz (biz) {
+  addBiz (biz, label) {
     const pos = new google.maps.LatLng(biz.lat, biz.lng);
     const marker = new google.maps.Marker({
       position: pos,
-      map: this.map
+      map: this.map,
+      label: label
     });
     marker.addListener('click', () => {
       alert(`clicked on: ${biz.name}`);
