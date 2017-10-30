@@ -1,0 +1,36 @@
+.biz-index-item-img {
+  border: 1px solid black;
+  width: 90px;
+  margin-right: 10px;
+}
+
+.biz-index-item-description {
+  border: 1px solid red;
+  width: 280px;
+  height: 90px;
+  padding-right: 10px;
+}
+
+.biz-index-item-location {
+  border: 1px solid green;
+  width: 225px;
+  height: 90px;
+}
+
+.biz-index-item-review {
+  border: 1px solid blue;
+  width: 618px;
+  height: 60px;
+  display: flex;
+}
+
+.biz-index-item-top {
+  display: flex;
+}
+
+.biz-index-item-bottom {
+  display: flex;
+  position: absolute;
+  margin-top: 110px;
+
+}

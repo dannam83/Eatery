@@ -20,6 +20,9 @@ class User < ApplicationRecord
   validates :fname, :lname, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_attached_file :image, default_url: "chef_logo.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   # add associations
 
   attr_reader :password

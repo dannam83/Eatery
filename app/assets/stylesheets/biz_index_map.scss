@@ -18,18 +18,22 @@
   margin-right: 30px;
 }
 
-.biz-index-item-li:first-child {
-  border-top: 1px solid #E1E1E1;
+.biz-index-item-li:last-child {
+  border-bottom: 1px solid #E1E1E1;
+  // width: 618px;
 }
 
-.biz-index-ul {
-  list-style-type: decimal;
-}
+// .biz-index-ul {
+//   list-style-type: decimal;
+// }
 
 .biz-index-item-li {
-  border-bottom: 1px solid #E1E1E1;
+  border-top: 1px solid #E1E1E1;
   font-family: Arial, sans-serif;
-  height: 80px;
+  height: 170px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 15px 0px 15px 0px;
 }
 
 .biz-index-item-link {
