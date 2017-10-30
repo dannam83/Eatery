@@ -88,7 +88,8 @@ const FooterContainer = () => {
         {footer()}
       </div>
       <div className="footer-pic-container">
-        {footerPic()}
+        <img className="footer-pic" src={window.cityscape}>
+        </img>
       </div>
     </div>
   );
