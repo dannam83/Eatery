@@ -1,7 +1,14 @@
-.biz-index-item-img {
-  border: 1px solid black;
+.biz-index-item-img-container {
+  overflow: hidden;
+  height: 90px;
   width: 90px;
   margin-right: 10px;
+  border-radius: 3px;
+}
+
+.biz-index-item-img {
+  height: 90px;
+  border-radius: 3px;
 }
 
 .biz-index-item-description {
@@ -32,5 +39,4 @@
   display: flex;
   position: absolute;
   margin-top: 110px;
-
 }

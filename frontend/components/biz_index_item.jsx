@@ -11,16 +11,22 @@ const bizPic = (img_url) => {
 
 
 
-const BizIndexItem = ({biz}) => {
+const BizIndexItem = ({biz, bullet}) => {
   return (
     <li className="biz-index-item-li">
       <div className="biz-index-item-top">
-        <div>
+        <div className="biz-index-item-img-container">
           {bizPic(biz.img_url)}
         </div>
 
         <div className="biz-index-item-description">
-          <Link to={`/bizs/${biz.id}`} className="biz-index-item-link">{biz.name}</Link>
+          {bullet}. <Link to={`/bizs/${biz.id}`} className="biz-index-item-link">{biz.name}</Link>
+          <p className="biz-index-item-rating">
+            (Average Rating)
+          </p>
+          <p className="biz-index-item-price-categories">
+            (Pricing : {biz.price}) <i className="biz-index-item-price-dot">.</i> (Categories)
+          </p>
         </div>
 
         <div className="biz-index-item-location">

@@ -10,6 +10,8 @@ class BizIndex extends React.Component {
   }
 
   bizIndex (bizs) {
+    let bullet;
+    bullet = 1;
     return (
       <div className="biz-index-div">
         <ul className="biz-index-ul">
@@ -17,6 +19,7 @@ class BizIndex extends React.Component {
             <BizIndexItem
               key={biz.id}
               biz={biz}
+              bullet={bullet++}
             />
           ))}
         </ul>

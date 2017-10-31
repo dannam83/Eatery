@@ -72,6 +72,7 @@ User.create(
   email: "catwoman@hmail.com",
   password: "catwoman12",
   zipcode: "10018"
+
 )
 Biz.create(
   name: 'Deli Licious',
@@ -87,7 +88,8 @@ Biz.create(
     Sun:["7:00 am","9:00 pm"],
   },
   price: 2,
-  phone: "(929) 243-7463"
+  phone: "(929) 243-7463",
+  biz_image: File.open('app/assets/images/restaurant/deliLicious1.jpg')
 )
 Biz.create(
   name: 'What The Delio',
@@ -103,7 +105,8 @@ Biz.create(
     Sun:["7:00 am","12:00 am"],
   },
   price: 1,
-  phone: "(929) 624-9882"
+  phone: "(929) 624-9882",
+  biz_image: File.open('app/assets/images/restaurant/whatTheDelio1.jpg')
 )
 Biz.create(
   name: 'Deli In My Belly',
@@ -119,7 +122,8 @@ Biz.create(
     Sun:["7:00 am","9:00 pm"],
   },
   price: 1,
-  phone: "(212) 443-7009"
+  phone: "(212) 443-7009",
+  biz_image: File.open('app/assets/images/restaurant/deliInMyBelly1.jpg')
 )
 Biz.create(
   name: 'Deli-Kate',
@@ -135,7 +139,8 @@ Biz.create(
     Sun:["7:00 am","3:30 pm"],
   },
   price: 4,
-  phone: "(212) 143-3354"
+  phone: "(212) 143-3354",
+  biz_image: File.open('app/assets/images/restaurant/deliKate1.jpg')
 )
 Biz.create(
   name: 'Pho Realz',
@@ -151,7 +156,8 @@ Biz.create(
     Sun:["10:00 am","11:30 pm"],
   },
   price: 4,
-  phone: "(212) 333-3845"
+  phone: "(212) 333-3845",
+  biz_image: File.open('app/assets/images/restaurant/phoRealz1.jpg')
 )
 Biz.create(
   name: 'Happy Eats',
@@ -167,7 +173,8 @@ Biz.create(
     Sun:["6:00 am","6:00 am"],
   },
   price: 2,
-  phone: "(212) 823-8720"
+  phone: "(212) 823-8720",
+  biz_image: File.open('app/assets/images/restaurant/happyEats1.jpg')
 )
 Biz.create(
   name: 'Russell Wilson Steakhouse',
@@ -183,7 +190,8 @@ Biz.create(
     Sun:["5:00 pm","11:00 pm"],
   },
   price: 4,
-  phone: "(646) 473-9927"
+  phone: "(646) 473-9927",
+  biz_image: File.open('app/assets/images/restaurant/russellWilsonSteakhouse1.jpg')
 )
 Biz.create(
   name: 'Richard Sherman Icecream',
@@ -199,7 +207,8 @@ Biz.create(
     Sun:["10:00 am","11:00 pm"],
   },
   price: 2,
-  phone: "(646) 166-2362"
+  phone: "(646) 166-2362",
+  biz_image: File.open('app/assets/images/restaurant/richardShermanIcecream1.jpg')
 )
 Biz.create(
   name: 'Spaghetti Maghetti',
@@ -215,7 +224,8 @@ Biz.create(
     Sun:["9:00 am","10:00 pm"],
   },
   price: 2,
-  phone: "(646) 878-8976"
+  phone: "(646) 878-8976",
+  biz_image: File.open('app/assets/images/restaurant/spaghettiMaghetti1.jpg')
 )
 Biz.create(
   name: 'I <3 Burgers',
@@ -231,5 +241,6 @@ Biz.create(
     Sun:["11:00 am","11:30 pm"],
   },
   price: 3,
-  phone: "(646) 199-9372"
+  phone: "(646) 199-9372",
+  biz_image: File.open('app/assets/images/restaurant/iLoveBurgers1.jpg')
 )
