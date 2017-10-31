@@ -9,8 +9,6 @@ const bizPic = (img_url) => {
   );
 };
 
-
-
 const BizIndexItem = ({biz, bullet}) => {
   return (
     <li className="biz-index-item-li">

@@ -2,18 +2,23 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  email           :string           not null
-#  fname           :string           not null
-#  lname           :string           not null
-#  img_url         :string
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                 :integer          not null, primary key
+#  email              :string           not null
+#  fname              :string           not null
+#  lname              :string           not null
+#  img_url            :string
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  zipcode            :string
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
-require 'bcrypt'
+# require 'bcrypt'
 
 class User < ApplicationRecord
   validates :email, :password_digest, :session_token, presence: true
@@ -23,7 +28,7 @@ class User < ApplicationRecord
   has_attached_file :image, default_url: "chef_logo.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  # add associations
+  has_many :reviews
 
   attr_reader :password
   after_initialize :ensure_session_token
