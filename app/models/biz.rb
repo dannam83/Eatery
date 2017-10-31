@@ -26,6 +26,16 @@ class Biz < ApplicationRecord
 
   has_many :reviews
 
+  def avg_rating
+    stars = 0.0
+    self.reviews.each do |review|
+      stars += review.rating
+    end
+
+    avg = stars/self.reviews.length
+    (avg * 2).round / 2.0
+  end
+
   # taken from AppAcademy BenchBNB Project
   def self.in_bounds(bounds)
     self.where("lat < ?", bounds[:northEast][:lat])

@@ -5,6 +5,7 @@ import SessionHeaderCon from './session_header_con';
 import SessionFormContainer from './session_form_container';
 import SearchContainer from './search_container';
 import FooterContainer from './footer_container';
+import BizContainer from './biz_container';
 import { AuthRoute } from '../util/route_util.js';
 import {
   Route,
@@ -32,6 +33,7 @@ const App = () => (
   <AuthRoute exact path="/signup" component={SessionFormContainer} />
   <AuthRoute exact path="/guest" component={SessionFormContainer} />
   <Route exact path="/search" component={SearchContainer} />
+  <Route exact path="/bizs/:bizId" component={BizContainer} />
   <Route path="/" component={FooterContainer} />
 
   </div>

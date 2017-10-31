@@ -1,0 +1,10 @@
+.stars {
+  display: flex;
+  flex-direction: row;
+}
+
+.star {
+  width: 15px;
+  height: 15px;
+  padding: 2px;
+}

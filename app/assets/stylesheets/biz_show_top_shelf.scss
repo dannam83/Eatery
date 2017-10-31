@@ -1,0 +1,55 @@
+.biz-profile-master-container {
+  background-color: #F7F7F7;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.biz-profile-master-div {
+  width: 1000px;
+  padding: 25px;
+}
+
+.top-shelf-div {
+  height: 385px;
+}
+
+.top-shelf-top-half-left-div {
+  background-color: lightyellow;
+  width: 520px;
+  height: 112px;
+  padding-right: 30px;
+  position: absolute;
+}
+
+.top-shelf-top-half-right-div {
+  background-color: lightpink;
+  width: 440px;
+  height: 37px;
+  position: absolute;
+  margin-left: 560px;
+  margin-top: 20px;
+}
+
+.top-shelf-bottom-half-div {
+  background-color: lightblue;
+  width: 1000px;
+  margin-top: 112px;
+  position: absolute;
+  height: 273px;
+  display: flex;
+}
+
+.bottom-shelf-master-div {
+
+}
+
+.bottom-shelf-left-div {
+  background-color: red;
+  width: 600px;
+}
+
+.bottom-shelf-right-div {
+  background-color: blue;
+  width: 300px;
+}

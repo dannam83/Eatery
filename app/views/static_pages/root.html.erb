@@ -4,7 +4,7 @@
   <% if logged_in? %>
     window.currentUser = <%= render(
       "/api/users/user.json.jbuilder",
-      currentUser: current_user
+      user: current_user
     ).html_safe %>
   <% end %>
 </script>

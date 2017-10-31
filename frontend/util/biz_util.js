@@ -7,10 +7,10 @@ export const fetchBizs = (filters) => (
   })
 );
 
-export const fetchBiz = () => (
+export const fetchBiz = (id) => (
   $.ajax({
     method: 'GET',
-    url: `api/biz/bizId`,
+    url: `api/bizs/${id}`,
     error: (err) => console.log(err)
   })
 );

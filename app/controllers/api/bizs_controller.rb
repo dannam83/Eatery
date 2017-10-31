@@ -5,7 +5,7 @@ class Api::BizsController < ApplicationController
   end
 
   def show
-    @biz = Biz.find_by(params[:id])
+    @biz = Biz.find(params[:id])
     render :show
   end
 
@@ -13,4 +13,5 @@ class Api::BizsController < ApplicationController
     @biz = Biz.new(biz_params)
     @biz.save
   end
+
 end

@@ -33,7 +33,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def destroy
-    review = Review.find(params[:id])
+    review = current_user.reviews.find(params[:id])
     review.destroy
   end
 

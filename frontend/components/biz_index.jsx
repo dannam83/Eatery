@@ -29,6 +29,9 @@ class BizIndex extends React.Component {
 
   render () {
     const bizs = this.props.bizs;
+    if (bizs.length < 2) {
+      return null;
+    }
     return(
       <div>
         {this.bizIndex({bizs})}
