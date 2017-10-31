@@ -11,6 +11,12 @@
   border-radius: 3px;
 }
 
+.biz-index-item-price-categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .biz-index-item-description {
   border: 1px solid red;
   width: 280px;

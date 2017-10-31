@@ -80,6 +80,18 @@ const avg_rating = (biz) => {
   return starRating(stars);
 }
 
+const pricing = (price) => {
+  if (price < 2) {
+    return (<p>$</p>);
+  } else if (price < 3) {
+    return (<p>$$</p>);
+  } else if (price < 4) {
+    return (<p>$$$</p>);
+  } else {
+    return (<p>$$$$</p>)
+  }
+}
+
 
 
 const BizIndexItem = ({biz, bullet}) => {
@@ -96,7 +108,9 @@ const BizIndexItem = ({biz, bullet}) => {
             {avg_rating(biz)}
           </div>
           <p className="biz-index-item-price-categories">
-            (Pricing : {biz.price}) <i className="biz-index-item-price-dot">.</i> (Categories)
+            {pricing(biz.price)}
+            <i className="biz-index-item-price-dot">.</i>
+            (Categories)
           </p>
         </div>
 
