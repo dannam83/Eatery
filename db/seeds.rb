@@ -10,7 +10,8 @@ require 'faker'
 
 User.delete_all
 Biz.delete_all
-
+Review.delete_all
+Description.delete_all
 
 User.create(
   fname: "Guest",
@@ -265,7 +266,121 @@ Biz.create(
 
 
 Review.create(
-  body: Faker::Friends.quote,
+  body: Faker::FamilyGuy.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::FamilyGuy.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::FamilyGuy.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::FamilyGuy.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::FamilyGuy.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::FamilyGuy.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::FamilyGuy.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::FamilyGuy.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::FamilyGuy.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::FamilyGuy.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::HarryPotter.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::HarryPotter.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::HarryPotter.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::HarryPotter.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::HarryPotter.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::HarryPotter.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::HarryPotter.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::HarryPotter.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::HarryPotter.quote,
+  rating: [1,2,3,4,5].sample,
+  user_id: User.all.sample.id,
+  biz_id: Biz.all.sample.id
+)
+Review.create(
+  body: Faker::HarryPotter.quote,
   rating: [1,2,3,4,5].sample,
   user_id: User.all.sample.id,
   biz_id: Biz.all.sample.id
@@ -330,93 +445,124 @@ Review.create(
   user_id: User.all.sample.id,
   biz_id: Biz.all.sample.id
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+
+Description.create(
+  biz_id: Biz.find_by(name: 'Deli Licious').id,
+  category: 'Delis'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'Deli Licious').id,
+  category: 'Sandwiches'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'Deli Licious').id,
+  category: 'Fast Food'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'What The Delio').id,
+  category: 'Delis'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'What The Delio').id,
+  category: 'Sandwiches'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'What The Delio').id,
+  category: 'Fast Food'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'Deli-Kate').id,
+  category: 'Delis'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'Deli-Kate').id,
+  category: 'Sandwiches'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'Deli-Kate').id,
+  category: 'Fast Food'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'Deli In My Belly').id,
+  category: 'Delis'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'Deli In My Belly').id,
+  category: 'Sandwiches'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'Deli In My Belly').id,
+  category: 'Fast Food'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'Pho Realz').id,
+  category: 'Vietnamese'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'Pho Realz').id,
+  category: 'Soups'
 )
-Review.create(
-  body: Faker::Friends.quote,
-  rating: [1,2,3,4,5].sample,
-  user_id: User.all.sample.id,
-  biz_id: Biz.all.sample.id
+Description.create(
+  biz_id: Biz.find_by(name: 'Pho Realz').id,
+  category: 'Asian Fusion'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Happy Eats').id,
+  category: 'Diners'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Happy Eats').id,
+  category: 'American (Traditional)'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Happy Eats').id,
+  category: 'Breakfast & Brunch'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Russell Wilson Steakhouse').id,
+  category: 'Steakhouses'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Russell Wilson Steakhouse').id,
+  category: 'American (New)'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Russell Wilson Steakhouse').id,
+  category: 'Seafood'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Richard Sherman Icecream').id,
+  category: 'Ice Cream & Frozen Yogurt'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Richard Sherman Icecream').id,
+  category: 'Gelato'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Richard Sherman Icecream').id,
+  category: 'Desserts'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Spaghetti Maghetti').id,
+  category: 'Ice Cream & Frozen Yogurt'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Spaghetti Maghetti').id,
+  category: 'Pizza'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'Spaghetti Maghetti').id,
+  category: 'Sandwiches'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'I <3 Burgers').id,
+  category: 'Sandwiches'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'I <3 Burgers').id,
+  category: 'American (Traditional)'
+)
+Description.create(
+  biz_id: Biz.find_by(name: 'I <3 Burgers').id,
+  category: 'Sandwiches'
 )

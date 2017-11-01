@@ -88,8 +88,49 @@ const pricing = (price) => {
   } else if (price < 4) {
     return (<p className="biz-pricing">$$$</p>);
   } else {
-    return (<p className="biz-pricing">$$$$</p>)
+    return (<p className="biz-pricing">$$$$</p>);
   }
+};
+
+//setup as a span within a span to easily convert to Link later
+const categories = (biz) => {
+    if (biz.categories.length === 0) {
+      return null;
+    } else {
+      return biz.categories.map((cat, index) => {
+        if ( index === 0 ) {
+          return (
+            <span
+              className="biz-index-item-cat-span"
+              key={cat.id}>{cat.category}
+            </span>
+          );
+        } else {
+          return (
+            <span
+              className="biz-index-item-cat-span"
+              key={cat.id}><p className="biz-index-item-cat-comma">, </p>{cat.category}
+            </span>
+
+          );
+        }
+    });
+  }
+};
+
+const review = (biz) => {
+  return (
+    <div className="biz-index-review-div">
+      <div className="biz-index-review-pic-div">
+        <img className="biz-index-review-pic" src={biz.last_review_author_image_url} />
+      </div>
+      <div className="biz-index-review-body-div">
+        <div className="biz-index-review-body">
+          last review body
+        </div>
+      </div>
+    </div>
+  )
 }
 
 const BizIndexItem = ({biz, bullet}) => {
@@ -107,11 +148,11 @@ const BizIndexItem = ({biz, bullet}) => {
           <div className="biz-index-item-rating">
             {avg_rating(biz)}
           </div>
-          <p className="biz-index-item-price-categories">
+          <div className="biz-index-item-price-categories">
             {pricing(biz.price)}
             <span className="biz-index-item-price-dot">.</span>
-            (Categories)
-          </p>
+            <p className="biz-index-item-categories-span">{categories(biz)}</p>
+          </div>
         </div>
 
         <div className="biz-index-item-location">
@@ -121,7 +162,7 @@ const BizIndexItem = ({biz, bullet}) => {
 
       <div className="biz-index-item-bottom">
         <div className="biz-index-item-review">
-          business review
+          {review(biz)}
         </div>
       </div>
 

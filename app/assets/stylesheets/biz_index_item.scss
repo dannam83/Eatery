@@ -12,14 +12,15 @@
 }
 
 .biz-index-item-name {
-  padding: 1px, 1px, 1px, 2px;
+  // padding: 1px, 1px, 9px, 2px;
 }
 
 .biz-index-item-price-categories {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 3px;
+  margin-top: 5px;
+  font-size: 14px;
 }
 
 .biz-index-item-price-dot {
@@ -36,6 +37,22 @@
   width: 280px;
   height: 90px;
   padding-right: 10px;
+}
+
+.biz-index-item-cat-span {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.biz-index-item-categories-span {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.biz-index-item-cat-comma {
+  margin-right: 4px;
 }
 
 .biz-index-item-location {
@@ -59,4 +76,17 @@
   display: flex;
   position: absolute;
   margin-top: 110px;
+}
+
+.biz-index-review-div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-right: 5px;
+}
+
+.biz-index-review-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
 }

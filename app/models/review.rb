@@ -14,6 +14,12 @@
 class Review < ApplicationRecord
   validates :body, :rating, :biz_id, :user_id, presence: true
 
-  belongs_to :user
-  belongs_to :biz
+  belongs_to :user,
+    foreign_key: :user_id,
+    class_name: 'User'
+
+  belongs_to :biz,
+    foreign_key: :biz_id,
+    class_name: 'Biz'
+
 end

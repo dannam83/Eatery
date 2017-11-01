@@ -25,6 +25,14 @@ class Biz < ApplicationRecord
   validates_attachment_content_type :biz_image, content_type: /\Aimage\/.*\Z/
 
   has_many :reviews
+  has_many :categories,
+    primary_key: :id,
+    foreign_key: :biz_id,
+    class_name: 'Description'
+
+  def last_review_author_image_url
+    self.reviews.last.user.image.url
+  end
 
   def avg_rating
     stars = 0.0
