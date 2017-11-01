@@ -1,25 +1,32 @@
-.biz-profile-master-container {
-  background-color: #F7F7F7;
+.biz-profile-master-master {
+  // display: flex;
+  // position: absolute;
+}
+
+.biz-profile-top-master-container {
   display: flex;
   justify-content: center;
   position: relative;
   font-family: Arial, sans-serif;
+  background-color: #F7F7F7;
 }
 
-.biz-profile-master-div {
-  width: 955px;
-  padding: 25px;
+.biz-profile-top-master-div {
+  width: 1000px;
 }
 
 .top-shelf-div {
-  height: 385px;
+  // height: 385px; this is height when BOTTOM HALF is added
+  height: 95px;
+  background-color: #F7F7F7;
+  padding: 25px;
 }
 
 .top-shelf-top-half-left-div {
-  background-color: lightyellow;
+  // background-color: lightyellow;
   width: 475px;
   height: 112px;
-  padding-right: 30px;
+  padding-right: 20px;
   position: absolute;
 }
 
@@ -47,12 +54,61 @@
 }
 
 .top-shelf-top-half-right-div {
-  background-color: lightpink;
+  // background-color: lightpink;
   width: 440px;
   height: 37px;
   position: absolute;
-  margin-left: 515px;
+  margin-left: 530px;
   margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.top-shelf-right-review-link-div {
+  background-color: #D92626;
+  border-radius: 3px;
+  width: 160px;
+  height: 35px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid black;
+  margin-right: 10px;
+}
+
+.top-shelf-right-review-link-div:hover {
+  background-color: #F31616;
+}
+
+.biz-profile-write-review-text {
+  font-size: 14px;
+  font-weight: 700;
+  padding-right: 5px;
+}
+
+.biz-profile-links-next-to-write-review-div {
+  background-color: #FCFCFC;
+  color: #717171;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid gray;
+  border-radius: 3px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+
+}
+
+.biz-profile-links-next-to-review-span {
+  padding: 5px 13px 5px 13px;
+}
+
+#bplntrs-middle {
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
 }
 
 .top-shelf-bottom-half-div {
@@ -62,18 +118,4 @@
   position: absolute;
   height: 273px;
   display: flex;
-}
-
-.bottom-shelf-master-div {
-
-}
-
-.bottom-shelf-left-div {
-  background-color: red;
-  width: 600px;
-}
-
-.bottom-shelf-right-div {
-  background-color: blue;
-  width: 300px;
 }

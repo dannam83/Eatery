@@ -67,9 +67,11 @@
 }
 
 .biz-index-item-location {
-  border: 1px solid green;
+  // border: 1px solid green;
   width: 225px;
   height: 90px;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .biz-index-item-review {
@@ -104,4 +106,6 @@
   font-size: 13.5px;
   margin-left: 5px;
   line-height: 18px;
+  height: 35px;
+  overflow: hidden;
 }

@@ -8,10 +8,11 @@ const BizsReducer = (state = {}, action) => {
     case RECEIVE_BIZS:
       return action.bizs;
     case RECEIVE_BIZ:
-      return merge(newState, {[action.biz.id]:action.biz});
+      return Object.assign(newState, {[action.biz.id]:action.biz});
     default:
       return state;
   }
 };
+// return merge(newState, {[action.biz.id]:action.biz});
 
 export default BizsReducer;

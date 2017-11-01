@@ -1,0 +1,29 @@
+.biz-profile-bottom-master-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  font-family: Arial, sans-serif;
+  background-color: lightgreen;
+}
+
+.biz-profile-bottom-master-div {
+  width: 1000px;
+}
+
+.bottom-shelf-master-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom-shelf-left-div {
+  background-color: lightyellow;
+  width: 650px;
+  padding: 25px 25px 0px 25px;
+}
+
+.bottom-shelf-right-div {
+  background-color: lightpink;
+  width: 300px;
+  padding-top: 25px;
+  padding-right: 25px;
+}

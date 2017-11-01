@@ -21,8 +21,8 @@ class BizMap extends React.Component {
 
     this.listenForMove();
     this.props.bizs.forEach((biz, index) => {
-      let label = index + 1;
-      this.addBiz(biz, index);
+      let label = (index + 1).toString();
+      this.addBiz(biz, label);
     });
   }
 

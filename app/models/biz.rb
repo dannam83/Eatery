@@ -30,6 +30,18 @@ class Biz < ApplicationRecord
     foreign_key: :biz_id,
     class_name: 'Description'
 
+  # geocoded_by :address, :latitude  => :lat, :longitude => :lng
+  # after_validation :geocode
+
+  reverse_geocoded_by :lat, :lng # do |obj,results|
+    # if geo = results.first
+    #   obj.city    = geo.city
+    #   obj.zipcode = geo.postal_code
+    #   obj.country = geo.country_code
+    # end
+  # end
+  after_validation :reverse_geocode  # auto-fetch address
+
   def last_review_author_image_url
     self.reviews.last.user.image.url
   end

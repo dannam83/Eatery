@@ -10,27 +10,53 @@ class Biz extends React.Component {
   topShelf () {
     return (
       <div className="top-shelf-div">
-          <div className="top-shelf-top-half-left-div">
-            <div className="top-shelf-name">
-              <b>{this.props.biz.name}</b>
-            </div>
-            <div className="top-shelf-rating">
-              {this.avg_rating()}
-              <p className="top-shelf-number-of-reviews">
-                {this.props.biz.reviews.length} reviews</p>
-            </div>
-            <div className="top-shelf-price-categories">
-              {this.pricing(this.props.biz.price)}
-              <span className="biz-index-item-price-dot">.</span>
-              {this.categories(this.props.biz)}
-            </div>
-          </div>
-          <div className="top-shelf-top-half-right-div">
-            top shelf top half right div
-          </div>
-          <div className="top-shelf-bottom-half-div">
-            top shelf bottom half div
-          </div>
+        {this.topShelfTopLeft()}
+        {this.topShelfTopRight()}
+      </div>
+    );
+  }
+  // {this.topShelfBottom()}
+
+  topShelfTopLeft () {
+    return (
+      <div className="top-shelf-top-half-left-div">
+        <div className="top-shelf-name">
+          <b>{this.props.biz.name}</b>
+        </div>
+        <div className="top-shelf-rating">
+          {this.avg_rating()}
+          <p className="top-shelf-number-of-reviews">
+            {this.props.biz.reviews.length} reviews</p>
+        </div>
+        <div className="top-shelf-price-categories">
+          {this.pricing(this.props.biz.price)}
+          <span className="biz-index-item-price-dot">.</span>
+          {this.categories(this.props.biz)}
+        </div>
+      </div>
+    );
+  }
+
+  topShelfTopRight () {
+    return (
+      <div className="top-shelf-top-half-right-div">
+        <Link to="/bizs/{this.props.match.params.bizId}/reviews" className="top-shelf-right-review-link-div">
+          <img className="biz-profile-write-review-star" src={window.starWhite} />
+          <p className="biz-profile-write-review-text">Write A Review</p>
+        </Link>
+        <div className="biz-profile-links-next-to-write-review-div">
+          <span className="biz-profile-links-next-to-review-span">Add Photo</span>
+          <span className="biz-profile-links-next-to-review-span" id="bplntrs-middle">Share</span>
+          <span className="biz-profile-links-next-to-review-span">Bookmark</span>
+        </div>
+      </div>
+    );
+  }
+
+  topShelfBottom () {
+    return (
+      <div className="top-shelf-bottom-half-div">
+        top shelf bottom half div
       </div>
     );
   }
@@ -43,17 +69,17 @@ class Biz extends React.Component {
         return biz.categories.map((cat, index) => {
           if ( index + 1 === last) {
             return (
-              <p
+              <span
                 className="biz-index-item-cat-span"
                 key={cat.id}>{cat.category}
-              </p>
+              </span>
             );
           } else {
             return (
-              <p
+              <span
                 className="biz-index-item-cat-span"
                 key={cat.id}>{cat.category}<p className="biz-index-item-cat-comma">,</p>
-              </p>
+              </span>
 
             );
           }
@@ -165,9 +191,16 @@ class Biz extends React.Component {
       return null;
     }
     return (
-      <div className="biz-profile-master-container">
-        <div className="biz-profile-master-div">
-          {this.topShelf()}
+      <div className="biz-profile-master-master">
+        <div className="biz-profile-top-master-container">
+          <div className="biz-profile-top-master-div">
+            {this.topShelf()}
+          </div>
+        </div>
+        <div className="biz-profile-bottom-master-container">
+          <div className="biz-profile-bottom-master-div">
+            {this.bottomShelf()}
+          </div>
         </div>
       </div>
     );

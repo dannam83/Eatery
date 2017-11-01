@@ -82,13 +82,13 @@ const avg_rating = (biz) => {
 
 const pricing = (price) => {
   if (price < 2) {
-    return (<p className="biz-pricing">$</p>);
+    return (<span className="biz-pricing">$</span>);
   } else if (price < 3) {
-    return (<p className="biz-pricing">$$</p>);
+    return (<span className="biz-pricing">$$</span>);
   } else if (price < 4) {
-    return (<p className="biz-pricing">$$$</p>);
+    return (<span className="biz-pricing">$$$</span>);
   } else {
-    return (<p className="biz-pricing">$$$$</p>);
+    return (<span className="biz-pricing">$$$$</span>);
   }
 };
 
@@ -101,17 +101,17 @@ const categories = (biz) => {
       return biz.categories.map((cat, index) => {
         if ( index + 1 === last) {
           return (
-            <p
+            <span
               className="biz-index-item-cat-span"
               key={cat.id}>{cat.category}
-            </p>
+            </span>
           );
         } else {
           return (
-            <p
+            <span
               className="biz-index-item-cat-span"
-              key={cat.id}>{cat.category}<p className="biz-index-item-cat-comma">,</p>
-            </p>
+              key={cat.id}>{cat.category}<span className="biz-index-item-cat-comma">,</span>
+          </span>
 
           );
         }
@@ -147,7 +147,7 @@ const BizIndexItem = ({biz, bullet}) => {
             {bullet}. <Link to={`/bizs/${biz.id}`} className="biz-index-item-link">{biz.name}</Link>
           </div>
           <div className="biz-index-item-rating">
-            {avg_rating(biz)} <p className="biz-index-item-number-of-reviews">{biz.reviews.length} reviews</p>
+            {avg_rating(biz)} <span className="biz-index-item-number-of-reviews">{biz.reviews.length} reviews</span>
           </div>
           <div className="biz-index-item-price-categories">
             {pricing(biz.price)}
@@ -157,7 +157,8 @@ const BizIndexItem = ({biz, bullet}) => {
         </div>
 
         <div className="biz-index-item-location">
-          business location
+          {biz.address.slice(0,-5)}
+          <div>{biz.phone}</div>
         </div>
       </div>
 
