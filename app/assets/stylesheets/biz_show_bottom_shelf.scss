@@ -3,7 +3,7 @@
   justify-content: center;
   position: relative;
   font-family: Arial, sans-serif;
-  background-color: lightgreen;
+  // background-color: lightgreen;
 }
 
 .biz-profile-bottom-master-div {
@@ -16,9 +16,10 @@
 }
 
 .bottom-shelf-left-div {
-  background-color: lightyellow;
+  // background-color: lightyellow;
   width: 650px;
   padding: 25px 25px 0px 25px;
+  // border-right: 1px solid #E1E1E1;
 }
 
 .bottom-shelf-right-div {
@@ -26,4 +27,53 @@
   width: 300px;
   padding-top: 25px;
   padding-right: 25px;
+}
+
+.biz-profile-review-div {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #E1E1E1;
+  padding: 15px 5px 15px 0px;
+  margin-right: 5px;
+}
+
+.biz-profile-review-div:last-child {
+  border-bottom: 1px solid #E1E1E1;
+}
+
+.biz-profile-review-author-image {
+  width: 55px;
+  border-radius: 4px;
+}
+
+.biz-profile-review-author-info {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 150px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.biz-profile-review-body {
+  width: 400px;
+  font-size: 13px;
+  // line-height: 17px;
+}
+
+.biz-profile-reviews-stars-date-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.biz-profile-review-date {
+  padding-left: 5px;
+  margin-left: 10px;
+}
+
+.biz-profile-review-body-body {
+  margin-top: 20px;
+  font-size: 14.5px;
+  line-height: 17px;
 }

@@ -100,53 +100,53 @@ class Biz extends React.Component {
   starRating (stars) {
     if (stars < 2) {
       return (
-        <div className="stars">
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starClear} />
-          <img className="star-big" src={window.starClear} />
-          <img className="star-big" src={window.starClear} />
-          <img className="star-big" src={window.starClear} />
-        </div>
+        <span className="stars-biz-profile-review">
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
+          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
+          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
+          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
+        </span>
       );
     } else if (stars < 3) {
       return (
-        <div className="stars">
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starClear} />
-          <img className="star-big" src={window.starClear} />
-          <img className="star-big" src={window.starClear} />
-        </div>
+        <span className="stars-biz-profile-review-span">
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
+          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
+          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
+        </span>
       );
     } else if (stars < 4) {
       return (
-        <div className="stars">
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starClear} />
-          <img className="star-big" src={window.starClear} />
-        </div>
+        <span className="stars-biz-profile-review-span">
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
+          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
+        </span>
       );
     } else if (stars < 5) {
       return (
-        <div className="stars">
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starClear} />
-        </div>
+        <span className="stars-biz-profile-review-span">
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
+        </span>
       );
     } else {
       return (
-        <div className="stars">
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starFull} />
-          <img className="star-big" src={window.starFull} />
-        </div>
+        <span className="stars-biz-profile-review-span">
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
+        </span>
       );
     }
   }
@@ -167,7 +167,7 @@ class Biz extends React.Component {
     return (
       <div className="bottom-shelf-master-div">
         <div className="bottom-shelf-left-div">
-          bottom shelf left div
+          {this.review_listing(this.props.reviews)}
         </div>
 
         <div className="bottom-shelf-right-div">
@@ -178,25 +178,30 @@ class Biz extends React.Component {
   }
 
   review_listing (reviews) {
-    return (
-      reviews.map((review) => {
-        return (
-          <div className="biz-profile-review-div">
-            <div>
-              <img className="biz-profile-review-author-image" />
-            </div>
-            <div className="biz-profile-review-author-info">
-              <div>{review.user.fname} {review.user.lname[0]}.</div>
-            </div>
-            <div>
-              <span>{starRating(review.rating)}</span>
-              <span>{review.date}</span>
-              <div>{review.body}</div>
-            </div>
+    let keys = Object.keys(reviews);
+    return keys.map((key) => {
+      let review = reviews[key];
+      return (
+        <div className="biz-profile-review-div">
+          <div>
+            <img
+              className="biz-profile-review-author-image"
+              src={review.author_image}
+            />
           </div>
-        );
-      })
-    );
+          <div className="biz-profile-review-author-info">
+            <div>{review.fname} {review.lname[0]}.</div>
+          </div>
+          <div className="biz-profile-review-body">
+            <div className="biz-profile-reviews-stars-date-div">
+              <span>{this.starRating(review.rating)}</span>
+              <span className="biz-profile-review-date">{review.date}</span>
+            </div>
+            <div className="biz-profile-review-body-body">{review.body}</div>
+          </div>
+        </div>
+      );
+    });
   }
 
   render () {

@@ -103,8 +103,7 @@ const categories = (biz) => {
             <span
               className="biz-index-item-cat-span"
               key={cat.id}>{cat.category}<span className="biz-index-item-cat-comma">,</span>
-          </span>
-
+            </span>
           );
         }
     });
