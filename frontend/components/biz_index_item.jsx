@@ -97,20 +97,21 @@ const categories = (biz) => {
     if (biz.categories.length === 0) {
       return null;
     } else {
+      let last = biz.categories.length;
       return biz.categories.map((cat, index) => {
-        if ( index === 0 ) {
+        if ( index + 1 === last) {
           return (
-            <span
+            <p
               className="biz-index-item-cat-span"
               key={cat.id}>{cat.category}
-            </span>
+            </p>
           );
         } else {
           return (
-            <span
+            <p
               className="biz-index-item-cat-span"
-              key={cat.id}><p className="biz-index-item-cat-comma">, </p>{cat.category}
-            </span>
+              key={cat.id}>{cat.category}<p className="biz-index-item-cat-comma">,</p>
+            </p>
 
           );
         }
@@ -126,7 +127,7 @@ const review = (biz) => {
       </div>
       <div className="biz-index-review-body-div">
         <div className="biz-index-review-body">
-          last review body
+          {biz.last_review_body}
         </div>
       </div>
     </div>
@@ -151,7 +152,7 @@ const BizIndexItem = ({biz, bullet}) => {
           <div className="biz-index-item-price-categories">
             {pricing(biz.price)}
             <span className="biz-index-item-price-dot">.</span>
-            <p className="biz-index-item-categories-span">{categories(biz)}</p>
+            {categories(biz)}
           </div>
         </div>
 

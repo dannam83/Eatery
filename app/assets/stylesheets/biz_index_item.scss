@@ -8,7 +8,7 @@
 
 .biz-index-item-img {
   height: 90px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .biz-index-item-name {
@@ -33,7 +33,7 @@
 }
 
 .biz-index-item-description {
-  border: 1px solid red;
+  // border: 1px solid red;
   width: 280px;
   height: 90px;
   padding-right: 10px;
@@ -62,9 +62,9 @@
 }
 
 .biz-index-item-review {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   width: 618px;
-  height: 60px;
+  // height: 30px;
   display: flex;
 }
 
@@ -86,7 +86,13 @@
 }
 
 .biz-index-review-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 2px;
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+}
+
+.biz-index-review-body {
+  font-size: 13.5px;
+  margin-left: 5px;
+  line-height: 18px;
 }

@@ -34,6 +34,10 @@ class Biz < ApplicationRecord
     self.reviews.last.user.image.url
   end
 
+  def last_review_body
+    self.reviews.last.body
+  end
+
   def avg_rating
     stars = 0.0
     self.reviews.each do |review|
