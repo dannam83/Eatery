@@ -11,10 +11,24 @@
   border-radius: 3px;
 }
 
+.biz-index-item-name {
+  padding: 1px, 1px, 1px, 2px;
+}
+
 .biz-index-item-price-categories {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 3px;
+}
+
+.biz-index-item-price-dot {
+  color: gray;
+  margin: 0px 8px 0px 8px;
+  width: 3px;
+  height: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .biz-index-item-description {

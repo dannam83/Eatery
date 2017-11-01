@@ -82,17 +82,15 @@ const avg_rating = (biz) => {
 
 const pricing = (price) => {
   if (price < 2) {
-    return (<p>$</p>);
+    return (<p className="biz-pricing">$</p>);
   } else if (price < 3) {
-    return (<p>$$</p>);
+    return (<p className="biz-pricing">$$</p>);
   } else if (price < 4) {
-    return (<p>$$$</p>);
+    return (<p className="biz-pricing">$$$</p>);
   } else {
-    return (<p>$$$$</p>)
+    return (<p className="biz-pricing">$$$$</p>)
   }
 }
-
-
 
 const BizIndexItem = ({biz, bullet}) => {
   return (
@@ -103,13 +101,15 @@ const BizIndexItem = ({biz, bullet}) => {
         </div>
 
         <div className="biz-index-item-description">
-          {bullet}. <Link to={`/bizs/${biz.id}`} className="biz-index-item-link">{biz.name}</Link>
+          <div className="biz-index-item-name">
+            {bullet}. <Link to={`/bizs/${biz.id}`} className="biz-index-item-link">{biz.name}</Link>
+          </div>
           <div className="biz-index-item-rating">
             {avg_rating(biz)}
           </div>
           <p className="biz-index-item-price-categories">
             {pricing(biz.price)}
-            <i className="biz-index-item-price-dot">.</i>
+            <span className="biz-index-item-price-dot">.</span>
             (Categories)
           </p>
         </div>

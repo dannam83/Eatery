@@ -13,7 +13,7 @@ class Biz extends React.Component {
           <div className="top-shelf-top-half-left-div">
             <div className="top-shelf-name">{this.props.biz.name}</div>
             <div className="top-shelf-rating">{this.avg_rating()}</div>
-            <div className="top-shelf-price-categories">{this.props.biz.price}</div>
+            <div className="top-shelf-price-categories">{this.pricing(this.props.biz.price)}</div>
           </div>
           <div className="top-shelf-top-half-right-div">
             top shelf top half right div
@@ -93,6 +93,18 @@ class Biz extends React.Component {
           <img className="star" src={window.starFull} />
         </div>
       );
+    }
+  }
+
+  pricing (price) {
+    if (price < 2) {
+      return (<p className="biz-pricing">$</p>);
+    } else if (price < 3) {
+      return (<p className="biz-pricing">$$</p>);
+    } else if (price < 4) {
+      return (<p className="biz-pricing">$$$</p>);
+    } else {
+      return (<p className="biz-pricing">$$$$</p>);
     }
   }
 
