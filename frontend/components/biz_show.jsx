@@ -11,9 +11,19 @@ class Biz extends React.Component {
     return (
       <div className="top-shelf-div">
           <div className="top-shelf-top-half-left-div">
-            <div className="top-shelf-name">{this.props.biz.name}</div>
-            <div className="top-shelf-rating">{this.avg_rating()}</div>
-            <div className="top-shelf-price-categories">{this.pricing(this.props.biz.price)}</div>
+            <div className="top-shelf-name">
+              <b>{this.props.biz.name}</b>
+            </div>
+            <div className="top-shelf-rating">
+              {this.avg_rating()}
+              <p className="top-shelf-number-of-reviews">
+                {this.props.biz.reviews.length} reviews</p>
+            </div>
+            <div className="top-shelf-price-categories">
+              {this.pricing(this.props.biz.price)}
+              <span className="biz-index-item-price-dot">.</span>
+              {this.categories(this.props.biz)}
+            </div>
           </div>
           <div className="top-shelf-top-half-right-div">
             top shelf top half right div
@@ -23,6 +33,32 @@ class Biz extends React.Component {
           </div>
       </div>
     );
+  }
+
+  categories (biz) {
+      if (biz.categories.length === 0) {
+        return null;
+      } else {
+        let last = biz.categories.length;
+        return biz.categories.map((cat, index) => {
+          if ( index + 1 === last) {
+            return (
+              <p
+                className="biz-index-item-cat-span"
+                key={cat.id}>{cat.category}
+              </p>
+            );
+          } else {
+            return (
+              <p
+                className="biz-index-item-cat-span"
+                key={cat.id}>{cat.category}<p className="biz-index-item-cat-comma">,</p>
+              </p>
+
+            );
+          }
+      });
+    }
   }
 
   avg_rating () {
@@ -46,51 +82,51 @@ class Biz extends React.Component {
     if (stars < 2) {
       return (
         <div className="stars">
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starClear} />
-          <img className="star" src={window.starClear} />
-          <img className="star" src={window.starClear} />
-          <img className="star" src={window.starClear} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starClear} />
+          <img className="star-big" src={window.starClear} />
+          <img className="star-big" src={window.starClear} />
+          <img className="star-big" src={window.starClear} />
         </div>
       );
     } else if (stars < 3) {
       return (
         <div className="stars">
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starClear} />
-          <img className="star" src={window.starClear} />
-          <img className="star" src={window.starClear} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starClear} />
+          <img className="star-big" src={window.starClear} />
+          <img className="star-big" src={window.starClear} />
         </div>
       );
     } else if (stars < 4) {
       return (
         <div className="stars">
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starClear} />
-          <img className="star" src={window.starClear} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starClear} />
+          <img className="star-big" src={window.starClear} />
         </div>
       );
     } else if (stars < 5) {
       return (
         <div className="stars">
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starClear} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starClear} />
         </div>
       );
     } else {
       return (
         <div className="stars">
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starFull} />
-          <img className="star" src={window.starFull} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starFull} />
+          <img className="star-big" src={window.starFull} />
         </div>
       );
     }

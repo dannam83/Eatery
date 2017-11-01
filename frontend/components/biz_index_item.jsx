@@ -147,7 +147,7 @@ const BizIndexItem = ({biz, bullet}) => {
             {bullet}. <Link to={`/bizs/${biz.id}`} className="biz-index-item-link">{biz.name}</Link>
           </div>
           <div className="biz-index-item-rating">
-            {avg_rating(biz)}
+            {avg_rating(biz)} <p className="biz-index-item-number-of-reviews">{biz.reviews.length} reviews</p>
           </div>
           <div className="biz-index-item-price-categories">
             {pricing(biz.price)}
