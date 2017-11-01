@@ -64,20 +64,12 @@ const starRating = (stars) => {
 }
 
 const avg_rating = (biz) => {
-  if (biz.reviews.length === 0) {
+  if (biz.avg_rating === 0) {
     return (
       <div></div>
     )
   }
-  let stars = 0;
-  biz.reviews.forEach((review) => {
-    stars += review.rating;
-  });
-  stars = stars*1.0 / biz.reviews.length;
-  stars = stars*2;
-  stars = Math.round(stars);
-  stars = stars/2;
-  return starRating(stars);
+  return starRating(biz.avg_rating);
 }
 
 const pricing = (price) => {
@@ -147,7 +139,7 @@ const BizIndexItem = ({biz, bullet}) => {
             {bullet}. <Link to={`/bizs/${biz.id}`} className="biz-index-item-link">{biz.name}</Link>
           </div>
           <div className="biz-index-item-rating">
-            {avg_rating(biz)} <span className="biz-index-item-number-of-reviews">{biz.reviews.length} reviews</span>
+            {avg_rating(biz)} <span className="biz-index-item-number-of-reviews">{biz.review_count} reviews</span>
           </div>
           <div className="biz-index-item-price-categories">
             {pricing(biz.price)}

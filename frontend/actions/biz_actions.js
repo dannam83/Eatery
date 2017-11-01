@@ -7,7 +7,7 @@ const receiveBizs = (bizs) => ({
   type: RECEIVE_BIZS,
   bizs,
 });
-// haven't setup backend render show for biz yet
+
 const receiveBiz = (biz) => ({
   type: RECEIVE_BIZ,
   biz,

@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     loggedIn,
     errors,
-    biz: state.entities.bizs[ownProps.match.params.bizId]
+    biz: state.entities.bizs[ownProps.match.params.bizId],
+    reviews: state.entities.reviews,
   };
 };
 

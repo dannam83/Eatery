@@ -26,7 +26,7 @@ class Biz extends React.Component {
         <div className="top-shelf-rating">
           {this.avg_rating()}
           <p className="top-shelf-number-of-reviews">
-            {this.props.biz.reviews.length} reviews</p>
+            {this.props.biz.review_count} reviews</p>
         </div>
         <div className="top-shelf-price-categories">
           {this.pricing(this.props.biz.price)}
@@ -89,19 +89,12 @@ class Biz extends React.Component {
 
   avg_rating () {
     let stars = 0;
-    if (this.props.biz.reviews.length === 0) {
+    if (this.props.biz.avg_rating === 0) {
       return (
         <div></div>
       );
     }
-    this.props.biz.reviews.forEach((review) => {
-      stars += review.rating;
-    });
-    stars = stars*1.0 / this.props.biz.reviews.length;
-    stars = stars*2;
-    stars = Math.round(stars);
-    stars = stars/2;
-    return this.starRating(stars);
+    return this.starRating(this.props.biz.avg_rating);
   }
 
   starRating (stars) {
@@ -183,8 +176,28 @@ class Biz extends React.Component {
       </div>
     );
   }
-  // {topShelf()}
-  // {bottomShelf()}
+
+  review_listing (reviews) {
+    return (
+      reviews.map((review) => {
+        return (
+          <div className="biz-profile-review-div">
+            <div>
+              <img className="biz-profile-review-author-image" />
+            </div>
+            <div className="biz-profile-review-author-info">
+              <div>{review.user.fname} {review.user.lname[0]}.</div>
+            </div>
+            <div>
+              <span>{starRating(review.rating)}</span>
+              <span>{review.date}</span>
+              <div>{review.body}</div>
+            </div>
+          </div>
+        );
+      })
+    );
+  }
 
   render () {
     if (!this.props.biz) {

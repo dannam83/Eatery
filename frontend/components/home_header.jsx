@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 const links = () => {
   return (
     <div className="extra-choices-box2">

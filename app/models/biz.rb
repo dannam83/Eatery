@@ -51,6 +51,8 @@ class Biz < ApplicationRecord
   end
 
   def avg_rating
+    return 0 unless self.reviews
+
     stars = 0.0
     self.reviews.each do |review|
       stars += review.rating
@@ -58,6 +60,10 @@ class Biz < ApplicationRecord
 
     avg = stars/self.reviews.length
     (avg * 2).round / 2.0
+  end
+
+  def review_count
+    self.reviews.length
   end
 
   # taken from AppAcademy BenchBNB Project

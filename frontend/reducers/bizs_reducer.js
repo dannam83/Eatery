@@ -8,7 +8,7 @@ const BizsReducer = (state = {}, action) => {
     case RECEIVE_BIZS:
       return action.bizs;
     case RECEIVE_BIZ:
-      return Object.assign(newState, {[action.biz.id]:action.biz});
+      return Object.assign(newState, {[action.biz.biz.id]:action.biz.biz});
     default:
       return state;
   }
