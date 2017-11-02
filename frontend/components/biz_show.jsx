@@ -38,6 +38,14 @@ class Biz extends React.Component {
     );
   }
 
+  topShelfTopMiddle () {
+    return (
+      <div className="top-shelf-middle-div">
+        <img className="top-shelf-biz-image" src={this.props.biz.img_url}></img>
+      </div>
+    );
+  }
+
   topShelfTopRight () {
     return (
       <div className="top-shelf-top-half-right-div">
@@ -143,7 +151,7 @@ class Biz extends React.Component {
           <div className="biz-profile-review-body">
             <div className="biz-profile-reviews-stars-date-div">
               <span>{starRatingReviews(review.rating)}</span>
-              <span className="biz-profile-review-date">{review.date}</span>
+              <span className="biz-profile-review-date">{review.date.slice(0,10)}</span>
             </div>
             <div className="biz-profile-review-body-body">{review.body}</div>
           </div>

@@ -54,8 +54,22 @@
   flex-direction: row;
 }
 
+.top-shelf-middle-div {
+  margin-left: 250px;
+  position: absolute;
+  width: 270px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.top-shelf-biz-image {
+  width: 180px;
+  position: absolute;
+  border-radius: 4px;
+}
+
 .top-shelf-top-half-right-div {
-  // background-color: lightpink;
   width: 440px;
   height: 37px;
   position: absolute;
