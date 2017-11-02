@@ -43,7 +43,8 @@ class Biz < ApplicationRecord
   after_validation :reverse_geocode  # auto-fetch address
 
   def last_review_author_image_url
-    self.reviews.last.user.image.url
+    return self.reviews.last.user.image.url if self.reviews
+    return ""
   end
 
   def last_review_body
