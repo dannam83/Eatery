@@ -1,3 +1,31 @@
 // Place all the styles related to the reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review-form-master-expanding {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  min-width: 1000px;
+}
+
+.review-form-master-fixed {
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-left: 50px;
+}
+
+.review-form-left-div {
+  width: 635px;
+  height: 500px;
+  padding-right: 5px;
+}
+
+.review-form-right-div {
+  width: 300px;
+  background: lightpink;
+  border-left: 1px solid #E1E1E1;
+  padding-left: 15px;
+}

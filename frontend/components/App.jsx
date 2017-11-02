@@ -6,6 +6,7 @@ import SessionFormContainer from './session_form_container';
 import SearchContainer from './search_container';
 import FooterContainer from './footer_container';
 import BizContainer from './biz_container';
+import ReviewFormContainer from './review_form_container';
 import { AuthRoute } from '../util/route_util.js';
 import {
   Route,
@@ -29,13 +30,14 @@ const App = () => (
       </Switch>
     </header>
 
-  <AuthRoute exact path="/login" component={SessionFormContainer} />
-  <AuthRoute exact path="/signup" component={SessionFormContainer} />
-  <AuthRoute exact path="/guest" component={SessionFormContainer} />
-  <Route exact path="/search" component={SearchContainer} />
-  <Route exact path="/bizs/:bizId" component={BizContainer} />
-  <Route path="/" component={FooterContainer} />
+    <AuthRoute exact path="/login" component={SessionFormContainer} />
+    <AuthRoute exact path="/signup" component={SessionFormContainer} />
+    <AuthRoute exact path="/guest" component={SessionFormContainer} />
+    <Route exact path="/search" component={SearchContainer} />
+    <Route exact path="/bizs/:bizId" component={BizContainer} />
+    <Route exact path="/bizs/:bizId/reviews" component={ReviewFormContainer} />
 
+    <Route path="/" component={FooterContainer} />
   </div>
 );
 

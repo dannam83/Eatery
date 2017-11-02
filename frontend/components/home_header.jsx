@@ -50,9 +50,9 @@ const mainLogo = () => {
   return (
     <div className="mainLogo">
       <Link to="/" className="bigLogo">Eatery</Link>
-      <a href="/">
+      <Link to="/">
         <img className="bigChefPic" src={window.chefLogo}></img>
-      </a>
+      </Link>
     </div>
   )
 }

@@ -16,6 +16,12 @@ class Biz extends React.Component {
       </div>
     );
   }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.match.params.bizId !== this.props.match.params.bizId) {
+      this.props.fetchBiz(nextProps.match.params.bizId);
+    }
+  }
   // {this.topShelfBottom()}
 
   topShelfTopLeft () {

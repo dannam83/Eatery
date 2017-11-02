@@ -5,9 +5,9 @@ class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleGuest = this.handleGuest.bind(this);
     this.setState = this.setState.bind(this);
   }
+  // this.handleGuest = this.handleGuest.bind(this);
 
   update(field) {
     return (e) => {
@@ -30,21 +30,34 @@ class ReviewForm extends React.Component {
     }
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.processForm(this.state).then(
-      this.props.history.push('/')).then(
-        this.setState({['email']: ""})).then(
-          this.setState({['password']: ""})
-        );
+  sourcePath() {
+    if (this.props.params.bizId) {
+      return ("bizs");
+    } else {
+      return ("users");
+    }
   }
 
-  handleGuest(e) {
-    e.preventDefault();
-    this.props.processForm({['email']: "guest@hmail.com", ['password']: "asdf1234"}).then(
-      this.props.history.push('/')
-    );
+  sourceId() {
+    if (this.props.params.bizId) {
+      return (this.props.params.bizId);
+    } else {
+      return (this.props.params.userId);
+    }
   }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createReview(this.state).then(
+    this.props.history.push(`/${sourcePath()}/${sourceId()}`));
+  }
+
+  // handleGuest(e) {
+  //   e.preventDefault();
+  //   this.props.processForm({['email']: "guest@hmail.com", ['password']: "asdf1234"}).then(
+  //     this.props.history.push('/')
+  //   );
+  // }
 
   intro(formType) {
     if (this.props.match.path === '/signup') {
@@ -218,30 +231,46 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    if (this.props.formType === "Guest") {
-      return (
-        <div className="form-welcome-container">
-          <div className="form-container">
-            {this.guestForm()}
+    let submit="pick the button";
+    return (
+      <div className="review-form-master-expanding">
+        <div className="review-form-master-fixed">
+
+          <div className="review-form-left-div">
+            this is on the left
           </div>
-          <div className="welcome-container">
-            {this.sidePic()}
+          <div className="review-form-right-div">
+            this is on the right
           </div>
+
         </div>
-      );
-    } else {
-      return (
-        <div className="form-welcome-container">
-          <div className="form-container">
-            {this.sessionForm()}
-          </div>
-          <div className="welcome-container">
-            {this.sidePic()}
-          </div>
-        </div>
-    );}
+      </div>
+    );
   }
 
 }
+
+// if (this.props.formType === "Guest") {
+//   return (
+//     <div className="form-welcome-container">
+//       <div className="form-container">
+//         {this.guestForm()}
+//       </div>
+//       <div className="welcome-container">
+//         {this.sidePic()}
+//       </div>
+//     </div>
+//   );
+// } else {
+//   return (
+//     <div className="form-welcome-container">
+//       <div className="form-container">
+//         {this.sessionForm()}
+//       </div>
+//       <div className="welcome-container">
+//         {this.sidePic()}
+//       </div>
+//     </div>
+// );}
 
 export default ReviewForm;
