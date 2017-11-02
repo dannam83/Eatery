@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { fetchBizs } from './actions/biz_actions';
+// import { fetchBizs } from './actions/biz_actions';
 import configureStore from './store/store';
 import Root from './components/root';
-import { createReview } from './actions/review_actions';
+// import { createReview } from './actions/review_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchBizs = fetchBizs;
-  window.createReview = createReview;
   ReactDOM.render(<Root store={store} />, root);
 });
+
+// window.fetchBizs = fetchBizs;
+// window.createReview = createReview;
