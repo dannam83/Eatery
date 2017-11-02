@@ -78,12 +78,12 @@ User.create(
   image: File.open('app/assets/images/profile/bighero6.jpg')
 )
 User.create(
-  fname: "Cat",
-  lname: "Woman",
-  email: "catwoman@hmail.com",
-  password: "catwoman12",
+  fname: "Black",
+  lname: "Widow",
+  email: "blackwidow@hmail.com",
+  password: "blackwidow12",
   zipcode: "10018",
-  image: File.open('app/assets/images/profile/catwoman.jpg')
+  image: File.open('app/assets/images/profile/blackwidow.jpg')
 )
 User.create(
   fname: "Wolverine",
@@ -92,6 +92,14 @@ User.create(
   password: "wolverine12",
   zipcode: "10012",
   image: File.open('app/assets/images/profile/wolverine.jpg')
+)
+User.create(
+  fname: "Cat",
+  lname: "Woman",
+  email: "catwoman@hmail.com",
+  password: "catwoman12",
+  zipcode: "10012",
+  image: File.open('app/assets/images/profile/catwoman.jpg')
 )
 Biz.create(
   name: 'Deli Licious',

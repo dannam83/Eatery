@@ -16,19 +16,13 @@
   padding-top: 20px;
   padding-left: 50px;
   font-family: Arial, sans-serif;
+  min-height: 600px;
 }
 
 .review-form-left-div {
   width: 635px;
   height: 500px;
   padding-right: 15px;
-}
-
-.review-form-right-div {
-  width: 300px;
-  background: lightpink;
-  border-left: 1px solid #E1E1E1;
-  padding-left: 15px;
 }
 
 .review-form-intro-text {
@@ -56,6 +50,10 @@
 .review-form-intro-biz-pic {
   height: 80px;
   width: auto;
+}
+
+.review-form-form {
+  position: relative;
 }
 
 .review-form-intro-biz-summary {

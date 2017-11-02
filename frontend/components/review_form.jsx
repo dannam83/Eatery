@@ -53,7 +53,7 @@ class ReviewForm extends React.Component {
     review.rating = parseInt(this.state.rating);
     review.body = this.state.body;
     this.props.createReview(review).then(() => {
-      // 
+      //
       this.props.history.push(`/${this.sourcePath()}/${this.sourceId()}`);
     });
   }
@@ -127,7 +127,7 @@ class ReviewForm extends React.Component {
   starRating (stars) {
     if (stars < 2) {
       return (
-        <span className="stars">
+        <span className="stars" id="review-form-stars">
           <img className="star" src={window.starFull} />
           <img className="star" src={window.starClear} />
           <img className="star" src={window.starClear} />
@@ -137,7 +137,7 @@ class ReviewForm extends React.Component {
       );
     } else if (stars < 3) {
       return (
-        <span className="stars">
+        <span className="stars" id="review-form-stars">
           <img className="star" src={window.starFull} />
           <img className="star" src={window.starFull} />
           <img className="star" src={window.starClear} />
@@ -147,7 +147,7 @@ class ReviewForm extends React.Component {
       );
     } else if (stars < 4) {
       return (
-        <span className="stars">
+        <span className="stars" id="review-form-stars">
           <img className="star" src={window.starFull} />
           <img className="star" src={window.starFull} />
           <img className="star" src={window.starFull} />
@@ -157,7 +157,7 @@ class ReviewForm extends React.Component {
       );
     } else if (stars < 5) {
       return (
-        <span className="stars">
+        <span className="stars" id="review-form-stars">
           <img className="star" src={window.starFull} />
           <img className="star" src={window.starFull} />
           <img className="star" src={window.starFull} />
@@ -167,7 +167,7 @@ class ReviewForm extends React.Component {
       );
     } else {
       return (
-        <span className="stars">
+        <span className="stars" id="review-form-stars">
           <img className="star" src={window.starFull} />
           <img className="star" src={window.starFull} />
           <img className="star" src={window.starFull} />
@@ -179,11 +179,11 @@ class ReviewForm extends React.Component {
   }
 
   reviewForm () {
-    let submitText = this.props.loggedIn ? "Post Review" : "Sign Up and Post";
+    let submitText = this.props.loggedIn ? "Post Review" : "Sign Up to Post";
     return (
       <div className="review-form-template-master-container">
         <div className="review-form-template-text">Your Review</div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="review-form-form">
           <div className="review-form-template">
             <div className="review-form-select-rating-text">Select your rating:</div>
             <div className="review-form-ratings">
@@ -229,19 +229,35 @@ class ReviewForm extends React.Component {
     );
   }
 
-  otherReviews(reviews) {
-    return reviews.map((review) => {
+  reviewListing() {
+    let ids = Object.keys(this.props.reviews);
+    return ids.map((id) => {
+      let review = this.props.reviews[id];
       return (
-        <div className="review-form-other-review">
-          <div className="review-form-other-name">
-            pic and name
+        <div className="review-form-other-reviews-div" key={id}>
+
+          <div className="review-form-top-bottom">
+            <div>
+              <img
+                className="review-form-other-reviews-author-image"
+                src={review.author_image}
+              />
+            </div>
+
+            <div className="review-form-other-reviews-author-info">
+              <div>{review.fname} {review.lname[0]}.
+              </div>
+              <div className="review-form-other-reviews-stars-date-div">
+                <div>{this.starRating(review.rating)}</div>
+                <div className="review-form-other-reviews-date">{review.date.slice(0,10)}</div>
+              </div>
+            </div>
           </div>
-          <div>
-            stars and date
+
+          <div className="review-form-other-reviews-body">
+            <div className="review-form-other-reviews-body-body">{review.body}</div>
           </div>
-          <div>
-            review body
-          </div>
+
         </div>
       );
     });
@@ -259,7 +275,10 @@ class ReviewForm extends React.Component {
             {this.reviewForm()}
           </div>
           <div className="review-form-right-div">
-
+            <div className="review-form-intro-right">
+              Other Reviews
+            </div>
+            {this.reviewListing()}
           </div>
         </div>
       </div>
