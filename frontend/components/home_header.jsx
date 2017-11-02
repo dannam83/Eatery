@@ -69,16 +69,17 @@ const mainSearch = () => {
   )
 }
 
+// extra divs in between for inserting icons
 const mainLinks = () => {
   return (
     <div className="mainLinks">
-      <div>pic</div>
-      <Link to="/" className="mainLink">Restaurants</Link>
-      <div>pic</div>
+      <div></div>
+      <Link to="/search" className="mainLink">Restaurants</Link>
+      <div></div>
       <Link to="/" className="mainLink">Night Life</Link>
-      <div>pic</div>
+      <div></div>
       <Link to="/" className="mainLink">Home Delivery</Link>
-      <div>pic</div>
+      <div></div>
       <Link to="/" className="mainLink">Services</Link>
     </div>
   )

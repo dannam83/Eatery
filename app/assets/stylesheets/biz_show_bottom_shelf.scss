@@ -1,9 +1,15 @@
-.biz-profile-bottom-master-container {
+.biz-profile-bottom-master-master {
   display: flex;
   justify-content: center;
   position: relative;
+  min-width: 1000px;
+}
+
+.biz-profile-bottom-master-container {
+  width: 1000px;
+  display: flex;
+  justify-content: center;
   font-family: Arial, sans-serif;
-  // background-color: lightgreen;
 }
 
 .biz-profile-bottom-master-div {
@@ -15,15 +21,27 @@
   flex-direction: row;
 }
 
+.bottom-shelf-reviews-label-div {
+  margin-bottom: 12px;
+}
+
+.bottom-shelf-reviews-label {
+  color: #D92626;
+  font-size: 21.5px;
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.bottom-shelf-reviews-label-name {
+  font-size: 21.5px;
+}
+
 .bottom-shelf-left-div {
-  // background-color: lightyellow;
   width: 650px;
   padding: 25px 25px 0px 25px;
-  // border-right: 1px solid #E1E1E1;
 }
 
 .bottom-shelf-right-div {
-  // background-color: lightpink;
   width: 300px;
   margin-top: 25px;
   padding-right: 25px;
@@ -59,7 +77,6 @@
 .biz-profile-review-body {
   width: 400px;
   font-size: 13px;
-  // line-height: 17px;
 }
 
 .biz-profile-reviews-stars-date-div {

@@ -1,14 +1,13 @@
-.biz-profile-master-master {
-  // display: flex;
-  // position: absolute;
-}
-
 .biz-profile-top-master-container {
   display: flex;
   justify-content: center;
   position: relative;
   font-family: Arial, sans-serif;
   background-color: #F7F7F7;
+}
+
+.biz-profile-top-master-fixed {
+  width: 1000px;
 }
 
 .biz-profile-top-master-div {

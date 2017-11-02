@@ -45,11 +45,11 @@ class Biz extends React.Component {
       </div>
     );
   }
-
+// Link to={`/bizs/${biz.id}`}
   topShelfTopRight () {
     return (
       <div className="top-shelf-top-half-right-div">
-        <Link to="/bizs/{this.props.match.params.bizId}/reviews" className="top-shelf-right-review-link-div">
+        <Link to={`/bizs/${this.props.match.params.bizId}/reviews`} className="top-shelf-right-review-link-div">
           <img className="biz-profile-write-review-star" src={window.starWhite} />
           <p className="biz-profile-write-review-text">Write A Review</p>
         </Link>
@@ -122,6 +122,10 @@ class Biz extends React.Component {
     return (
       <div className="bottom-shelf-master-div">
         <div className="bottom-shelf-left-div">
+          <div className="bottom-shelf-reviews-label-div">
+            <span className="bottom-shelf-reviews-label">Recommended Reviews</span>
+            <span className="bottom-shelf-reviews-label-name">for {this.props.biz.name}</span>
+          </div>
           {this.reviewListing(this.props.reviews)}
         </div>
 
@@ -185,9 +189,11 @@ class Biz extends React.Component {
             {this.topShelf()}
           </div>
         </div>
-        <div className="biz-profile-bottom-master-container">
-          <div className="biz-profile-bottom-master-div">
-            {this.bottomShelf()}
+        <div className="biz-profile-bottom-master-master">
+          <div className="biz-profile-bottom-master-container">
+            <div className="biz-profile-bottom-master-div">
+              {this.bottomShelf()}
+            </div>
           </div>
         </div>
       </div>
