@@ -23,10 +23,12 @@
 }
 
 .bottom-shelf-right-div {
-  background-color: lightpink;
+  // background-color: lightpink;
   width: 300px;
-  padding-top: 25px;
+  margin-top: 25px;
   padding-right: 25px;
+  padding-left: 25px;
+  border-left: 1px solid #E1E1E1;
 }
 
 .biz-profile-review-div {
@@ -63,8 +65,6 @@
 .biz-profile-reviews-stars-date-div {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  padding-top: 4px;
 }
 
 .biz-profile-review-date {
@@ -73,7 +73,38 @@
 }
 
 .biz-profile-review-body-body {
-  margin-top: 20px;
+  margin-top: 17px;
   font-size: 14.5px;
   line-height: 17px;
+}
+
+.biz-profile-sidebar-description {
+  font-weight: 800;
+  color: #D92626;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.biz-profile-hours-day {
+  font-weight: 800;
+  font-size: 14px;
+  width: 40px;
+}
+
+.biz-profile-hours-div {
+  line-height: 19px;
+  display: flex;
+  flex-direction: row;
+}
+
+.biz-profile-hours-open {
+  font-size: 14px;
+}
+.biz-profile-hours-dash {
+  font-size: 14px;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+.biz-profile-hours-close {
+  font-size: 14px;
 }

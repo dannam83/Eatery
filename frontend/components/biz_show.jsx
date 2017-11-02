@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { starRatingAvgBig, starRatingReviews } from './stars';
 
 class Biz extends React.Component {
 
@@ -94,61 +95,7 @@ class Biz extends React.Component {
         <div></div>
       );
     }
-    return this.starRating(this.props.biz.avg_rating);
-  }
-
-  starRating (stars) {
-    if (stars < 2) {
-      return (
-        <span className="stars-biz-profile-review">
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
-          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
-          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
-          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
-        </span>
-      );
-    } else if (stars < 3) {
-      return (
-        <span className="stars-biz-profile-review-span">
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
-          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
-          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
-        </span>
-      );
-    } else if (stars < 4) {
-      return (
-        <span className="stars-biz-profile-review-span">
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
-          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
-        </span>
-      );
-    } else if (stars < 5) {
-      return (
-        <span className="stars-biz-profile-review-span">
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starClear} />
-        </span>
-      );
-    } else {
-      return (
-        <span className="stars-biz-profile-review-span">
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-          <img className="biz-profile-reviews-list-stars" src={window.starFull} />
-        </span>
-      );
-    }
+    return starRatingAvgBig(this.props.biz.avg_rating);
   }
 
   pricing (price) {
@@ -167,22 +114,23 @@ class Biz extends React.Component {
     return (
       <div className="bottom-shelf-master-div">
         <div className="bottom-shelf-left-div">
-          {this.review_listing(this.props.reviews)}
+          {this.reviewListing(this.props.reviews)}
         </div>
 
         <div className="bottom-shelf-right-div">
-          bottom shelf right div
+          <div className="biz-profile-sidebar-description">Hours</div>
+          {this.hoursListing(this.props.biz.hours)}
         </div>
       </div>
     );
   }
 
-  review_listing (reviews) {
-    let keys = Object.keys(reviews);
-    return keys.map((key) => {
-      let review = reviews[key];
+  reviewListing (reviews) {
+    let ids = Object.keys(reviews);
+    return ids.map((id) => {
+      let review = reviews[id];
       return (
-        <div className="biz-profile-review-div">
+        <div className="biz-profile-review-div" key={id}>
           <div>
             <img
               className="biz-profile-review-author-image"
@@ -194,11 +142,25 @@ class Biz extends React.Component {
           </div>
           <div className="biz-profile-review-body">
             <div className="biz-profile-reviews-stars-date-div">
-              <span>{this.starRating(review.rating)}</span>
+              <span>{starRatingReviews(review.rating)}</span>
               <span className="biz-profile-review-date">{review.date}</span>
             </div>
             <div className="biz-profile-review-body-body">{review.body}</div>
           </div>
+        </div>
+      );
+    });
+  }
+
+  hoursListing (hours) {
+    let days = Object.keys(hours);
+    return days.map((day) => {
+      return (
+        <div className="biz-profile-hours-div" key={day}>
+          <div className="biz-profile-hours-day">{day}</div>
+          <span className="biz-profile-hours-open">{hours[day][0]}</span>
+          <div className="biz-profile-hours-dash"> - </div>
+          <span className="biz-profile-hours-close">{hours[day][1]}</span>
         </div>
       );
     });
