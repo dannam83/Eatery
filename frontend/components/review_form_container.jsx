@@ -2,13 +2,17 @@ import ReviewForm from './review_form';
 import { connect } from 'react-redux';
 import { signup, login } from '../actions/session_actions';
 import { createReview } from '../actions/review_actions';
+import { fetchBiz } from '../actions/biz_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const loggedIn = state.currentUser ? true : false;
+  const loggedIn = state.session.currentUser ? true : false;
   const errors = state.errors.session;
   return {
     loggedIn,
     errors,
+    biz: state.entities.bizs[ownProps.match.params.bizId],
+    reviews: state.entities.reviews,
+    userId: state.session.currentUser.id
   };
 };
 

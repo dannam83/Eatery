@@ -7,7 +7,6 @@ class ReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setState = this.setState.bind(this);
   }
-  // this.handleGuest = this.handleGuest.bind(this);
 
   update(field) {
     return (e) => {
@@ -31,7 +30,7 @@ class ReviewForm extends React.Component {
   }
 
   sourcePath() {
-    if (this.props.params.bizId) {
+    if (this.props.match.params.bizId) {
       return ("bizs");
     } else {
       return ("users");
@@ -39,197 +38,216 @@ class ReviewForm extends React.Component {
   }
 
   sourceId() {
-    if (this.props.params.bizId) {
-      return (this.props.params.bizId);
+    if (this.props.match.params.bizId) {
+      return (this.props.match.params.bizId);
     } else {
-      return (this.props.params.userId);
+      return (this.props.userId);
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state).then(
-    this.props.history.push(`/${sourcePath()}/${sourceId()}`));
+    const review = {};
+    review.biz_id = parseInt(this.props.match.params.bizId);
+    review.user_id = this.props.userId;
+    review.rating = parseInt(this.state.rating);
+    review.body = this.state.body;
+    this.props.createReview(review).then(() => {
+      // 
+      this.props.history.push(`/${this.sourcePath()}/${this.sourceId()}`);
+    });
   }
 
-  // handleGuest(e) {
-  //   e.preventDefault();
-  //   this.props.processForm({['email']: "guest@hmail.com", ['password']: "asdf1234"}).then(
-  //     this.props.history.push('/')
-  //   );
-  // }
+  categories (categories) {
+      if (categories.length === 0) {
+        return null;
+      } else {
+        let last = categories.length;
+        return categories.map((cat, index) => {
+          if ( index + 1 === last) {
+            return (
+              <span
+                className="biz-index-item-cat-span"
+                key={cat.id}>{cat.category}
+              </span>
+            );
+          } else {
+            return (
+              <span
+                className="biz-index-item-cat-span"
+                key={cat.id}>{cat.category}<p className="biz-index-item-cat-comma">,</p>
+              </span>
 
-  intro(formType) {
-    if (this.props.match.path === '/signup') {
-      return(
-        <div>
-          <h1 className="intro-big">Sign Up for Eatery</h1>
-          <h2 className="intro-small">Connect with great local businesses</h2>
+            );
+          }
+      });
+    }
+  }
+
+  pricing (price) {
+    if (price < 2) {
+      return (<p className="biz-pricing">$</p>);
+    } else if (price < 3) {
+      return (<p className="biz-pricing">$$</p>);
+    } else if (price < 4) {
+      return (<p className="biz-pricing">$$$</p>);
+    } else {
+      return (<p className="biz-pricing">$$$$</p>);
+    }
+  }
+
+  reviewIntro(biz) {
+    return (
+      <div>
+        <div className="review-form-intro-text">
+          Write A Review
         </div>
+        <div className="review-form-intro-biz">
+          <div className="review-form-image-div">
+            <img className="review-form-intro-biz-pic"src={biz.img_url} />
+          </div>
+          <div className="review-form-intro-biz-summary">
+            <div>
+              <Link to={`/bizs/${biz.id}`} className="review-form-intro-biz-name">{biz.name}</Link>
+            </div>
+            <div className="review-form-price-dot-categories" id="review-form-price-categories">
+              {this.pricing(biz.price)}
+              <span className="biz-index-item-price-dot">.</span>
+              {this.categories(biz.categories)}
+            </div>
+            <div>
+              {biz.address}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  starRating (stars) {
+    if (stars < 2) {
+      return (
+        <span className="stars">
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starClear} />
+          <img className="star" src={window.starClear} />
+          <img className="star" src={window.starClear} />
+          <img className="star" src={window.starClear} />
+        </span>
       );
-    } else if (this.props.match.path === '/login') {
-      return(
-        <div>
-          <h1 className="intro-big">Log In to Eatery</h1>
-          <h2 className="intro-small">Welcome Back!</h2>
-        </div>
+    } else if (stars < 3) {
+      return (
+        <span className="stars">
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starClear} />
+          <img className="star" src={window.starClear} />
+          <img className="star" src={window.starClear} />
+        </span>
+      );
+    } else if (stars < 4) {
+      return (
+        <span className="stars">
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starClear} />
+          <img className="star" src={window.starClear} />
+        </span>
+      );
+    } else if (stars < 5) {
+      return (
+        <span className="stars">
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starClear} />
+        </span>
       );
     } else {
-      return(
-        <div>
-          <h1 className="intro-big">Want a taste?</h1>
-          <h2 className="intro-small">Sign in as a guest and check us out!</h2>
-        </div>
+      return (
+        <span className="stars">
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starFull} />
+          <img className="star" src={window.starFull} />
+        </span>
       );
     }
   }
 
-  nameInput(formType) {
-    if (this.props.match.path === '/signup') {
-      return(
-        <div className="form-name">
-            <input
-              className="input-name"
-              type="text"
-              onChange={this.update('fname')}
-              placeholder="First Name"
-              />
-            <input
-              className="input-name"
-              type="text"
-              onChange={this.update('lname')}
-              placeholder="Last Name"
-              />
-        </div>
-      );
-    }
-  }
-
-  zipCode(formType) {
-    if (this.props.match.path === '/signup') {
-      return(
-        <div>
-            <input
-              className="form-input"
-              type="text"
-              onChange={this.update('zipcode')}
-              placeholder="ZIP Code"
-              />
-        </div>
-      );
-    }
-  }
-
-  // if want to add a birthday column to table
-  // birthday(formType) {
-  //   if (this.props.match.path === '/signup') {
-  //     return(
-  //       <div>
-  //           <h3 className="birthday-text" id="birthday">Birthday</h3>
-  //           <h3 className="birthday-text" id="optional">Optional</h3>
-  //           <input
-  //             className="form-input"
-  //             type="text"
-  //             onChange={this.update('month')}
-  //             placeholder="ZIP Code"
-  //             />
-  //           <input
-  //             className="form-input"
-  //             type="text"
-  //             onChange={this.update('day')}
-  //             placeholder="ZIP Code"
-  //             />
-  //           <input
-  //             className="form-input"
-  //             type="text"
-  //             onChange={this.update('year')}
-  //             placeholder="ZIP Code"
-  //             />
-  //       </div>
-  //     );
-  //   }
-  // }
-
-  guestForm() {
+  reviewForm () {
+    let submitText = this.props.loggedIn ? "Post Review" : "Sign Up and Post";
     return (
-      <div className="form-div">
-        <form className="form" onSubmit={this.handleGuest}>
-          {this.renderErrors()}
-          {this.intro()}
-            <br/>
-            <input
-              className="form-input"
-              id="email"
-              type="text"
-              value="Guest"
-              onChange={this.update('email')}
-              />
-            <br/>
-            <input
-              className="form-input"
-              id="password"
-              type="text"
-              value="Thanks for visiting!"
-              onChange={this.update('password')}
-              />
-          <br/>
-          <input className="form-button" type="submit" value="Click here to begin"/>
-          <br/>
-          <h2 className="switch-comment">Or click here to get make your own account!</h2>
-          <Link className="switch-link" to="./signup">Sign Up</Link>
+      <div className="review-form-template-master-container">
+        <div className="review-form-template-text">Your Review</div>
+        <form onSubmit={this.handleSubmit}>
+          <div className="review-form-template">
+            <div className="review-form-select-rating-text">Select your rating:</div>
+            <div className="review-form-ratings">
+              <div className="review-form-ratings-radio-star">
+                <input type="radio" name="rating" value={1}
+                  onClick={this.update('rating')} className="review-form-radio-button"/>
+                {this.starRating(1)}
+              </div>
+              <div className="review-form-ratings-radio-star">
+                <input type="radio" name="rating" value={2}
+                  onClick={this.update('rating')} className="review-form-radio-button"/>
+                {this.starRating(2)}
+              </div>
+              <div className="review-form-ratings-radio-star">
+                <input type="radio" name="rating" value={3}
+                  onClick={this.update('rating')} className="review-form-radio-button"/>
+                {this.starRating(3)}
+              </div>
+              <div className="review-form-ratings-radio-star">
+                <input type="radio" name="rating" value={4}
+                  onClick={this.update('rating')} className="review-form-radio-button"/>
+                {this.starRating(4)}
+              </div>
+              <div className="review-form-ratings-radio-star">
+                <input type="radio" name="rating" value={5}
+                  onClick={this.update('rating')} className="review-form-radio-button"/>
+                {this.starRating(5)}
+              </div>
+            </div>
+            <div>
+              <textarea
+                name="body"
+                onChange={this.update('body')}
+                className="review-form-text-area"
+                placeholder="Write your review here!"
+                >
+              </textarea>
+            </div>
+          </div>
+          <input className="form-button" id="review-form-submit" type="submit" value={submitText}/>
         </form>
       </div>
     );
   }
 
-  sessionForm() {
-    const formType = this.props.formType;
-    const signup = formType === "Sign Up";
-    const otherType = signup ? "Log In" : "Sign Up";
-    const otherUrl = signup ? "/login" : "/signup";
-    const switchText = signup ? "Already on Eatery?" : "New to Eatery?";
-    return (
-      <div className="form-div">
-        <form className="form" onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
-          {this.intro()}
-          {this.nameInput()}
-            <br/>
-            <input
-              className="form-input"
-              id="email"
-              type="text"
-              onChange={this.update('email')}
-              placeholder="Email"
-              />
-            <br/>
-            <input
-              className="form-input"
-              id="password"
-              type="password"
-              onChange={this.update('password')}
-              placeholder="Password"
-              />
-          <br/>
-          {this.zipCode()}
-          <br/>
-          <input className="form-button" type="submit" value={formType}/>
-          <br/>
-          <h2 className="switch-comment">{switchText}</h2>
-          <Link className="switch-link" to={otherUrl}>{otherType}</Link>
-        </form>
-      </div>
-    );
+  otherReviews(reviews) {
+    return reviews.map((review) => {
+      return (
+        <div className="review-form-other-review">
+          <div className="review-form-other-name">
+            pic and name
+          </div>
+          <div>
+            stars and date
+          </div>
+          <div>
+            review body
+          </div>
+        </div>
+      );
+    });
   }
 
-  sidePic() {
-    return (
-      <div className="welcome-div">
-        <img className="welcome-img" src={welcome}></img>
-      </div>
-    );
-  }
-
+  // {otherReviews()}
   render() {
     let submit="pick the button";
     return (
@@ -237,40 +255,17 @@ class ReviewForm extends React.Component {
         <div className="review-form-master-fixed">
 
           <div className="review-form-left-div">
-            this is on the left
+            {this.reviewIntro(this.props.biz)}
+            {this.reviewForm()}
           </div>
           <div className="review-form-right-div">
-            this is on the right
-          </div>
 
+          </div>
         </div>
       </div>
     );
   }
 
 }
-
-// if (this.props.formType === "Guest") {
-//   return (
-//     <div className="form-welcome-container">
-//       <div className="form-container">
-//         {this.guestForm()}
-//       </div>
-//       <div className="welcome-container">
-//         {this.sidePic()}
-//       </div>
-//     </div>
-//   );
-// } else {
-//   return (
-//     <div className="form-welcome-container">
-//       <div className="form-container">
-//         {this.sessionForm()}
-//       </div>
-//       <div className="welcome-container">
-//         {this.sidePic()}
-//       </div>
-//     </div>
-// );}
 
 export default ReviewForm;

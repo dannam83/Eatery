@@ -1,6 +1,6 @@
 class Api::ReviewsController < ApplicationController
 
-  before_action :require, only: [:create, :edit, :update]
+  # before_action :require, only: [:create, :edit, :update]
 
   def show
     @review = Review.find(params[:id])
@@ -11,6 +11,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
+
     @review = Review.new(review_params)
 
     if @review.save

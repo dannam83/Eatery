@@ -8,10 +8,10 @@
 
 require 'faker'
 
-User.delete_all
-Biz.delete_all
-Review.delete_all
-Description.delete_all
+User.destroy_all
+Biz.destroy_all
+Review.destroy_all
+Description.destroy_all
 
 User.create(
   fname: "Guest",
