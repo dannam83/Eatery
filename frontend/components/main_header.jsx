@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const logo = () => (
   <div className="logo-default-div">
     <Link to="/" className="logo-default">Eatery</Link>
-    <a href="/">
+    <Link to="/">
       <img className="chefPic" id="default-chef" src={window.chefLogo}></img>
-    </a>
+    </Link>
   </div>
 );
 
@@ -16,10 +16,9 @@ const sessionLinks = () => (
   </div>
 );
 
-const greeter = (currentUser, logout) => (
+const greeter = (currentUser) => (
   <div className="greeter-default-div">
-    <h3>{currentUser.fname} {currentUser.lname[0]}</h3>
-    <Link onClick={logout} to="/login" className="logout-default">Log Out</Link>
+    <img className="greeter-default-img" src={currentUser.img_url} />
   </div>
 );
 
@@ -49,13 +48,17 @@ const mainHeaderSearch = (currentUser, logout, location) => {
   );
 };
 
-const loginButton = (currentUser) => {
+const loginButton = (currentUser, logout) => {
   if (!currentUser) {
     return (
       <Link to="/login" className="header-default-login">Log In</Link>
-    )
+    );
+  } else {
+    return (
+      <Link className="header-default-login" to="/login" onClick={logout}>Log Out</Link>
+    );
   }
-}
+};
 
 const mainHeaderLinks = (currentUser) => {
   return (

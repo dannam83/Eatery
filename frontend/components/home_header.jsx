@@ -31,7 +31,9 @@ const loginLinks = (currentUser, logout) => {
   return (
     <div className="extra-choices-box2">
       <div className="session-choice">
-        <h3 className="session-start">{currentUser.fname} {currentUser.lname[0]}</h3>
+        <h3 className="session-start">
+          {currentUser.fname}
+          <p className="home-header-lname">{currentUser.lname[0]}</p></h3>
       </div>
       <div className="session-choice">
         <Link className="session-start" id="logging" to="/login" onClick={logout}>Log Out</Link>

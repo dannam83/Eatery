@@ -87,7 +87,7 @@
 
 .review-form-template {
   border: 1px solid #CDCDCD;
-  padding: 15px 15px 15px 15px;
+  padding: 15px 16px 15px 15px;
 }
 
 .review-form-template-text {
@@ -120,9 +120,15 @@
 }
 
 .review-form-text-area {
-  width: 540px;
+  width: 600px;
   min-height: 150px;
   border: none;
+  // padding: 10px;
+  font-size: 14px;
+  resize: none;
+}
+.review-form-text-area:focus {
+  outline: none;
 }
 
 #review-form-submit {

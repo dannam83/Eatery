@@ -30,7 +30,7 @@ const App = () => (
       </Switch>
     </header>
 
-    <AuthRoute exact path="/login" component={SessionFormContainer} />
+    <Route exact path="/login" component={SessionFormContainer} />
     <AuthRoute exact path="/signup" component={SessionFormContainer} />
     <AuthRoute exact path="/guest" component={SessionFormContainer} />
     <Route exact path="/search" component={SearchContainer} />

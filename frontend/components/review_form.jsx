@@ -48,9 +48,9 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const review = {};
-    review.biz_id = parseInt(this.props.match.params.bizId);
+    review.biz_id = this.props.match.params.bizId;
     review.user_id = this.props.userId;
-    review.rating = parseInt(this.state.rating);
+    review.rating = this.state.rating;
     review.body = this.state.body;
     this.props.createReview(review).then(() => {
       //

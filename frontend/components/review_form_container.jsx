@@ -7,14 +7,14 @@ import { fetchBiz } from '../actions/biz_actions';
 const mapStateToProps = (state, ownProps) => {
   const loggedIn = state.session.currentUser ? true : false;
   const errors = state.errors.session;
-  const id = state.session.currentUser ? state.session.currentUser.id : "";
+  const userId = state.session.currentUser ? state.session.currentUser.id : "";
   const reviews = state.entities.reviews ? state.entities.reviews : [];
   return {
     loggedIn,
     errors,
     biz: state.entities.bizs[ownProps.match.params.bizId],
     reviews: reviews,
-    userId: id
+    userId: userId
   };
 };
 

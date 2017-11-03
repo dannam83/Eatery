@@ -97,7 +97,17 @@
 .greeter-default-div {
   display: flex;
   position: relative;
+  justify-content: center;
   align-items: center;
+  font-family: Arial, sans-serif;
+  margin-left: 0px;
+  padding-left: 32px;
+  border-radius: 4px;
+}
+
+.greeter-default-img {
+  height: 40px;
+  border-radius: 4px;
 }
 
 .search-default-div {
