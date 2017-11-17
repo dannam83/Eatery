@@ -16,8 +16,6 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-// const Header = this.props.location === '/' ? HomeHeaderCon : MainHeaderCon;
-
 const App = () => (
   <div>
     <header>
@@ -30,7 +28,7 @@ const App = () => (
       </Switch>
     </header>
 
-    <Route exact path="/login" component={SessionFormContainer} />
+    <AuthRoute exact path="/login" component={SessionFormContainer} />
     <AuthRoute exact path="/signup" component={SessionFormContainer} />
     <AuthRoute exact path="/guest" component={SessionFormContainer} />
     <Route exact path="/search" component={SearchContainer} />
@@ -42,6 +40,3 @@ const App = () => (
 );
 
 export default App;
-
-// SCSS
-// put header into component

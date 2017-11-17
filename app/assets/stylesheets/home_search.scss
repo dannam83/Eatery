@@ -105,6 +105,21 @@
   text-decoration: none;
   margin-right: 15px;
 }
+.designedBy {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.designedByItem {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+}
+
+.aboutLinks {
+  margin-top: 8px;
+}
 
 .photoCred {
   display: flex;
@@ -132,9 +147,9 @@
   font-size: 14.5px;
 }
 
-.photoName:hover {
-  text-decoration: underline;
-}
+// .photoName:hover {
+//   text-decoration: underline;
+// }
 
 .photoLocation {
   font-weight: 900;

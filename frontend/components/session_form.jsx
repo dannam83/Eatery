@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Alert from './alert.jsx';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -19,24 +20,30 @@ class SessionForm extends React.Component {
     const errors = this.props.errors.session;
       if (errors) {
         return(
-        <ul>
-          {this.props.errors.session.map((error, i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
+          new Alert (errors.responseJSON.errors)
       );
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state).then(
-      this.props.history.push('/')).then(
-        this.setState({['email']: ""})).then(
-          this.setState({['password']: ""})
-        );
+    if (this.state.email === "") {
+      alert ("Please enter your email.");
+    } else if (!this.state.password) {
+      alert ("Please enter a password.");
+    } else if (this.state.password.length < 6) {
+      alert ("Password must be at least 6 characters long.");
+    } else {
+      this.props.processForm(this.state);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors.responseJSON) {
+      alert (nextProps.errors.responseJSON.errors);
+    } else {
+      this.setState({['email']: "", ['password']:""});
+    }
   }
 
   handleGuest(e) {

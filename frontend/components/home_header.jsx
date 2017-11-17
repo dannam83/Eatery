@@ -14,11 +14,17 @@ const links = () => {
   )
 }
 
-const extraLinks = () => {
+const extraLinks = (currentUser) => {
+  let guest;
+  if (currentUser) {
+    guest = "Home"
+  } else {
+    guest = "Guest"
+  }
   return (
     <div className="extra-choices-box">
       <div className="extra-choices">
-        <Link className="extra-links" to="/guest">Guest</Link>
+        <Link className="extra-links" to="/guest">{guest}</Link>
       </div>
       <div className="extra-choices">
         <Link className="extra-links" to="/search">Restaurants</Link>
@@ -75,54 +81,65 @@ const mainSearch = () => {
 const mainLinks = () => {
   return (
     <div className="mainLinks">
-      <div></div>
       <Link to="/search" className="mainLink">Restaurants</Link>
-      <div></div>
       <Link to="/" className="mainLink">Night Life</Link>
-      <div></div>
       <Link to="/" className="mainLink">Home Delivery</Link>
-      <div></div>
       <Link to="/" className="mainLink">Services</Link>
     </div>
   )
 }
+const designedBy = () => {
+  return (
+    <div className="designedBy">
+      <div>
+        <span className="designedByCreatedBy designedByItem">Created By</span>
+        <Link to="/" className="designedByName designedByItem">Daniel Nam</Link>
+      </div>
+      <div className="aboutLinks">
+        <Link to="/" className="designedByLink designedByItem">Home Delivery</Link>
+        <Link to="/" className="designedByLink designedByItem">Services</Link>
+      </div>
+    </div>
+  )
+}
 
-const photoCred = (location, name) => {
+const photoCred = (location, name, url) => {
   return (
     <div className="photoCred">
-      <Link to="/biz/bizId" className="photoLocation">{location}</Link>
-      <div className="photoCredName">Photo by<Link to="/users/userId" className="photoName">{name}</Link></div>
+      <Link to={url} className="photoLocation">{location}</Link>
+      <div className="photoCredName">Photo by<span to="/users/userId" className="photoName">{name}</span></div>
     </div>
   )
 }
 
 const HomeHeader = ({currentUser, logout, location}) => {
   const images = [
-    [window.burger, "Burger Station", "Jen K."],
-    [window.cupcakes, "Frosted City", "Valerie S."],
-    [window.ribs, "Wild West Broiler", "Tony L."],
-    [window.sushi, "Osaka Sushi", "David N."],
-    [window.tacos, "Macho Taco", "Jill A."],
-    [window.steak, "Jeter Mueger Steakhouse", "Kurt R."]
+    [window.burger, "I <3 Burgers", "Jen K.", "/bizs/73"],
+    [window.cupcakes, "Richard Sherman IceCream", "Valerie S.", "bizs/71"],
+    [window.ribs, "Spaghetti Maghetti", "Tony L.", "bizs/72"],
+    [window.sushi, "Happy Eats", "David N.", "/bizs/69"],
+    [window.tacos, "Deli Licious", "Jill A.", "/bizs/64"],
+    [window.steak, "Russell Wilson Steakhouse", "Kurt R.", "/bizs/70"]
   ]
   const imageInfo = images[Math.floor(Math.random()*images.length)];
   const image = imageInfo[0];
   const locale = imageInfo[1];
   const name = imageInfo[2];
+  const url = imageInfo[3];
   return (
   <nav className="signed-out">
     <img className="homePic" src={image}></img>
     <div className="blocker"></div>
     <div className="fixed-size-box-organizer">
       <div className="fixed-size-box">
-        {extraLinks()}
+        {extraLinks(currentUser)}
         {greeterSelector(currentUser, logout)}
       </div>
       <div className="fixed-size-others">
         {mainLogo()}
         {mainSearch()}
-        {mainLinks()}
-        {photoCred(locale,name)}
+        {designedBy()}
+        {photoCred(locale, name, url)}
       </div>
     </div>
   </nav>

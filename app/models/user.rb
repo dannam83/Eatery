@@ -55,6 +55,10 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def self.email_used?(email)
+    !!User.find_by(email: email)
+  end
+
   private
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
