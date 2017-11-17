@@ -54,7 +54,7 @@ The map was also tricky to work with. There was a bug with the map marker labels
 
 ## Link
 http://eatery-dn.herokuapp.com
-  
+
 ## Experience
 To explore Eatery you can use the guest login provided, or you can just go ahead and create your own account. Don't worry, your password is fully encrypted and safe with Eatery! After logging in, click on restaurants to see the list of restaurants and the reviews for each. You might recognize some of review writers.
 
