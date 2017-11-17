@@ -92,12 +92,8 @@ const designedBy = () => {
   return (
     <div className="designedBy">
       <div>
-        <span className="designedByCreatedBy designedByItem">Created By</span>
-        <Link to="/" className="designedByName designedByItem">Daniel Nam</Link>
-      </div>
-      <div className="aboutLinks">
-        <Link to="/" className="designedByLink designedByItem">Home Delivery</Link>
-        <Link to="/" className="designedByLink designedByItem">Services</Link>
+        <span className="designedByCreatedBy designedByItem designedByTop">a website created by</span>
+        <a href="http://dannam.xyz" className="designedByName designedByItem designedByTop">Daniel Nam</a>
       </div>
     </div>
   )

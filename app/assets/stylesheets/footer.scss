@@ -54,18 +54,88 @@
   display: flex;
   justify-content: center;
   min-width: 1000px;
-  position: relative;
-  height: 50px;
 }
 
 .footer-pic {
   width: 600px;
   opacity: 0.5;
-  display: none;
+  display: flex;
 }
 
-@media screen and (min-width:1000px) {
-  .footer-pic {
-    display: flex;
+// @media screen and (min-width:1000px) {
+//   .footer-pic {
+//     display: flex;
+//   }
+// }
+
+@media screen and (min-height:800px) {
+  .footer-master-container {
+    height: 550px;
   }
+}
+
+.footer-me-div {
+  margin-bottom: 40px;
+}
+
+.footer-row {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+}
+
+.name {
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.footer-me-name {
+  text-decoration: none;
+  padding-right: 9px;
+}
+
+.footer-me-name:visited {
+  color: #D30000;
+}
+
+.footer-me-name:hover {
+  text-decoration: underline;
+}
+
+.footer-me-FA {
+  color: #0072B2;
+}
+
+.footer-me-FA:hover {
+  color: #000099;
+  animation-name: spin;
+  animation-duration: 2500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes roll {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.footer-route {
+  align-self: flex-end;
+}
+
+.footer-master-container {
+  background-color: #F7F7F7;
 }

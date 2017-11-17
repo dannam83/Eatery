@@ -17,7 +17,7 @@ import {
 } from 'react-router-dom';
 
 const App = () => (
-  <div>
+  <div className="app-master-container">
     <header>
       <Switch>
         <Route exact path="/" component={HomeHeaderCon} />
@@ -35,7 +35,7 @@ const App = () => (
     <Route exact path="/bizs/:bizId" component={BizContainer} />
     <Route exact path="/bizs/:bizId/reviews" component={ReviewFormContainer} />
 
-    <Route path="/" component={FooterContainer} />
+    <Route path="/" component={FooterContainer} className="footer-route"/>
   </div>
 );
 

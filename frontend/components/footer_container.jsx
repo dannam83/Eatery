@@ -1,5 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FontAwesome from 'react-fontawesome';
+
+const aboutMe = () => {
+  return (
+    <div className="footer-column footer-me-div">
+      <div className="footer-label footer-row name">
+        <a href="http://dannam.xyz" className="footer-me-name">Daniel Nam</a>
+      </div>
+      <div className="footer-row">
+        <a className="footer-me-anchor"
+          href="http://github.com/dannam83">
+          <FontAwesome name='icon alt fa-github' className="footer-me-FA" />
+        </a>
+  			<a className="footer-me-anchor"
+          href="https://www.linkedin.com/in/daniel-nam-4032a0b/">
+  				<FontAwesome name="icon alt fa-linkedin" className="footer-me-FA" />
+        </a>
+  			<a className="footer-me-anchor"
+          href="https://angel.co/daniel-nam-3?public_profile=1">
+  				<FontAwesome name="icon alt fa-angellist" className="footer-me-FA" />
+        </a>
+  			<a className="footer-me-anchor"
+          href="http://dannam.xyz/images/resume.pdf">
+  				<FontAwesome name="icon alt fa-file-pdf-o" className="footer-me-FA" />
+        </a>
+  			<a className="footer-me-anchor"
+          href="mailto:dannam83@gmail.com">
+  				<FontAwesome name="icon alt fa-envelope" className="footer-me-FA" />
+        </a>
+      </div>
+    </div>
+  );
+};
 
 const about = () => {
   return (
@@ -83,8 +116,9 @@ const footerPic = () => {
 
 const FooterContainer = () => {
   return (
-    <div>
+    <div className="footer-master-container">
       <div className="footer-container">
+        {aboutMe()}
       </div>
       <div className="footer-pic-container">
         <img className="footer-pic" src={window.cityscape}>

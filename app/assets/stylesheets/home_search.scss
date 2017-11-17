@@ -106,15 +106,20 @@
   margin-right: 15px;
 }
 .designedBy {
-  margin-top: 15px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
 }
 .designedByItem {
   color: white;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 500;
   font-family: Arial, sans-serif;
+}
+
+.designedByTop {
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .aboutLinks {
