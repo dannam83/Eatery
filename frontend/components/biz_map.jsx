@@ -20,7 +20,6 @@ class BizMap extends React.Component {
     // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     // this.MarkerManager = new MarkerManager(this.map);
-
     this.listenForMove();
     this.props.bizs.forEach((biz, index) => {
       let label = (index + 1).toString();
@@ -28,7 +27,7 @@ class BizMap extends React.Component {
     });
   }
 
-  componentDidUpdate() {
+  componentWillReceiveProps() {
     let count = 0;
     this.props.bizs.forEach(biz => {
       count++;

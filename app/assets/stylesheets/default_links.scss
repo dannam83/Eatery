@@ -37,7 +37,7 @@
 }
 
 .header-default-space {
-  width: 103px;
+  width: 58px;
 }
 
 .header-default-link:hover, .header-default-login:hover {
@@ -49,5 +49,20 @@
 }
 
 #header-default-link-first {
-  margin-left: 92px;
+  margin-left: 5px;
+}
+
+* {
+  transition: color 0.5s;
+}
+
+.about-me {
+  -webkit-animation:colorchange 20s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+  0% {color: white;}
+  33% {color: darkred;}
+  66% {color: #02AD00;}
+  100% {color: white}
 }

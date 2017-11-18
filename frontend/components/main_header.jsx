@@ -22,6 +22,9 @@ class MainHeader extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.fetchBizs(this.state);
+    if (this.props.match.path != "/search") {
+      this.props.history.push("/search");
+    }
   }
 
   logo () {
@@ -66,7 +69,7 @@ class MainHeader extends React.Component {
         <input
           className="search-default-input"
           type="text"
-          placeholder="city, state"
+          placeholder="Manhattan, NY"
         />
         <input className="search-default-submit" type="submit" value="Go"/>
       </form>
@@ -103,13 +106,23 @@ class MainHeader extends React.Component {
     return (
       <div className="header-default-links-container">
         <div className="header-default-links">
-          <Link className="header-default-link" id="header-default-link-first" to="/search">Restaurants</Link>
-          <Link className="header-default-link" to="/search">Nightlife</Link>
-          <Link className="header-default-link" to="/search">Home Services</Link>
+          <Link className="header-default-link" id="header-default-link-first"
+            to="/search">Search Page</Link>
           <p className="header-default-link-period">.</p>
-          <Link className="header-default-link" to="/search">Write a Review</Link>
-          <Link className="header-default-link" to="/search">Events</Link>
-          <Link className="header-default-link" to="/search">Talk</Link>
+          <a className="header-default-link about-me"
+            href="http://dannam.xyz">About Me</a>
+          <p className="header-default-link-period">.</p>
+          <a className="header-default-link about-me"
+            href="http://github.com/dannam83">GitHub</a>
+          <a className="header-default-link about-me"
+            href="https://www.linkedin.com/in/daniel-nam-4032a0b/">LinkedIn</a>
+          <a className="header-default-link about-me"
+            href="https://angel.co/daniel-nam-3?public_profile=1">Angel List</a>
+          <p className="header-default-link-period">.</p>
+          <a className="header-default-link about-me"
+            href="http://dannam.xyz/images/resume.pdf">Resume</a>
+          <a className="header-default-link about-me"
+            href="mailto:dannam83@gmail.com">Contact</a>
           <p className="header-default-space"></p>
           {this.loginButton(currentUser)}
         </div>

@@ -93,11 +93,12 @@
   flex-direction: row;
   align-items: flex-start;
   margin-right: 5px;
+  overflow: hidden;
+  height: 35px;
 }
 
 .biz-index-review-pic {
   width: 35px;
-  height: 35px;
   border-radius: 4px;
 }
 

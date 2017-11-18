@@ -124,7 +124,6 @@ class HomeHeader extends React.Component {
     );
   }
 
-  // extra divs in between for inserting icons
   mainLinks () {
     return (
       <div className="mainLinks">
@@ -135,6 +134,7 @@ class HomeHeader extends React.Component {
       </div>
     );
   }
+
   designedBy () {
     return (
       <div className="designedBy">
