@@ -59,7 +59,11 @@ class MainHeader extends React.Component {
           id="filter"
           />
         <span className="search-default-label" id="search-default-second"><p className="short-default-border">Near</p></span>
-        <input className="search-default-input" type="text" placeholder="city, state"/>
+        <input
+          className="search-default-input"
+          type="text"
+          placeholder="city, state"
+        />
         <input className="search-default-submit" type="submit" value="Go"/>
       </form>
     );

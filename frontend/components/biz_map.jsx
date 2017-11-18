@@ -19,11 +19,11 @@ class BizMap extends React.Component {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     // this.MarkerManager = new MarkerManager(this.map);
 
-    this.listenForMove();
-    this.props.bizs.forEach((biz, index) => {
-      let label = (index + 1).toString();
-      this.addBiz(biz, label);
-    });
+    // this.listenForMove();
+    // this.props.bizs.forEach((biz, index) => {
+    //   let label = (index + 1).toString();
+    //   this.addBiz(biz, label);
+    // });
   }
 
   componentDidUpdate() {

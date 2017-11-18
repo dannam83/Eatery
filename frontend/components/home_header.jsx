@@ -3,6 +3,25 @@ import { Link } from 'react-router-dom';
 
 class HomeHeader extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.setState = this.setState.bind(this);
+  }
+
+  update(field) {
+    return (e) => {
+      this.setState({[field]:e.target.value});
+    };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.fetchBizs(this.state).then(
+      this.props.history.push("/search")
+    );
+  }
+
   links () {
     return (
       <div className="extra-choices-box2">
@@ -69,11 +88,20 @@ class HomeHeader extends React.Component {
 
   mainSearch () {
     return (
-      <form className="mainSearch">
+      <form className="mainSearch" onSubmit={this.handleSubmit}>
         <span className="mainSearchLabel" id="mainSearchFirst">Find</span>
-        <input className="mainSearchInput" type="text" placeholder="burgers, deli, italian, etc."/>
+        <input
+          className="mainSearchInput"
+          type="text"
+          onChange={this.update('search')}
+          placeholder="burgers, deli, italian, etc."
+          />
         <span className="mainSearchLabel" id="mainSearchSecond"><p className="shortBorder">Near</p></span>
-        <input className="mainSearchInput" type="text" placeholder="Manhattan, NY"/>
+        <input
+          className="mainSearchInput"
+          type="text"
+          placeholder="Manhattan, NY"
+        />
         <input className="mainSearchSubmit" type="submit" id="mainSearchLast" value="Go"/>
       </form>
     );

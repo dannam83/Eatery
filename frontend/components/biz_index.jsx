@@ -6,7 +6,9 @@ import BizMap from './biz_map';
 class BizIndex extends React.Component {
 
   componentDidMount () {
-    this.props.fetchBizs();
+    if (this.props.bizs.length < 1) {
+      this.props.fetchBizs();
+    }
   }
 
   bizIndex (bizs) {
