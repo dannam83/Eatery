@@ -13,8 +13,8 @@ const receiveBiz = (biz) => ({
   biz,
 });
 
-export const fetchBizs = () => (dispatch) => {
-  return (BizApiUtil.fetchBizs().then(
+export const fetchBizs = (filter) => (dispatch) => {
+  return (BizApiUtil.fetchBizs(filter).then(
     (bizs) => dispatch(receiveBizs(bizs))
   ));
 };
