@@ -12,7 +12,7 @@ class Api::BizsController < ApplicationController
       matches = search_typing(@bizs, filter) if filter
       render :json => {matches: matches}
     else
-      @bizs = @bizs.shuffle[0...5]
+      @bizs = @bizs.shuffle[0...10]
       render :index
     end
 
@@ -21,14 +21,18 @@ class Api::BizsController < ApplicationController
   def search_entered(bizs, filter)
     bizs = bizs.select{ |biz| biz.name_match_filter(filter)}
     biz_cat_matches = Description.matching_bizs(filter)
-    bizs.concat(biz_cat_matches)
+    bizs = bizs.concat(biz_cat_matches)
+    bizs = bizs[0...10] if bizs.length > 10
+    bizs
   end
 
   def search_typing(bizs, filter)
     bizs = bizs.select{ |biz| biz.name_match_filter(filter)}
     bizs = bizs.map{|biz| biz.name}
     cat_matches = Description.matching_cats(filter)
-    cat_matches.concat(bizs)
+    matches = cat_matches.concat(bizs)
+    matches = matches[0...10] if matches.length > 10
+    matches
   end
 
   def show

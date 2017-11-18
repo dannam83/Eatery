@@ -23,7 +23,10 @@ class Description < ApplicationRecord
       category = listing.category.downcase.delete(" ").delete("-")
       filter = filter.downcase.delete(" ").delete("-")
       filter = filter.chars[0...-1].join if filter[-1] == "s"
-      if category.include?(filter)
+      search_letters = filter.length
+      if filter[0...search_letters] == category[0...search_letters]
+        bizs.unshift(listing.biz)
+      elsif category.include?(filter)
         bizs << listing.biz
       end
     end
@@ -36,11 +39,14 @@ class Description < ApplicationRecord
       category = listing.category.downcase.delete(" ").delete("-")
       filter = filter.downcase.delete(" ").delete("-")
       filter = filter.chars[0...-1].join if filter[-1] == "s"
-      if category.include?(filter)
+      search_letters = filter.length
+      if filter[0...search_letters] == category[0...search_letters]
+        cats.unshift(listing.category)
+      elsif category.include?(filter)
         cats << listing.category
       end
     end
-    cats
+    cats.uniq
   end
 
 end

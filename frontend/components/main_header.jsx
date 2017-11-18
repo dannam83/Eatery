@@ -12,8 +12,11 @@ class MainHeader extends React.Component {
   update(field) {
     return (e) => {
       this.setState({[field]:e.target.value});
-      this.props.fetchMatches(this.state);
     };
+  }
+
+  componentDidUpdate() {
+    this.props.fetchMatches(this.state);
   }
 
   handleSubmit(e) {

@@ -6,6 +6,7 @@ const aboutMe = () => {
   return (
     <div className="footer-column footer-me-div">
       <div className="footer-label footer-row name">
+        <p className="footer-name-by">a website by</p>
         <a href="http://dannam.xyz" className="footer-me-name">Daniel Nam</a>
       </div>
       <div className="footer-row">

@@ -28,6 +28,10 @@ class HomeHeader extends React.Component {
     };
   }
 
+  componentDidUpdate() {
+    this.props.fetchMatches(this.state);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.fetchBizs(this.state).then(

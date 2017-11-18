@@ -82,17 +82,25 @@
   width: 300px;
   display: flex;
   justify-content: space-between;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 .name {
   justify-content: center;
   padding-bottom: 20px;
+  font-family: 'Shadows Into Light', cursive;
+
+}
+
+.footer-name-by {
+  font-size: 20px;
+  padding-top: 5px;
 }
 
 .footer-me-name {
   text-decoration: none;
-  padding-right: 9px;
+  padding-right: 6px;
+  padding-left: 8px;
 }
 
 .footer-me-name:visited {
@@ -105,12 +113,16 @@
 
 .footer-me-FA {
   color: #0072B2;
+  animation-name: spin;
+  animation-duration: 7000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .footer-me-FA:hover {
   color: #000099;
   animation-name: spin;
-  animation-duration: 2500ms;
+  animation-duration: 700ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }

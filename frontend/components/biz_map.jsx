@@ -10,9 +10,11 @@ class BizMap extends React.Component {
   }
 
   componentDidMount() {
-
+    // const firstBiz = this.props.bizs.first;
+    // const centerLat = firstBiz.lat || 40.7629471996736;
+    // const centerLng = firstBiz.lng || -73.97823811645509;
     const mapOptions = {
-      center: { lat: 40.76294719967364, lng: -73.97823811645509 },
+      center: { lat: 40.7629471996736, lng: -73.97823811645509 },
       zoom: 13
     };
     // wrap the mapDOMNode in a Google Map
