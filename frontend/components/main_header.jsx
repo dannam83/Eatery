@@ -17,15 +17,7 @@ class MainHeader extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.email === "") {
-      alert ("Please enter your email.");
-    } else if (!this.state.password) {
-      alert ("Please enter a password.");
-    } else if (this.state.password.length < 6) {
-      alert ("Password must be at least 6 characters long.");
-    } else {
-      this.props.processForm(this.state);
-    }
+    this.props.fetchBizs(this.state);
   }
 
   logo () {
@@ -57,9 +49,15 @@ class MainHeader extends React.Component {
 
   searchBar () {
     return (
-      <form className="search-default-div">
+      <form className="search-default-div" onSubmit={this.handleSubmit}>
         <span className="search-default-label" id="search-default-first">Find</span>
-        <input className="search-default-input" type="text" placeholder="burgers, deli, italian, etc."/>
+        <input
+          className="search-default-input"
+          type="text"
+          onChange={this.update('search')}
+          placeholder="burgers, deli, italian, etc."
+          id="filter"
+          />
         <span className="search-default-label" id="search-default-second"><p className="short-default-border">Near</p></span>
         <input className="search-default-input" type="text" placeholder="city, state"/>
         <input className="search-default-submit" type="submit" value="Go"/>

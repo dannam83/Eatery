@@ -1,8 +1,10 @@
 class Api::BizsController < ApplicationController
   def index
-    filter = params[:filter]
+    filter = nil
+    filter = params[:filter] if params[:filter]
+    filter = filter[:search] if params[:filter]
     @bizs = params[:bounds] ? Biz.in_bounds(params[:bounds]) : Biz.all
-    @bizs.select!{ |biz| biz.name_match_filter(filter)} if filter
+    @bizs = @bizs.select{ |biz| biz.name_match_filter(filter)} if filter
     cat_matches = Description.matching_bizs(filter) if filter
     @bizs = @bizs.concat(cat_matches) if filter
     render :index

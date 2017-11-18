@@ -29,7 +29,7 @@ class BizIndex extends React.Component {
 
   render () {
     const bizs = this.props.bizs;
-    if (bizs.length < 2) {
+    if (bizs.length < 1) {
       return null;
     }
     return(

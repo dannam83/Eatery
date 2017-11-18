@@ -21,10 +21,9 @@ class Description < ApplicationRecord
     bizs = []
     Description.all.each do |listing|
       category = listing.category.downcase.delete(" ").delete("-")
-      category = category.chars[0...-1].join if category[-1] == "s"
       filter = filter.downcase.delete(" ").delete("-")
       filter = filter.chars[0...-1].join if filter[-1] == "s"
-      if category[0...filter.length] == filter
+      if category.include?(filter)
         bizs << listing.biz
       end
     end
