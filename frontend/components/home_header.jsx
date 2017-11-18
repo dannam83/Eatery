@@ -7,6 +7,19 @@ class HomeHeader extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setState = this.setState.bind(this);
+    const images = [
+      [window.burger, "I <3 Burgers", "Jen K.", "/bizs/73"],
+      [window.cupcakes, "Richard Sherman IceCream", "Valerie S.", "bizs/71"],
+      [window.ribs, "Spaghetti Maghetti", "Tony L.", "bizs/72"],
+      [window.sushi, "Happy Eats", "David N.", "/bizs/69"],
+      [window.tacos, "Deli Licious", "Jill A.", "/bizs/64"],
+      [window.steak, "Russell Wilson Steakhouse", "Kurt R.", "/bizs/70"]
+    ];
+    this.state = {imageInfo: images[Math.floor(Math.random()*images.length)]};
+  }
+
+  componentDidMount () {
+    this.props.fetchBizs();
   }
 
   update(field) {
@@ -142,15 +155,7 @@ class HomeHeader extends React.Component {
     const currentUser = this.props.currentUser;
     const logout = this.props.logout;
     const location = this.props.location;
-    const images = [
-      [window.burger, "I <3 Burgers", "Jen K.", "/bizs/73"],
-      [window.cupcakes, "Richard Sherman IceCream", "Valerie S.", "bizs/71"],
-      [window.ribs, "Spaghetti Maghetti", "Tony L.", "bizs/72"],
-      [window.sushi, "Happy Eats", "David N.", "/bizs/69"],
-      [window.tacos, "Deli Licious", "Jill A.", "/bizs/64"],
-      [window.steak, "Russell Wilson Steakhouse", "Kurt R.", "/bizs/70"]
-    ];
-    const imageInfo = images[Math.floor(Math.random()*images.length)];
+    const imageInfo = this.state.imageInfo;
     const image = imageInfo[0];
     const locale = imageInfo[1];
     const name = imageInfo[2];

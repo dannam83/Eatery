@@ -20,8 +20,14 @@ class Search extends React.Component {
         </div>
         <div className="biz-index-map-container">
           <div className="biz-index-map-div">
-            <BizIndex bizs={this.props.bizs} fetchBizs={this.props.fetchBizs}/>
-            <BizMap updateBounds={this.props.updateBounds} bizs={this.props.bizs}/>
+            <BizIndex
+              bizs={this.props.bizs}
+              fetchBizs={this.props.fetchBizs}
+              />
+            <BizMap
+              updateBounds={this.props.updateBounds}
+              bizs={this.props.bizs}
+              />
           </div>
         </div>
       </div>

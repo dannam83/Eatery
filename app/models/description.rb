@@ -30,4 +30,17 @@ class Description < ApplicationRecord
     bizs
   end
 
+  def self.matching_cats(filter)
+    cats = []
+    Description.all.each do |listing|
+      category = listing.category.downcase.delete(" ").delete("-")
+      filter = filter.downcase.delete(" ").delete("-")
+      filter = filter.chars[0...-1].join if filter[-1] == "s"
+      if category.include?(filter)
+        cats << listing.category
+      end
+    end
+    cats
+  end
+
 end

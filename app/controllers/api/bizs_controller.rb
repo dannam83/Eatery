@@ -1,13 +1,34 @@
 class Api::BizsController < ApplicationController
   def index
     filter = nil
-    filter = params[:filter] if params[:filter]
-    filter = filter[:search] if params[:filter]
     @bizs = params[:bounds] ? Biz.in_bounds(params[:bounds]) : Biz.all
-    @bizs = @bizs.select{ |biz| biz.name_match_filter(filter)} if filter
-    cat_matches = Description.matching_bizs(filter) if filter
-    @bizs = @bizs.concat(cat_matches) if filter
-    render :index
+
+    if params[:filter]
+      filter = params[:filter][:search]
+      @bizs = search_entered(@bizs, filter) if filter
+      render :index
+    elsif params[:search]
+      filter = params[:search][:search]
+      matches = search_typing(@bizs, filter) if filter
+      render :json => {matches: matches}
+    else
+      @bizs = @bizs.shuffle[0...5]
+      render :index
+    end
+
+  end
+
+  def search_entered(bizs, filter)
+    bizs = bizs.select{ |biz| biz.name_match_filter(filter)}
+    biz_cat_matches = Description.matching_bizs(filter)
+    bizs.concat(biz_cat_matches)
+  end
+
+  def search_typing(bizs, filter)
+    bizs = bizs.select{ |biz| biz.name_match_filter(filter)}
+    bizs = bizs.map{|biz| biz.name}
+    cat_matches = Description.matching_cats(filter)
+    cat_matches.concat(bizs)
   end
 
   def show
