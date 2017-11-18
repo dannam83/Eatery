@@ -552,7 +552,7 @@ Description.create(
 )
 Description.create(
   biz_id: Biz.find_by(name: 'Spaghetti Maghetti').id,
-  category: 'Ice Cream & Frozen Yogurt'
+  category: 'Spaghetti'
 )
 Description.create(
   biz_id: Biz.find_by(name: 'Spaghetti Maghetti').id,
@@ -560,11 +560,11 @@ Description.create(
 )
 Description.create(
   biz_id: Biz.find_by(name: 'Spaghetti Maghetti').id,
-  category: 'Sandwiches'
+  category: 'Italian'
 )
 Description.create(
   biz_id: Biz.find_by(name: 'I <3 Burgers').id,
-  category: 'Sandwiches'
+  category: 'Burgers'
 )
 Description.create(
   biz_id: Biz.find_by(name: 'I <3 Burgers').id,

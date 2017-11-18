@@ -70,6 +70,22 @@ class Biz < ApplicationRecord
     self.reviews.length
   end
 
+  def self.name_match_filter(filter)
+    bizs = []
+    Biz.all.each do |biz|
+      bizs << biz if biz.name_match_filter(filter)
+    end
+    bizs
+  end
+
+  def name_match_filter(filter)
+    name = self.name.downcase.delete(" ").delete("-")
+    name = name.chars[0...-1].join if name[-1] == "s"
+    filter = filter.downcase.delete(" ").delete("-")
+    filter = filter.chars[0...-1].join if filter[-1] == "s"
+    name[0...filter.length] == filter
+  end
+
   # taken from AppAcademy BenchBNB Project
   def self.in_bounds(bounds)
     self.where("lat < ?", bounds[:northEast][:lat])

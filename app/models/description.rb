@@ -16,4 +16,19 @@ class Description < ApplicationRecord
     primary_key: :id,
     foreign_key: :biz_id,
     class_name: 'Biz'
+
+  def self.matching_bizs(filter)
+    bizs = []
+    Description.all.each do |listing|
+      category = listing.category.downcase.delete(" ").delete("-")
+      category = category.chars[0...-1].join if category[-1] == "s"
+      filter = filter.downcase.delete(" ").delete("-")
+      filter = filter.chars[0...-1].join if filter[-1] == "s"
+      if category[0...filter.length] == filter
+        bizs << listing.biz
+      end
+    end
+    bizs
+  end
+
 end

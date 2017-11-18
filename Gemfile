@@ -5,14 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-<<<<<<< HEAD
 gem 'geocoder'
 gem 'faker'
 gem 'figaro'
 gem "paperclip", '~> 5.0.0'
 gem 'aws-sdk', '<3.0'
-=======
->>>>>>> 1ee414023ef4842728c446ef252ec4ae504dce3b
+
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -58,10 +56,9 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-<<<<<<< HEAD
+
   gem 'rails_12factor'
-=======
->>>>>>> 1ee414023ef4842728c446ef252ec4ae504dce3b
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
