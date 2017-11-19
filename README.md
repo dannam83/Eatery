@@ -1,5 +1,16 @@
+## Link
+http://eatery-dn.herokuapp.com
+
 # Introduction
 Eatery is a clone of the beloved restaurant website Yelp. It allows a visitors to surf around viewing restaurants and reviews for those restaurants. It also allows that visitors to signup and create their own account and start writing their own reviews.
+
+
+## Experience
+To explore Eatery you can use the guest login provided, or you can just go ahead and create your own account. Don't worry, your password is fully encrypted and safe with Eatery! After logging in, click on restaurants to see the list of restaurants and the reviews for each. You might recognize some of review writers.
+
+Now you can choose a restaurant and post a review. Once you post you review you'll come right back to the restaurant page and see your review posted there as well!
+
+Thanks for checking out Eatery!
 
 # Background
 
@@ -51,13 +62,3 @@ The map was also tricky to work with. There was a bug with the map marker labels
   }
   ```
 # Usage
-
-## Link
-http://eatery-dn.herokuapp.com
-
-## Experience
-To explore Eatery you can use the guest login provided, or you can just go ahead and create your own account. Don't worry, your password is fully encrypted and safe with Eatery! After logging in, click on restaurants to see the list of restaurants and the reviews for each. You might recognize some of review writers.
-
-Now you can choose a restaurant and post a review. Once you post you review you'll come right back to the restaurant page and see your review posted there as well!
-
-Thanks for checking out Eatery!
