@@ -27,6 +27,7 @@ class Search extends React.Component {
             <BizMap
               updateBounds={this.props.updateBounds}
               bizs={this.props.bizs}
+              match={this.props.match}
               />
           </div>
         </div>

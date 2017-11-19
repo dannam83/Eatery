@@ -8,7 +8,8 @@ class Api::BizsController < ApplicationController
       @bizs = search_entered(@bizs, filter) if filter
       render :index
     elsif params[:search]
-      filter = params[:search][:search]
+      filter = params[:search]
+      filter = filter[:search] unless filter == ""
       matches = search_typing(@bizs, filter) if filter
       render :json => {matches: matches}
     else
