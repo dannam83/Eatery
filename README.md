@@ -2,7 +2,7 @@
 http://eatery-dn.herokuapp.com
 
 # Introduction
-Eatery is a website inspired by Yelp. It allows a visitors to search restaurants by name or by categories of food. Restaurants have It also allows that visitors to signup and create their own account and start writing their own reviews.
+Eatery is a website inspired by Yelp. It allows a visitors to search restaurants by name or by categories of food, and it will show matching restaurants with reviews, ratings,  It also allows that visitors to signup and create their own account and start writing their own reviews.
 
 
 ## Experience
