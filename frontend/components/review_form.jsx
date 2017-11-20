@@ -228,12 +228,14 @@ class ReviewForm extends React.Component {
       </div>
     );
   }
+  // let date = review.date ? review.date.slice(0,10) : "";
+
 
   reviewListing() {
     let ids = Object.keys(this.props.reviews);
     return ids.map((id) => {
       let review = this.props.reviews[id];
-      let date = review.date ? review.date.slice(0,10) : "";
+      let date = review.date;
       return (
         <div className="review-form-other-reviews-div" key={id}>
 

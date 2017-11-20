@@ -143,11 +143,13 @@ class Biz extends React.Component {
     );
   }
 
+  // let date = review.date ? review.date.slice(0,10) : "";
+
   reviewListing (reviews) {
     let ids = Object.keys(reviews).reverse();
     return ids.map((id) => {
       let review = reviews[id];
-      let date = review.date ? review.date.slice(0,10) : "";
+      let date = review.date;
       return (
         <div className="biz-profile-review-div" key={id}>
           <div>
