@@ -426,8 +426,8 @@ Biz.create(
 )
 Biz.create(
   name: 'McDonalds',
-  lat: 40.774628,
-  lng: -73.983949,
+  lat: 40.770137,
+  lng:  -73.981060,
   hours: {
     Mon:["10:00 am","11:30 pm"],
     Tue:["10:00 am","11:30 pm"],
