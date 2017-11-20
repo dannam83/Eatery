@@ -148,7 +148,7 @@ const BizIndexItem = ({biz, bullet}) => {
         </div>
 
         <div className="biz-index-item-location">
-          {address}
+          {biz.address}
           <div>{biz.phone}</div>
         </div>
       </div>

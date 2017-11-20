@@ -103,8 +103,8 @@ User.create(
 )
 Biz.create(
   name: 'Deli Licious',
-  lat: 40.765173,
-  lng: -73.983253,
+  lat: 40.765795,
+  lng: -73.987212,
   hours: {
     Mon:["6:00 am","11:00 pm"],
     Tue:["6:00 am","11:00 pm"],
@@ -460,8 +460,8 @@ Biz.create(
 )
 Biz.create(
   name: 'Starbucks',
-  lat: 40.771833,
-  lng: -73.982328,
+  lat: 40.766803,
+  lng: -73.985152,
   hours: {
     Mon:["6:00 am","11:00 pm"],
     Tue:["6:00 am","11:00 pm"],
