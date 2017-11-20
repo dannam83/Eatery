@@ -92,7 +92,6 @@ User.create(
   image: File.open('app/assets/images/profile/catwoman.jpg')
 )
 
-
 Biz.create(
   name: 'Deli Licious',
   lat: 40.765795,
@@ -263,50 +262,78 @@ Biz.create(
   phone: "(646) 199-9372",
   biz_image: File.open('app/assets/images/restaurant/iLoveBurgers.jpg')
 )
-
-
-
-
-
-
 Biz.create(
-  name: 'Fancy Smancy',
-  lat: 40.778534,
-  lng:  -73.983597,
+  name: 'Italian Stallion',
+  lat: 40.771682,
+  lng:  -73.982998,
   hours: {
-    Mon:["5:00 pm","11:30 pm"],
-    Tue:["5:00 pm","11:30 pm"],
-    Wed:["5:00 pm","11:30 pm"],
-    Thu:["5:00 pm","11:30 pm"],
-    Fri:["5:00 pm","11:30 pm"],
-    Sat:["5:00 pm","11:30 pm"],
-    Sun:["5:00 pm","11:30 pm"],
+    Mon:["10:00 am","11:30 pm"],
+    Tue:["10:00 am","11:30 pm"],
+    Wed:["10:00 am","11:30 pm"],
+    Thu:["10:00 am","11:30 pm"],
+    Fri:["10:00 am","1:30 am"],
+    Sat:["11:00 am","1:30 am"],
+    Sun:["11:00 am","11:30 pm"],
   },
   price: 4,
-  phone: "(646) 771-9372",
-  biz_image: File.open('app/assets/images/restaurant/fancysmancy.jpg')
+  phone: "(646) 236-9312",
+  biz_image: File.open('app/assets/images/restaurant/italianstallion.jpg')
 )
 Biz.create(
-  name: 'Jeter Kueger Steakhouse',
-  lat: 40.778688,
-  lng: -73.985904,
+  name: 'Mythos',
+  lat: 40.771656,
+  lng: -73.980826,
   hours: {
-    Mon:["5:00 pm","11:30 pm"],
-    Tue:["5:00 pm","11:30 pm"],
-    Wed:["5:00 pm","11:30 pm"],
-    Thu:["5:00 pm","11:30 pm"],
-    Fri:["5:00 pm","11:30 pm"],
-    Sat:["5:00 pm","11:30 pm"],
-    Sun:["5:00 pm","11:30 pm"],
+    Mon:["10:00 am","10:30 pm"],
+    Tue:["10:00 am","10:30 pm"],
+    Wed:["10:00 am","10:30 pm"],
+    Thu:["10:00 am","10:30 pm"],
+    Fri:["10:00 am","12:30 am"],
+    Sat:["11:00 am","12:30 am"],
+    Sun:["11:00 am","10:30 pm"],
   },
-  price: 4,
-  phone: "(646) 339-9372",
-  biz_image: File.open('app/assets/images/restaurant/jeterkueger.jpeg')
+  price: 2,
+  phone: "(646) 753-9372",
+  biz_image: File.open('app/assets/images/restaurant/mythos.jpg')
 )
 Biz.create(
-  name: 'Shake Shack',
-  lat: 40.776318,
-  lng: -73.983327,
+  name: 'Mexican Style',
+  lat: 40.775935,
+  lng:  -73.981296,
+  hours: {
+    Mon:["9:00 am","11:30 pm"],
+    Tue:["9:00 am","11:30 pm"],
+    Wed:["9:00 am","11:30 pm"],
+    Thu:["9:00 am","11:30 pm"],
+    Fri:["9:00 am","1:30 am"],
+    Sat:["11:00 am","1:30 am"],
+    Sun:["11:00 am","11:30 pm"],
+  },
+  price: 1,
+  phone: "(646) 707-9372",
+  biz_image: File.open('app/assets/images/restaurant/mexicanstyle.jpg')
+)
+Biz.create(
+  name: 'Tacos Galore',
+  lat: 40.777730,
+  lng: -73.979526,
+  hours: {
+    Mon:["7:00 am","11:30 pm"],
+    Tue:["7:00 am","11:30 pm"],
+    Wed:["7:00 am","11:30 pm"],
+    Thu:["7:00 am","11:30 pm"],
+    Fri:["7:00 am","1:30 am"],
+    Sat:["7:00 am","1:30 am"],
+    Sun:["9:00 am","11:30 pm"],
+  },
+  price: 1,
+  phone: "(646) 228-9372",
+  biz_image: File.open('app/assets/images/restaurant/tacosgalore.jpg')
+)
+Biz.create(
+  name: 'Pastry Town',
+  lat: 40.779079,
+  lng: -73.978662,
   hours: {
     Mon:["10:00 am","11:30 pm"],
     Tue:["10:00 am","11:30 pm"],
@@ -317,111 +344,31 @@ Biz.create(
     Sun:["11:00 am","11:30 pm"],
   },
   price: 2,
-  phone: "(646) 548-9372",
-  biz_image: File.open('app/assets/images/restaurant/shakeshack.jpg')
+  phone: "(646) 865-9372",
+  biz_image: File.open('app/assets/images/restaurant/pastrytown.jpg')
 )
 Biz.create(
-  name: 'McDonalds',
-  lat: 40.770137,
-  lng:  -73.981060,
+  name: 'Currean Express',
+  lat: 40.779168,
+  lng: -73.980861,
   hours: {
     Mon:["10:00 am","11:30 pm"],
     Tue:["10:00 am","11:30 pm"],
     Wed:["10:00 am","11:30 pm"],
     Thu:["10:00 am","11:30 pm"],
-    Fri:["10:00 am","1:30 am"],
-    Sat:["11:00 am","1:30 am"],
-    Sun:["11:00 am","11:30 pm"],
-  },
-  price: 1,
-  phone: "(646) 862-9372",
-  biz_image: File.open('app/assets/images/restaurant/mcdonalds.jpg')
-)
-Biz.create(
-  name: 'Pret A Manger',
-  lat: 40.773296,
-  lng: -73.982940,
-  hours: {
-    Mon:["6:00 am","11:00 pm"],
-    Tue:["6:00 am","11:00 pm"],
-    Wed:["6:00 am","11:00 pm"],
-    Thu:["6:00 am","11:00 pm"],
-    Fri:["6:00 am","11:00 pm"],
-    Sat:["7:00 am","11:00 pm"],
-    Sun:["7:00 am","11:00 pm"],
-  },
-  price: 1,
-  phone: "(646) 749-9372",
-  biz_image: File.open('app/assets/images/restaurant/pretamanger.jpg')
-)
-Biz.create(
-  name: 'Starbucks',
-  lat: 40.766803,
-  lng: -73.985152,
-  hours: {
-    Mon:["6:00 am","11:00 pm"],
-    Tue:["6:00 am","11:00 pm"],
-    Wed:["6:00 am","11:00 pm"],
-    Thu:["6:00 am","11:00 pm"],
-    Fri:["6:00 am","11:00 pm"],
-    Sat:["7:00 am","11:00 pm"],
-    Sun:["7:00 am","11:00 pm"],
-  },
-  price: 1,
-  phone: "(646) 889-9372",
-  biz_image: File.open('app/assets/images/restaurant/starbucks.jpg')
-)
-Biz.create(
-  name: 'Chicken And Waffles',
-  lat: 40.771297,
-  lng: -73.983841,
-  hours: {
-    Mon:["10:00 am","11:30 pm"],
-    Tue:["10:00 am","11:30 pm"],
-    Wed:["10:00 am","11:30 pm"],
-    Thu:["10:00 am","11:30 pm"],
-    Fri:["10:00 am","1:30 am"],
-    Sat:["11:00 am","1:30 am"],
-    Sun:["11:00 am","11:30 pm"],
-  },
-  price: 3,
-  phone: "(646) 826-9372",
-  biz_image: File.open('app/assets/images/restaurant/chickenandwaffles.jpg')
-)
-Biz.create(
-  name: 'Southern Kitchen',
-  lat: 40.770281,
-  lng: -73.983948,
-  hours: {
-    Mon:["10:00 am","11:30 pm"],
-    Tue:["10:00 am","11:30 pm"],
-    Wed:["10:00 am","11:30 pm"],
-    Thu:["10:00 am","11:30 pm"],
-    Fri:["10:00 am","1:30 am"],
-    Sat:["11:00 am","1:30 am"],
+    Fri:["10:00 am","11:30 pm"],
+    Sat:["11:00 am","11:30 pm"],
     Sun:["11:00 am","11:30 pm"],
   },
   price: 2,
-  phone: "(646) 334-9372",
-  biz_image: File.open('app/assets/images/restaurant/southernkitchen.jpg')
+  phone: "(646) 199-9372",
+  biz_image: File.open('app/assets/images/restaurant/curreanexpress.jpg')
 )
-Biz.create(
-  name: 'The Fusion',
-  lat: 40.769273,
-  lng: -73.984967,
-  hours: {
-    Mon:["10:00 am","11:30 pm"],
-    Tue:["10:00 am","11:30 pm"],
-    Wed:["10:00 am","11:30 pm"],
-    Thu:["10:00 am","11:30 pm"],
-    Fri:["10:00 am","1:30 am"],
-    Sat:["10:00 am","1:30 am"],
-    Sun:["10:00 am","11:30 pm"],
-  },
-  price: 3,
-  phone: "(646) 489-9372",
-  biz_image: File.open('app/assets/images/restaurant/thefusion.jpg')
-)
+
+
+
+
+
 
 
 Review.create(
