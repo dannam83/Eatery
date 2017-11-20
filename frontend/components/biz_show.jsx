@@ -147,6 +147,7 @@ class Biz extends React.Component {
     let ids = Object.keys(reviews).reverse();
     return ids.map((id) => {
       let review = reviews[id];
+      let date = review.date ? review.date.slice(0,10) : "";
       return (
         <div className="biz-profile-review-div" key={id}>
           <div>
@@ -161,7 +162,7 @@ class Biz extends React.Component {
           <div className="biz-profile-review-body">
             <div className="biz-profile-reviews-stars-date-div">
               <span>{starRatingReviews(review.rating)}</span>
-              <span className="biz-profile-review-date">{review.date.slice(0,10)}</span>
+              <span className="biz-profile-review-date">{date}</span>
             </div>
             <div className="biz-profile-review-body-body">{review.body}</div>
           </div>

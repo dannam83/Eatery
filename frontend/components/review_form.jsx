@@ -233,6 +233,7 @@ class ReviewForm extends React.Component {
     let ids = Object.keys(this.props.reviews);
     return ids.map((id) => {
       let review = this.props.reviews[id];
+      let date = review.date ? review.date.slice(0,10) : "";
       return (
         <div className="review-form-other-reviews-div" key={id}>
 
@@ -249,7 +250,7 @@ class ReviewForm extends React.Component {
               </div>
               <div className="review-form-other-reviews-stars-date-div">
                 <div>{this.starRating(review.rating)}</div>
-                <div className="review-form-other-reviews-date">{review.date.slice(0,10)}</div>
+                <div className="review-form-other-reviews-date">{date}</div>
               </div>
             </div>
           </div>
