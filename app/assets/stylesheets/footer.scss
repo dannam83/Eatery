@@ -2,7 +2,7 @@
   min-width: 1000px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 20px;
 }
 
@@ -75,7 +75,7 @@
   display: flex;
 }
 
-@media screen and (min-height:800px) {
+@media screen and (min-height:900px) {
   .footer-master-container {
     height: 550px;
   }
