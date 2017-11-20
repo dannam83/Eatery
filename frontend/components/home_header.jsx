@@ -8,17 +8,16 @@ class HomeHeader extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setState = this.setState.bind(this);
     const images = [
-      [window.pizza, "I <3 Burgers", "Dak P.", "/bizs/73"],
-      [window.cake, "Richard Sherman IceCream", "Eli M.", "bizs/71"],
-      [window.churro, "Spaghetti Maghetti", "Cam N.", "bizs/72"],
-      [window.dessert, "Happy Eats", "Drew B.", "/bizs/69"],
-      [window.pancakes, "Deli Licious", "Ben R.", "/bizs/64"],
-      [window.pizza, "Deli Licious", "Tom B.", "/bizs/64"],
-      [window.salad, "Fancy Smancy", "Aaron R.", "/bizs/64"],
-      [window.salmon, "Currean Express", "Carson W.", "/bizs/64"],
-      [window.vineyard, "Jeter Kueger Steakhouse", "Alex S.", "/bizs/64"],
-      [window.cupcakes, "Deli Licious", "Matt R.", "/bizs/64"],
-      [window.orangeDrink, "Russell Wilson Steakhouse", "Phillip R.", "/bizs/70"]
+      [window.cake, "Pastry Town", "Eli M.", "bizs/52"],
+      [window.churro, "Richard Sherman Icecream", "Cam N.", "bizs/33"],
+      [window.cupcakes, "Deli Licious", "Matt R.", "/bizs/26"],
+      [window.dessert, "Happy Eats", "Drew B.", "/bizs/31"],
+      [window.orangeDrink, "Russell Wilson Steakhouse", "Phillip R.", "/bizs/32"],
+      [window.pancakes, "Deli-Kate", "Ben R.", "/bizs/29"],
+      [window.pizza, "Italian Stallion", "Tom B.", "/bizs/36"],
+      [window.salad, "Fancy Smancy", "Aaron R.", "/bizs/51"],
+      [window.salmon, "Currean Express", "Carson W.", "/bizs/41"],
+      [window.vineyard, "Jeter Kueger Steakhouse", "Alex S.", "/bizs/43"],
     ];
     this.state = {imageInfo: images[Math.floor(Math.random()*images.length)]};
   }
