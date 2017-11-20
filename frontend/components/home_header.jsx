@@ -12,12 +12,11 @@ class HomeHeader extends React.Component {
       [window.cake, "Richard Sherman IceCream", "Eli M.", "bizs/71"],
       [window.churro, "Spaghetti Maghetti", "Cam N.", "bizs/72"],
       [window.dessert, "Happy Eats", "Drew B.", "/bizs/69"],
-      [window.gummibear, "Deli Licious", "Peyton M.", "/bizs/64"],
       [window.pancakes, "Deli Licious", "Ben R.", "/bizs/64"],
       [window.pizza, "Deli Licious", "Tom B.", "/bizs/64"],
-      [window.salad, "Deli Licious", "Aaron R.", "/bizs/64"],
-      [window.salmon, "Deli Licious", "Carson W.", "/bizs/64"],
-      [window.vineyard, "Deli Licious", "Alex S.", "/bizs/64"],
+      [window.salad, "Fancy Smancy", "Aaron R.", "/bizs/64"],
+      [window.salmon, "Currean Express", "Carson W.", "/bizs/64"],
+      [window.vineyard, "Jeter Kueger Steakhouse", "Alex S.", "/bizs/64"],
       [window.cupcakes, "Deli Licious", "Matt R.", "/bizs/64"],
       [window.orangeDrink, "Russell Wilson Steakhouse", "Phillip R.", "/bizs/70"]
     ];
@@ -101,8 +100,8 @@ class HomeHeader extends React.Component {
   mainLogo () {
     return (
       <div className="mainLogo">
-        <Link to="/" className="bigLogo">Eatery</Link>
-        <Link to="/">
+        <Link to="/search" className="bigLogo">Eatery</Link>
+        <Link to="/search">
           <img className="bigChefPic" src={window.chefLogo}></img>
         </Link>
       </div>
