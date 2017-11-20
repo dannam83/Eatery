@@ -16,7 +16,6 @@ class Api::BizsController < ApplicationController
       @bizs = @bizs.shuffle[0...10]
       render :index
     end
-
   end
 
   def search_entered(bizs, filter)

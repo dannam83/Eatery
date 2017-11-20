@@ -12,7 +12,6 @@ class Search extends React.Component {
     );
   }
 
-  // {this.bizFilters()}  add this to filters div when ready to implement
   render () {
     return (
       <div className="biz-filter-index-map-container">

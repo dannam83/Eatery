@@ -9,6 +9,5 @@ const MatchesReducer = (state = {}, action) => {
       return state;
   }
 };
-// return merge(newState, {[action.biz.id]:action.biz});
 
 export default MatchesReducer;

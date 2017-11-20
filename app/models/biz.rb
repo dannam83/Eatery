@@ -43,19 +43,17 @@ class Biz < ApplicationRecord
   after_validation :reverse_geocode  # auto-fetch address
 
   def last_review_author_image_url
-    if self.reviews
-      return self.reviews.last.user.image.url
-    else
-      return ""
-    end
+    return self.reviews.last.user.image.url if self.reviews.length > 0
+    return ""
   end
 
   def last_review_body
-    self.reviews.last.body
+    return self.reviews.last.body if self.reviews.length > 0
+    return ""
   end
 
   def avg_rating
-    return 0 unless self.reviews
+    return 0 unless self.reviews.length > 0
 
     stars = 0.0
     self.reviews.each do |review|
@@ -64,6 +62,10 @@ class Biz < ApplicationRecord
 
     avg = stars/self.reviews.length
     (avg * 2).round / 2.0
+  end
+
+  def reviews_list
+    reviews.reverse
   end
 
   def review_count

@@ -20,7 +20,6 @@ class BizMap extends React.Component {
       this.drawMap(this.props.bizs);
     }
   }
-  // this.MarkerManager.updateMarkers();
 
   drawMap (bizs) {
     const mapOptions = this.mapSetup(bizs);
@@ -80,7 +79,9 @@ class BizMap extends React.Component {
 
   render () {
     return(
-      <div ref={ map => this.mapNode = map } id="map-container"></div>
+      <div className="map-div">
+        <div ref={ map => this.mapNode = map } id="map-container"></div>
+      </div>
     );
   }
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Alert from './alert.jsx';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -114,35 +113,34 @@ class SessionForm extends React.Component {
     }
   }
 
-  // if want to add a birthday column to table
-  // birthday(formType) {
-  //   if (this.props.match.path === '/signup') {
-  //     return(
-  //       <div>
-  //           <h3 className="birthday-text" id="birthday">Birthday</h3>
-  //           <h3 className="birthday-text" id="optional">Optional</h3>
-  //           <input
-  //             className="form-input"
-  //             type="text"
-  //             onChange={this.update('month')}
-  //             placeholder="ZIP Code"
-  //             />
-  //           <input
-  //             className="form-input"
-  //             type="text"
-  //             onChange={this.update('day')}
-  //             placeholder="ZIP Code"
-  //             />
-  //           <input
-  //             className="form-input"
-  //             type="text"
-  //             onChange={this.update('year')}
-  //             placeholder="ZIP Code"
-  //             />
-  //       </div>
-  //     );
-  //   }
-  // }
+  birthday(formType) {
+    if (this.props.match.path === '/signup') {
+      return(
+        <div>
+            <h3 className="birthday-text" id="birthday">Birthday</h3>
+            <h3 className="birthday-text" id="optional">Optional</h3>
+            <input
+              className="form-input"
+              type="text"
+              onChange={this.update('month')}
+              placeholder="ZIP Code"
+              />
+            <input
+              className="form-input"
+              type="text"
+              onChange={this.update('day')}
+              placeholder="ZIP Code"
+              />
+            <input
+              className="form-input"
+              type="text"
+              onChange={this.update('year')}
+              placeholder="ZIP Code"
+              />
+        </div>
+      );
+    }
+  }
 
   guestForm() {
     return (

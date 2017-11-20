@@ -35,78 +35,6 @@ const aboutMe = () => {
   );
 };
 
-const about = () => {
-  return (
-    <div className="footer-column">
-      <p className="footer-label">About</p>
-      <Link to="/" className="footer-link">About Yelp</Link>
-      <Link to="/" className="footer-link">Careers</Link>
-      <Link to="/" className="footer-link">Press</Link>
-      <Link to="/" className="footer-link">Investor Relations</Link>
-      <Link to="/" className="footer-link">Contest Guidelines</Link>
-      <Link to="/" className="footer-link">Terms of Service</Link>
-      <Link to="/" className="footer-link">Privacy Policy</Link>
-      <Link to="/" className="footer-link">Ad Choices</Link>
-    </div>
-  );
-};
-
-const discover = () => {
-  return (
-    <div className="footer-column">
-      <p className="footer-label">Discover</p>
-      <Link to="/" className="footer-link">The Local Yelp</Link>
-      <Link to="/" className="footer-link">Yelp Blog</Link>
-      <Link to="/" className="footer-link">Support</Link>
-      <Link to="/" className="footer-link">Yelp Mobile</Link>
-      <Link to="/" className="footer-link">Developers</Link>
-      <Link to="/" className="footer-link">RSS</Link>
-    </div>
-  );
-};
-
-const yelpForBusinessOwners = () => {
-  return (
-    <div className="footer-column">
-      <p className="footer-label">Yelp for Business Owners</p>
-      <Link to="/" className="footer-link">Claim your Business Page</Link>
-      <Link to="/" className="footer-link">Advertise on Yelp</Link>
-      <Link to="/" className="footer-link">Yelp Reservations</Link>
-      <Link to="/" className="footer-link">Business Success Stories</Link>
-      <Link to="/" className="footer-link">Business Support</Link>
-      <Link to="/" className="footer-link">Yelp Blog for Business Owners</Link>
-    </div>
-  );
-};
-
-const international = () => {
-  return (
-    <div className="footer-column">
-      <div>
-        <p className="footer-label">Languages</p>
-        <Link to="/" className="footer-link">English</Link>
-
-      </div>
-      <div>
-        <p className="footer-label" id="footer-countries">Countries</p>
-        <Link to="/" className="footer-link">United States</Link>
-
-      </div>
-    </div>
-  );
-};
-
-const footer = () => {
-  return (
-    <div className="footer-columns">
-      {about()}
-      {discover()}
-      {yelpForBusinessOwners()}
-      {international()}
-    </div>
-  );
-};
-
 const footerPic = () => {
   return (
     <div className="footer-picture-div">
@@ -115,20 +43,37 @@ const footerPic = () => {
   );
 };
 
-const FooterContainer = () => {
+const walleBall = () => {
   return (
-    <div className="footer-master-container">
-      <div className="footer-container">
-        {aboutMe()}
+    <div className="walle-ball-container">
+      <div className="walle-ball-div">
+        <a href="http://dannam.xyz/Wall_E_Ball/" className="walle-ball-link-pic">
+          <img className="walle-ball-pic" src={window.walleBall}></img>
+        </a>
       </div>
-      <div className="footer-pic-container">
-        <img className="footer-pic" src={window.cityscape}>
-        </img>
+      <div className="walle-ball-desc">
+        <a href="http://dannam.xyz/Wall_E_Ball/" className="walle-ball-link">
+          try playing Wall-E Ball!
+        </a>
       </div>
     </div>
   );
 };
 
-
+const FooterContainer = () => {
+  return (
+    <div className="footer-master-container">
+      <div className="footer-container">
+        <div className="footer-top">
+          {aboutMe()}
+          {walleBall()}
+        </div>
+      </div>
+      <div className="footer-pic-container">
+        <img className="footer-pic" src={window.cityscape}></img>
+      </div>
+    </div>
+  );
+};
 
 export default FooterContainer;

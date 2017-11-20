@@ -38,7 +38,7 @@ class MainHeader extends React.Component {
     );
   }
 
-  sessionLinks () {
+  sessionLink () {
     return (
       <div className="signup-default-div">
         <Link className="signup-default" to="/signup">Sign Up</Link>
@@ -62,7 +62,7 @@ class MainHeader extends React.Component {
           className="search-default-input"
           type="text"
           onChange={this.update('search')}
-          placeholder="burgers, deli, italian, etc."
+          placeholder="category or restaurant name"
           id="filter"
           />
         <span className="search-default-label" id="search-default-second"><p className="short-default-border">Near</p></span>
@@ -76,8 +76,8 @@ class MainHeader extends React.Component {
     );
   }
 
-  mainHeaderSearch (currentUser, logout, location) {
-    const userPresence = currentUser ? this.greeter(currentUser, logout) : this.sessionLinks();
+  mainHeaderSearch (currentUser) {
+    const userPresence = currentUser ? this.greeter(currentUser) : this.sessionLink();
     return (
       <div className="header-container-default">
         <img className="star-logo" src={window.starLogo}></img>
@@ -102,7 +102,7 @@ class MainHeader extends React.Component {
     }
   }
 
-  mainHeaderLinks (currentUser) {
+  mainHeaderLinks (currentUser, logout) {
     return (
       <div className="header-default-links-container">
         <div className="header-default-links">
@@ -124,7 +124,7 @@ class MainHeader extends React.Component {
           <a className="header-default-link about-me"
             href="mailto:dannam83@gmail.com">Contact</a>
           <p className="header-default-space"></p>
-          {this.loginButton(currentUser)}
+          {this.loginButton(currentUser, logout)}
         </div>
       </div>
     );
@@ -134,8 +134,8 @@ class MainHeader extends React.Component {
     const props = this.props;
     return (
       <div className="header-container-default-master">
-        {this.mainHeaderSearch(props.currentUser, props.logout, props.location)}
-        {this.mainHeaderLinks(props.currentUser)}
+        {this.mainHeaderSearch(props.currentUser)}
+        {this.mainHeaderLinks(props.currentUser, props.logout)}
       </div>
     );
   }

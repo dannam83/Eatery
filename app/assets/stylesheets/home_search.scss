@@ -1,11 +1,3 @@
-// everything within the .fixed-size-box in home.scss
-// .fixed-size-box {
-//   width: 1000px;
-//   height: 600;
-//   display: flex;
-//   justify-content: center;
-// }
-
 .fixed-size-box-organizer {
   display: flex;
   position: relative;
@@ -106,13 +98,13 @@
   margin-right: 15px;
 }
 .designedBy {
-  margin-top: 25px;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
 }
 .designedByItem {
   color: white;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   font-family: Arial, sans-serif;
 }
@@ -129,7 +121,7 @@
 .photoCred {
   display: flex;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 180px;
   flex-direction: column;
   color: white;
   font-size: 14px;
@@ -151,10 +143,6 @@
   color: white;
   font-size: 14.5px;
 }
-
-// .photoName:hover {
-//   text-decoration: underline;
-// }
 
 .photoLocation {
   font-weight: 900;

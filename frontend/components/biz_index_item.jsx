@@ -84,7 +84,6 @@ const pricing = (price) => {
   }
 };
 
-//setup as a span within a span to easily convert to Link later
 const categories = (biz) => {
     if (biz.categories.length === 0) {
       return null;

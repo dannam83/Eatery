@@ -144,7 +144,7 @@ class Biz extends React.Component {
   }
 
   reviewListing (reviews) {
-    let ids = Object.keys(reviews);
+    let ids = Object.keys(reviews).reverse();
     return ids.map((id) => {
       let review = reviews[id];
       return (

@@ -18,7 +18,6 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-// signup and login functions in case currently logged out
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     createReview: (review) => dispatch(createReview(review)),

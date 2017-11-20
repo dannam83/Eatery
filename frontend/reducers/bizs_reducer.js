@@ -13,6 +13,5 @@ const BizsReducer = (state = {}, action) => {
       return state;
   }
 };
-// return merge(newState, {[action.biz.id]:action.biz});
 
 export default BizsReducer;

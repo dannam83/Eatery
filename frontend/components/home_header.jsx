@@ -8,12 +8,18 @@ class HomeHeader extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setState = this.setState.bind(this);
     const images = [
-      [window.burger, "I <3 Burgers", "Jen K.", "/bizs/73"],
-      [window.cupcakes, "Richard Sherman IceCream", "Valerie S.", "bizs/71"],
-      [window.ribs, "Spaghetti Maghetti", "Tony L.", "bizs/72"],
-      [window.sushi, "Happy Eats", "David N.", "/bizs/69"],
-      [window.tacos, "Deli Licious", "Jill A.", "/bizs/64"],
-      [window.steak, "Russell Wilson Steakhouse", "Kurt R.", "/bizs/70"]
+      [window.pizza, "I <3 Burgers", "Dak P.", "/bizs/73"],
+      [window.cake, "Richard Sherman IceCream", "Eli M.", "bizs/71"],
+      [window.churro, "Spaghetti Maghetti", "Cam N.", "bizs/72"],
+      [window.dessert, "Happy Eats", "Drew B.", "/bizs/69"],
+      [window.gummibear, "Deli Licious", "Peyton M.", "/bizs/64"],
+      [window.pancakes, "Deli Licious", "Ben R.", "/bizs/64"],
+      [window.pizza, "Deli Licious", "Tom B.", "/bizs/64"],
+      [window.salad, "Deli Licious", "Aaron R.", "/bizs/64"],
+      [window.salmon, "Deli Licious", "Carson W.", "/bizs/64"],
+      [window.vineyard, "Deli Licious", "Alex S.", "/bizs/64"],
+      [window.cupcakes, "Deli Licious", "Matt R.", "/bizs/64"],
+      [window.orangeDrink, "Russell Wilson Steakhouse", "Phillip R.", "/bizs/70"]
     ];
     this.state = {imageInfo: images[Math.floor(Math.random()*images.length)]};
   }
@@ -111,7 +117,7 @@ class HomeHeader extends React.Component {
           className="mainSearchInput"
           type="text"
           onChange={this.update('search')}
-          placeholder="burgers, deli, italian, etc."
+          placeholder="category or restaurant name"
           />
         <span className="mainSearchLabel" id="mainSearchSecond"><p className="shortBorder">Near</p></span>
         <input
@@ -139,7 +145,7 @@ class HomeHeader extends React.Component {
     return (
       <div className="designedBy">
         <div>
-          <span className="designedByCreatedBy designedByItem designedByTop">a website created by</span>
+          <span className="designedByCreatedBy designedByItem designedByTop">a website by</span>
           <a href="http://dannam.xyz" className="designedByName designedByItem designedByTop">Daniel Nam</a>
         </div>
       </div>

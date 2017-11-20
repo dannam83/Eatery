@@ -1,7 +1,5 @@
 class Api::ReviewsController < ApplicationController
 
-  # before_action :require, only: [:create, :edit, :update]
-
   def show
     @review = Review.find(params[:id])
   end
