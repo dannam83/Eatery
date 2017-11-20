@@ -3,11 +3,15 @@ import merge from 'lodash/merge';
 
 const ReviewsReducer = (state = {}, action) => {
   Object.freeze(state);
-
+  const reviews = action.biz.reviews;
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_BIZ:
-      return action.biz.reviews;
+      if (reviews) {
+        return reviews;
+      } else {
+        return [];
+      } break;
     default:
       return state;
   }
