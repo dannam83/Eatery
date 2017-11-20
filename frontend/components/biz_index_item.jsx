@@ -147,7 +147,7 @@ const BizIndexItem = ({biz, bullet}) => {
         </div>
 
         <div className="biz-index-item-location">
-          {biz.address.slice(0,-5)}
+          {biz.address}
           <div>{biz.phone}</div>
         </div>
       </div>
@@ -161,5 +161,7 @@ const BizIndexItem = ({biz, bullet}) => {
     </li>
   );
 };
+// {biz.address.slice(0,-5)}
+
 
 export default BizIndexItem;
