@@ -13,10 +13,8 @@ Anyone can explore restaurants on Eatery, but to write reviews you must be logge
 Try choosing a restaurant and posting a review! You'll see your review posted right away, and you could potentially tip the scales on the overall rating.
 
 # Technical
-
 ## Stack
 Ruby on Rails, React-Redux, PostgreSQL, JavaScript, HTML, AWS, CSS, Sass, Git
-
 ## Features
 ### Security: BCrypt
 BCrypt encryption is used on the backend to provide security for user account passwords. BCrypt uses both key hashing and key stretching to provide the highest level of protection.
@@ -27,10 +25,8 @@ Eatery uses a search algorithm that I put together myself. Because capitalizatio
 Using Google Maps API implementation, restaurant locations are shown on the right of the search page. The markers are labeled according to the restaurant's bullet number, and clicking on the marker will also tell you which restaurant you've clicked on. 
 Additionally, with every search, the map will update and recenter itself according to the first match from the search.
 ![alt text](https://user-images.githubusercontent.com/30483700/33055704-249e5bbc-ce4f-11e7-9097-912c30fc0700.png)
-
 ### Forms: Customized Components
 The forms on Eatery are built on customized React Components. Submissions are immediately loaded to the backend PostgreSQL database through an AJAX request, and information is immediately updated on the frontend through an AJAX promise. 
-
 ## Challenges
 One of the challenges with this app was finding a way for the frontend to have all the different information it needed in order to fully render a page. In order to accomplish this, new methods had to be created in the backend that could package data in a way that would appropriately alter the state. For example, when the search page loads, we want a list of businesses and the most recent review for each business. What we don't want is every single review for every single business. I created the following methods so that the backend could send in the response just the necessary information.
 ```
