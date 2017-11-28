@@ -110,17 +110,22 @@ class MainHeader extends React.Component {
             to="/search">Search Page</Link>
           <p className="header-default-link-period">.</p>
           <a className="header-default-link about-me"
-            href="http://dannam.xyz">About Me</a>
+            href="http://dannam.xyz"
+            target="_blank">About Me</a>
           <p className="header-default-link-period">.</p>
           <a className="header-default-link about-me"
-            href="http://github.com/dannam83">GitHub</a>
+            href="http://github.com/dannam83"
+            target="_blank">GitHub</a>
           <a className="header-default-link about-me"
-            href="https://www.linkedin.com/in/daniel-nam-4032a0b/">LinkedIn</a>
+            href="https://www.linkedin.com/in/daniel-nam-4032a0b/"
+            target="_blank">LinkedIn</a>
           <a className="header-default-link about-me"
-            href="https://angel.co/daniel-nam-3?public_profile=1">Angel List</a>
+            href="https://angel.co/daniel-nam-3?public_profile=1"
+            target="_blank">Angel List</a>
           <p className="header-default-link-period">.</p>
           <a className="header-default-link about-me"
-            href="http://dannam.xyz/images/resume.pdf">Resume</a>
+            href="http://dannam.xyz/images/resume.pdf"
+            target="_blank">Resume</a>
           <a className="header-default-link about-me"
             href="mailto:dannam83@gmail.com">Contact</a>
           <p className="header-default-space"></p>

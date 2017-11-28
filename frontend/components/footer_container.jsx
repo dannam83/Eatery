@@ -7,23 +7,31 @@ const aboutMe = () => {
     <div className="footer-column footer-me-div">
       <div className="footer-label footer-row name">
         <p className="footer-name-by">a website by</p>
-        <a href="http://dannam.xyz" className="footer-me-name">Daniel Nam</a>
+        <a href="http://dannam.xyz"
+          className="footer-me-name"
+          target="_blank">
+          Daniel Nam
+        </a>
       </div>
       <div className="footer-row">
         <a className="footer-me-anchor"
-          href="http://github.com/dannam83">
+          href="http://github.com/dannam83"
+          target="_blank">
           <FontAwesome name='icon alt fa-github' className="footer-me-FA" />
         </a>
   			<a className="footer-me-anchor"
-          href="https://www.linkedin.com/in/daniel-nam-4032a0b/">
+          href="https://www.linkedin.com/in/daniel-nam-4032a0b/"
+          target="_blank">
   				<FontAwesome name="icon alt fa-linkedin" className="footer-me-FA" />
         </a>
   			<a className="footer-me-anchor"
-          href="https://angel.co/daniel-nam-3?public_profile=1">
+          href="https://angel.co/daniel-nam-3?public_profile=1"
+          target="_blank">
   				<FontAwesome name="icon alt fa-angellist" className="footer-me-FA" />
         </a>
   			<a className="footer-me-anchor"
-          href="http://dannam.xyz/images/resume.pdf">
+          href="http://dannam.xyz/images/resume.pdf"
+          target="_blank">
   				<FontAwesome name="icon alt fa-file-pdf-o" className="footer-me-FA" />
         </a>
   			<a className="footer-me-anchor"
@@ -47,12 +55,16 @@ const walleBall = () => {
   return (
     <div className="walle-ball-container">
       <div className="walle-ball-div">
-        <a href="http://dannam.xyz/Wall_E_Ball/" className="walle-ball-link-pic">
+        <a href="http://dannam.xyz/Wall_E_Ball/"
+          className="walle-ball-link-pic"
+          target="_blank">
           <img className="walle-ball-pic" src={window.walleBall}></img>
         </a>
       </div>
       <div className="walle-ball-desc">
-        <a href="http://dannam.xyz/Wall_E_Ball/" className="walle-ball-link">
+        <a href="http://dannam.xyz/Wall_E_Ball/"
+          className="walle-ball-link"
+          target="_blank">
           try playing Wall-E Ball!
         </a>
       </div>
