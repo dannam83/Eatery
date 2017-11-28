@@ -32,7 +32,15 @@ class BizIndex extends React.Component {
   render () {
     const bizs = this.props.bizs;
     if (bizs.length < 1) {
-      return null;
+      return (
+        <div className="biz-index-div">
+          <ul className="biz-index-ul">
+            <li className="biz-index-item-li">
+              <div>No results found. Try another search.</div>
+            </li>
+          </ul>
+        </div>
+      );
     }
     return(
       <div>

@@ -68,13 +68,13 @@ class Biz extends React.Component {
     );
   }
 
-  topShelfBottom () {
-    return (
-      <div className="top-shelf-bottom-half-div">
-        top shelf bottom half div
-      </div>
-    );
-  }
+  // topShelfBottom () {
+  //   return (
+  //     <div className="top-shelf-bottom-half-div">
+  //       top shelf bottom half div
+  //     </div>
+  //   );
+  // }
 
   categories (biz) {
       if (biz.categories.length === 0) {
@@ -146,6 +146,15 @@ class Biz extends React.Component {
 
   reviewListing (reviews) {
     let ids = Object.keys(reviews).reverse();
+    if (ids.length < 1) {
+      return (
+        <div className="biz-profile-review-div">
+          <div>
+            Be the first review for {this.props.biz.name}!
+          </div>
+        </div>
+      );
+    }
     return ids.map((id) => {
       let review = reviews[id];
       let date = review.date ? review.date.slice(0,10) : "";
