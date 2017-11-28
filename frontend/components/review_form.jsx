@@ -48,14 +48,32 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const review = {};
-    review.biz_id = this.props.match.params.bizId;
-    review.user_id = this.props.userId;
-    review.rating = this.state.rating;
-    review.body = this.state.body;
-    this.props.createReview(review).then(() => {
-      //
-      this.props.history.push(`/${this.sourcePath()}/${this.sourceId()}`);
-    });
+    let rating;
+    let body;
+    if (!this.state) {
+      rating = 0;
+      body = "";
+    } else if (!this.state.rating) {
+      rating = 0;
+    } else if (!this.state.body) {
+      body = "";
+    }
+
+    if (!this.props.loggedIn) {
+      alert ("You must be logged in to post a review");
+    } else if (rating === 0) {
+      alert ("Please select a rating");
+    } else if (body === "") {
+      alert ("Please write a review about your experience");
+    } else {
+      review.biz_id = this.props.match.params.bizId;
+      review.user_id = this.props.userId;
+      review.rating = rating;
+      review.body = body;
+      this.props.createReview(review).then(() => {
+        this.props.history.push(`/${this.sourcePath()}/${this.sourceId()}`);
+      });
+    }
   }
 
   categories (categories) {
@@ -112,7 +130,7 @@ class ReviewForm extends React.Component {
             </div>
             <div className="review-form-price-dot-categories" id="review-form-price-categories">
               {this.pricing(biz.price)}
-              <span className="biz-index-item-price-dot">.</span>
+              <span className="biz-index-item-price-dot" id="review-dot">.</span>
               {this.categories(biz.categories)}
             </div>
             <div>
