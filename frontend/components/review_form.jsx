@@ -68,8 +68,8 @@ class ReviewForm extends React.Component {
     } else {
       review.biz_id = this.props.match.params.bizId;
       review.user_id = this.props.userId;
-      review.rating = rating;
-      review.body = body;
+      review.rating = this.state.rating;
+      review.body = this.state.body;
       this.props.createReview(review).then(() => {
         this.props.history.push(`/${this.sourcePath()}/${this.sourceId()}`);
       });
