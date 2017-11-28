@@ -82,6 +82,14 @@ h2.switch-comment {
   font-family: Arial, sans-serif;
 }
 
+.switch-link:visited {
+  color: #0072B2;
+}
+
+.switch-link:link {
+  text-decoration: none;
+}
+
 .form-name {
   display: flex;
   flex-direction: row;
