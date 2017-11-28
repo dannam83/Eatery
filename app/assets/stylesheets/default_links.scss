@@ -25,6 +25,10 @@
   margin-right: 19px;
 }
 
+.about-me {
+  color: #3A3A3A;
+}
+
 .header-default-link-period {
   padding: 4px 25px 0px 7px;
 }
@@ -48,17 +52,17 @@
   outline-width: 0px;
 }
 
-* {
-  transition: color 0.5s;
-}
-
-.about-me {
-  -webkit-animation:colorchange 20s infinite alternate;
-}
-
-@-webkit-keyframes colorchange {
-  0% {color: white;}
-  33% {color: darkred;}
-  66% {color: #02AD00;}
-  100% {color: white}
-}
+// * {
+//   transition: color 0.5s;
+// }
+//
+// .about-me {
+//   -webkit-animation:colorchange 20s infinite alternate;
+// }
+//
+// @-webkit-keyframes colorchange {
+//   0% {color: white;}
+//   33% {color: darkred;}
+//   66% {color: #02AD00;}
+//   100% {color: white}
+// }
