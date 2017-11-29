@@ -99,10 +99,10 @@ class HomeHeader extends React.Component {
   mainLogo () {
     return (
       <div className="mainLogo">
-        <Link to="/" className="bigLogo">Eatery</Link>
-        <Link to="/">
+        <a href="/" className="bigLogo">Eatery</a>
+        <a href="/">
           <img className="bigChefPic" src={window.chefLogo}></img>
-        </Link>
+        </a>
       </div>
     );
   }
