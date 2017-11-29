@@ -109,6 +109,14 @@
   font-family: Arial, sans-serif;
 }
 
+.designedByName {
+  text-decoration: none;
+}
+
+.designedByName:hover {
+  text-decoration: underline;
+}
+
 .designedByTop {
   padding-left: 3px;
   padding-right: 3px;
