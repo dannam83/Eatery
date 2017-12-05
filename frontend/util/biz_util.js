@@ -20,6 +20,3 @@ export const fetchBiz = (id) => (
     url: `api/bizs/${id}`,
   })
 );
-
-// error: (err) => console.log(err)
-// error: (err) => console.log(err)
