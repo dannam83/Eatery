@@ -11,6 +11,7 @@ gem 'faker'
 gem 'figaro'
 gem "paperclip", '~> 5.0.0'
 gem 'aws-sdk', '<3.0'
+gem 'react-rails'
 
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
