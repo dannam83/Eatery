@@ -1,5 +1,6 @@
 var path = require("path");
 var webpack = require("webpack");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 var plugins = []; // if using any plugins for both dev and production
 var devPlugins = []; // if using any plugins for development
@@ -30,13 +31,13 @@ module.exports = {
   },
   plugins: plugins,
   module: {
-    loaders: [
+    rules: [
       {
         test: [/\.jsx?$/, /\.js?$/],
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['@babel/preset-env', '@babel/preset-react']
         }
       }
     ]
