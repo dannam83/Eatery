@@ -7,7 +7,7 @@ const aboutMe = () => {
     <div className="footer-column footer-me-div">
       <div className="footer-label footer-row name">
         <p className="footer-name-by">a website by</p>
-        <a href="http://dannam.xyz"
+        <a href="https://dannam.xyz"
           className="footer-me-name"
           target="_blank">
           Daniel Nam
@@ -30,7 +30,7 @@ const aboutMe = () => {
   				<FontAwesome name="icon alt fa-angellist" className="footer-me-FA" />
         </a>
   			<a className="footer-me-anchor"
-          href="http://dannam.xyz/images/resume.pdf"
+          href="https://dannam.xyz/images/resume.pdf"
           target="_blank">
   				<FontAwesome name="icon alt fa-file-pdf-o" className="footer-me-FA" />
         </a>
@@ -55,14 +55,14 @@ const walleBall = () => {
   return (
     <div className="walle-ball-container">
       <div className="walle-ball-div">
-        <a href="http://dannam.xyz/Wall_E_Ball/"
+        <a href="https://dannam.xyz/Wall_E_Ball/"
           className="walle-ball-link-pic"
           target="_blank">
           <img className="walle-ball-pic" src={window.walleBall}></img>
         </a>
       </div>
       <div className="walle-ball-desc">
-        <a href="http://dannam.xyz/Wall_E_Ball/"
+        <a href="https://dannam.xyz/Wall_E_Ball/"
           className="walle-ball-link"
           target="_blank">
           try playing Wall-E Ball!
