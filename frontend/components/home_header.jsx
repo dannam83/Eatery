@@ -144,7 +144,7 @@ class HomeHeader extends React.Component {
       <div className="designedBy">
         <div>
           <span className="designedByCreatedBy designedByItem designedByTop">a website by</span>
-          <a href="http://dannam.xyz"
+          <a href="https://dannam.xyz"
             className="designedByName designedByItem designedByTop"
             target="_blank">
             Daniel Nam

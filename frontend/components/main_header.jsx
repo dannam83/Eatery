@@ -114,7 +114,7 @@ class MainHeader extends React.Component {
             target="_blank">About Me</a>
           <p className="header-default-link-period">.</p>
           <a className="header-default-link about-me"
-            href="http://github.com/dannam83"
+            href="https://github.com/dannam83"
             target="_blank">GitHub</a>
           <a className="header-default-link about-me"
             href="https://www.linkedin.com/in/daniel-nam-4032a0b/"

@@ -15,7 +15,7 @@ const aboutMe = () => {
       </div>
       <div className="footer-row">
         <a className="footer-me-anchor"
-          href="http://github.com/dannam83"
+          href="https://github.com/dannam83"
           target="_blank">
           <FontAwesome name='icon alt fa-github' className="footer-me-FA" />
         </a>
