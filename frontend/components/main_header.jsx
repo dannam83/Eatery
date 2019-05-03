@@ -110,7 +110,7 @@ class MainHeader extends React.Component {
             to="/search">Search Page</Link>
           <p className="header-default-link-period">.</p>
           <a className="header-default-link about-me"
-            href="http://dannam.xyz"
+            href="https://dannam.xyz"
             target="_blank">About Me</a>
           <p className="header-default-link-period">.</p>
           <a className="header-default-link about-me"
@@ -124,7 +124,7 @@ class MainHeader extends React.Component {
             target="_blank">Angel List</a>
           <p className="header-default-link-period">.</p>
           <a className="header-default-link about-me"
-            href="http://dannam.xyz/images/resume.pdf"
+            href="https://dannam.xyz/images/resume.pdf"
             target="_blank">Resume</a>
           <a className="header-default-link about-me"
             href="mailto:dannam83@gmail.com">Contact</a>
